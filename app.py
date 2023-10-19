@@ -1,10 +1,6 @@
-from flask import Flask
+from suport import flask_app
 
-app = Flask(__name__)
+app = flask_app()
 
-@app.route("/")
-def home():
-	return "Hello, world!"
-
-if __name__ == "__main__":
+if __name__ == '__main__':
     app.run(debug=True)
