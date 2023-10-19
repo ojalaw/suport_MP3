@@ -2,6 +2,6 @@ from flask import Blueprint
 
 views = Blueprint('views', __name__)
 
-@views.route()
+@views.route('/')
 def home():
     return "<h1>Hello, test!</h1>"
