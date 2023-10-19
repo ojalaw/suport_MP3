@@ -6,8 +6,11 @@ import json
 
 views = Blueprint('views', __name__)
 
+@views.route('/')
+def overview():
+    return render_template("overview.html")
 
-@views.route('/', methods=['GET', 'POST'])
+@views.route('/home', methods=['GET', 'POST'])
 @login_required
 def home():
     if request.method == 'POST': 
@@ -23,8 +26,8 @@ def home():
 
     return render_template("home.html", user=current_user)
 
-
 @views.route('/delete-note', methods=['POST'])
+@login_required
 def delete_note():  
     note = json.loads(request.data)
     noteId = note['noteId']

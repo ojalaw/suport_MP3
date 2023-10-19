@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}Overview{% endblock %}
+
+{% block content %}
+
+<div class="background">
+    <div class="gallery">
+        <div class="card">
+            <figure>
+                <img
+                    src="images/max.avif"
+                    alt="Preview"
+                >
+            </figure>
+        </div>
+        <div class="card">
+            <figure>
+                <img
+                    src="images/lewis.avif"
+                    alt="Preview"
+                >
+            </figure>
+        </div>
+        <div class="card">
+            <figure>
+                <img
+                    src="images/lando.avif"
+                    alt="Preview"
+                >
+            </figure>
+        </div>
+        </div>
+    </div>            
+</div>
+
+<div class="buttons">
+    <a href="{{ url_for('auth.login') }}" class="btn btn-primary">Login</a>
+    <a href="{{ url_for('auth.sign_up') }}" class="btn btn-secondary">Sign Up</a>
+</div>
+
+{% endblock %}
