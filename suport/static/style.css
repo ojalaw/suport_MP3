@@ -4,7 +4,7 @@
     --secondary: #1D1D1D;
 }
 
-* {
+*, {
     margin: 0;
     padding: 0;
     box-sizing: border-box;  
@@ -12,10 +12,10 @@
 
 body {
     margin: 0;
+    background-color: var(--background);
 }
 
 .background {
-    background-color: var(--background);
     display: grid;
     place-items: center;
     width: 100%;
@@ -25,6 +25,7 @@ body {
 /*---overview---*/
 
 .gallery {
+    justify-content: center;
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
@@ -79,6 +80,7 @@ h1, h3 {
 }
 
 .my-form {
+    background-color:white;
     display: flex;
     flex-direction: column;
     justify-content: start;
