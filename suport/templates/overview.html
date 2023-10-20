@@ -9,7 +9,7 @@
         <div class="card">
             <figure>
                 <img
-                    src="images/max.avif"
+                    src="/static/images/football.jpg"
                     alt="Preview"
                 >
             </figure>
@@ -17,7 +17,7 @@
         <div class="card">
             <figure>
                 <img
-                    src="images/lewis.avif"
+                    src="/static/images/formula1.jpg"
                     alt="Preview"
                 >
             </figure>
@@ -25,18 +25,17 @@
         <div class="card">
             <figure>
                 <img
-                    src="images/lando.avif"
+                    src="/static/images/rugby.jpg"
                     alt="Preview"
                 >
             </figure>
         </div>
         </div>
-    </div>            
-</div>
-
-<div class="buttons">
-    <a href="{{ url_for('auth.login') }}" class="btn btn-primary">Login</a>
-    <a href="{{ url_for('auth.sign_up') }}" class="btn btn-secondary">Sign Up</a>
+        <div class="buttons">
+            <a href="{{ url_for('auth.login') }}" class="btn btn-primary">Login</a>
+            <a href="{{ url_for('auth.sign_up') }}" class="btn btn-secondary">Sign Up</a>
+        </div>  
+    </div>          
 </div>
 
 {% endblock %}
