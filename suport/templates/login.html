@@ -4,48 +4,58 @@
 
 {% block content %}
 
-<div class="container">
-
-  <form method="POST">
-
-    <h3>Login</h3>
-
-    <div class="row">
-      <div class="col">
-        <div class="form-floating">
-          <input 
-            type="email" 
-            class="form-control" 
-            id="email" 
-            name="email"
-            placeholder="Email">
-          <label for="email">Email Address</label>
-        </div>
-      </div>
+<body>
+    <div class="form-center">
+        <form class="my-form" method="POST">
+            <div class="form-welcome-row">
+            </div>
+            <div class="text-field">
+                <label for="email">Email:
+                  <input 
+                  type="email" 
+                  class="form-control" 
+                  id="email" 
+                  name="email"
+                  placeholder="Email">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" 
+                        viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" 
+                        fill="none" stroke-linecap="round" stroke-linejoin="round"
+                    >
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"></path>
+                        <path d="M16 12v1.5a2.5 2.5 0 0 0 5 0v-1.5a9 9 0 1 0 -5.5 8.28"></path>
+                    </svg>
+                </label>
+            </div>
+            <div class="text-field">
+                <label for="password">Password:
+                  <input
+                  type="password"
+                  class="form-control"
+                  id="password" 
+                  name="password"
+                  placeholder="Password">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" 
+                        viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" 
+                        fill="none" stroke-linecap="round" stroke-linejoin="round"
+                    >
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M5 13a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-6z"></path>
+                        <path d="M11 16a1 1 0 1 0 2 0a1 1 0 0 0 -2 0"></path>
+                        <path d="M8 11v-4a4 4 0 1 1 8 0v4"></path>
+                    </svg>
+                </label>
+            </div>
+            <button type="submit" class="my-form__button">
+                Login
+            </button>
+            <div class="my-form__actions">
+                <a href="/sign-up" title="Create Account">
+                    Haven't signed up yet?
+                </a>
+            </div>
+        </form>
     </div>
-
-    <div class="row">
-      <div class="col">
-        <div class="form-floating">
-          <input
-            type="password"
-            class="form-control"
-            id="password" 
-            name="password"
-            placeholder="Password">
-          <label for="password">Password</label>
-        </div>
-      </div>  
-    </div>
-
-    <br>
-
-    <div class="d-grid">
-      <button type="submit" class="btn btn-primary">Login</button>
-    </div>
-
-  </form>
-
-</div>
+</body>
 
 {% endblock %}
