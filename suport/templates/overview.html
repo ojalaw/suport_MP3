@@ -4,6 +4,15 @@
 
 {% block content %}
 
+<div class="intro-text">
+    <div>
+        <h1>Welcome to Suport</h1>
+    </div>
+<div>
+    <p>Interacting with other fans about the sports you love</p>
+</div>
+</div>
+
 <div class="background">
     <div class="gallery">
         <div class="card">
@@ -32,8 +41,8 @@
         </div>
         </div>
         <div class="buttons">
-            <a href="{{ url_for('auth.login') }}" class="btn btn-primary">Login</a>
-            <a href="{{ url_for('auth.sign_up') }}" class="btn btn-secondary">Sign Up</a>
+            <a href="{{ url_for('auth.login') }}" class="btn btn-light">Login</a>
+            <a href="{{ url_for('auth.sign_up') }}" class="btn btn-light">Sign Up</a>
         </div>  
     </div>          
 </div>
