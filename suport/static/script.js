@@ -2,10 +2,11 @@ function deleteNote(noteId) {
     fetch("/delete-note", {
       method: "POST",
       body: JSON.stringify({ noteId: noteId }),
-    }).then((_res) => {
-      window.location.href = "/home";
-    });
-  }
+    }).then(response => {
+        showConfirmMessage("Note deleted!"); 
+      })
+    
+    }
 
   function showEditNoteForm(noteId) {
     const form = document.getElementById(`edit-note-form-${noteId}`);
