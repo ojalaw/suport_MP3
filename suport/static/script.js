@@ -8,7 +8,6 @@ function deleteNote(noteId) {
   }
 
   function showEditNoteForm(noteId) {
-    // Toggle the display of the edit form
     const form = document.getElementById(`edit-note-form-${noteId}`);
     form.style.display = form.style.display === 'none' ? 'block' : 'none';
 }
@@ -33,7 +32,7 @@ function saveEditedNote(noteId) {
             alert(data.error);
         } else {
             alert(data.message);
-            location.reload();  // Reload the page to reflect the changes
+            location.reload();
         }
     });
 }
