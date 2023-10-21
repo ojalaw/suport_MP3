@@ -17,33 +17,32 @@
     <div class="gallery">
         <div class="card">
             <figure>
-                <img
-                    src="/static/images/football.jpg"
-                    alt="Preview"
-                >
+                <a href="{{ url_for('views.home') }}">
+                    <img src="/static/images/football.jpg" alt="Preview">
+                </a>
             </figure>
         </div>
         <div class="card">
             <figure>
-                <img
-                    src="/static/images/formula1.jpg"
-                    alt="Preview"
-                >
+                <a href="{{ url_for('views.home') }}">
+                    <img src="/static/images/formula1.jpg" alt="Preview">
+                </a>
             </figure>
         </div>
         <div class="card">
             <figure>
-                <img
-                    src="/static/images/rugby.jpg"
-                    alt="Preview"
-                >
+                <a href="{{ url_for('views.home') }}">
+                    <img src="/static/images/rugby.jpg" alt="Preview">
+                </a>
             </figure>
         </div>
         </div>
+        {% if not current_user.is_authenticated %}
         <div class="buttons">
             <a href="{{ url_for('auth.login') }}" class="btn btn-light">Login</a>
             <a href="{{ url_for('auth.sign_up') }}" class="btn btn-light">Sign Up</a>
-        </div>  
+        </div>
+    {% endif %}
     </div>          
 </div>
 
