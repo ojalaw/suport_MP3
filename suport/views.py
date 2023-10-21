@@ -24,8 +24,7 @@ def home():
             db.session.commit()
             flash('Note added!', category='success')
 
-    notes = Note.query.all()  
-    return render_template("home.html", notes=notes) 
+    return render_template("home.html", user=current_user)
 
 @views.route('/delete-note', methods=['POST'])
 @login_required
@@ -39,17 +38,3 @@ def delete_note():
             db.session.commit()
 
     return jsonify({})
-
-@views.route('/edit-note', methods=['POST'])
-@login_required
-def edit_note():
-    data = json.loads(request.data)
-    noteId = data['noteId']
-    newText = data['text']
-    note = Note.query.get(noteId)
-    if note and note.user_id == current_user.id:
-        note.data = newText
-        db.session.commit()
-        return jsonify({"message": "Note updated successfully!"})
-    else:
-        return jsonify({"error": "Note not found or unauthorized!"}), 400

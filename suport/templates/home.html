@@ -8,24 +8,12 @@
 
 <ul class="list-group" id="notes">
 
-  {% for note in notes %}
+  {% for note in user.notes %}
   
   <li class="list-group-item">
     {{ note.data }}
-    
-    {% if note.user_id == current_user.id %}
-        <button type="button" class="btn btn-primary" onclick="showEditNoteForm('{{ note.id }}')">Edit</button>
-        <button type="button" class="btn-close" onClick="deleteNote('{{ note.id }}')"></button>
-    {% endif %}
 
-    <small>Added by: {{ note.user.username }} on {{ note.date.strftime('%Y-%m-%d %H:%M:%S') }}</small>
-
-    <div id="edit-note-form-{{ note.id }}" class="edit-note-form" style="display: none;">
-        <form onsubmit="event.preventDefault(); saveEditedNote('{{ note.id }}');">
-            <input type="text" name="text" value="{{ note.data }}">
-            <button type="submit">Save</button>
-        </form>
-    </div>
+    <button type="button" class="btn-close" onClick="deleteNote('{{ note.id }}');"></button>
 
   </li>
   
