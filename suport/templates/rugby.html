@@ -3,6 +3,40 @@
 {% block title %}Rugby{% endblock %}
 
 {% block content %}
+<h1 class="display-4">Rugby Notes</h1>
 
+<ul class="list-group" id="notes">
+  {% for note in notes %}
+  <li class="list-group-item">
+    {{ note.data }}
+    
+    {% if note.user_id == current_user.id %}
+        <button type="button" class="btn btn-primary" onclick="showEditNoteForm('{{ note.id }}')">Edit</button>
+        <button type="button" class="btn-close" onClick="deleteNote('{{ note.id }}')"></button>
+    {% endif %}
+
+    <small>Added by: {{ note.user.username }} on {{ note.date.strftime('%Y-%m-%d %H:%M:%S') }}</small>
+
+    <div id="edit-note-form-{{ note.id }}" class="edit-note-form" style="display: none;">
+        <form onsubmit="event.preventDefault(); saveEditedNote('{{ note.id }}');">
+            <input type="text" name="text" value="{{ note.data }}">
+            <button type="submit">Save</button>
+        </form>
+    </div>
+  </li>
+  {% endfor %}
+</ul>
+
+<form method="POST">
+  <div class="row">
+    <div class="col">
+      <textarea name="note" id="note" class="form-control"></textarea>
+    </div>
+    <div class="col-auto">
+      <button type="submit" class="btn btn-primary">Add Note</button>
+    </div>
+  </div>
+  <input type="hidden" name="sport" value="rugby">
+</form>
 
 {% endblock %}

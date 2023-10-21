@@ -6,6 +6,42 @@ import json
 
 views = Blueprint('views', __name__)
 
+@views.route('/football', methods=['GET', 'POST'])
+@login_required
+def football():
+    if request.method == 'POST':
+        note_data = request.form.get('note')
+        new_note = Note(data=note_data, user_id=current_user.id, sport='football')
+        db.session.add(new_note)
+        db.session.commit()
+        flash('Note added to Football!', category='success')
+    notes = Note.query.filter_by(sport='football').all()
+    return render_template("football.html", notes=notes)
+
+@views.route('/formula1', methods=['GET', 'POST'])
+@login_required
+def formula1():
+    if request.method == 'POST':
+        note_data = request.form.get('note')
+        new_note = Note(data=note_data, user_id=current_user.id, sport='formula1')
+        db.session.add(new_note)
+        db.session.commit()
+        flash('Note added to Formula1!', category='success')
+    notes = Note.query.filter_by(sport='formula1').all()
+    return render_template("formula1.html", notes=notes)
+
+@views.route('/rugby', methods=['GET', 'POST'])
+@login_required
+def rugby():
+    if request.method == 'POST':
+        note_data = request.form.get('note')
+        new_note = Note(data=note_data, user_id=current_user.id, sport='rugby')
+        db.session.add(new_note)
+        db.session.commit()
+        flash('Note added to Rugby!', category='success')
+    notes = Note.query.filter_by(sport='rugby').all()
+    return render_template("rugby.html", notes=notes)
+
 @views.route('/')
 def overview():
     return render_template("overview.html")
