@@ -5,6 +5,20 @@
 {% block content %}
 <h1 class="display-4">Football Reviews</h1>
 
+<!-- Input area for adding reviews -->
+<form method="POST">
+  <div class="row">
+    <div class="col">
+      <textarea name="review" id="review" class="form-control"></textarea>
+    </div>
+    <div class="col-auto">
+      <button type="submit" class="btn btn-primary">Add Review</button>
+    </div>
+  </div>
+  <input type="hidden" name="sport" value="football">
+</form>
+
+<!-- Displaying the reviews -->
 <ul class="list-group" id="reviews">
   {% for review in reviews %}
   <li class="list-group-item">
@@ -26,17 +40,5 @@
   </li>
   {% endfor %}
 </ul>
-
-<form method="POST">
-  <div class="row">
-    <div class="col">
-      <textarea name="review" id="review" class="form-control"></textarea>
-    </div>
-    <div class="col-auto">
-      <button type="submit" class="btn btn-primary">Add Review</button>
-    </div>
-  </div>
-  <input type="hidden" name="sport" value="football">
-</form>
 
 {% endblock %}
