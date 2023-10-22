@@ -3,8 +3,16 @@
 {% block title %}Formula 1{% endblock %}
 
 {% block content %}
-<h1 class="display-4">Formula 1 Reviews</h1>
-
+<div class = "review-title">
+  <h1 class="display-4">Formula 1</h1>
+  </div>
+  
+  <img class = "review-image" src="/static/images/formula1.jpg" alt="Formula1">
+  
+  
+  <div class = "review-text">
+    <p>Let other fans know what you're thinking, post a review on your chosen formula 1 memory below. </p>
+  </div>
 <form method="POST">
   <div class="row">
     <div class="col">
@@ -22,10 +30,12 @@
   <li class="list-group-item">
     {{ review.data }}
     
-    {% if review.user_id == current_user.id %}
-        <button type="button" class="btn btn-primary" onclick="showEditReviewForm('{{ review.id }}')">Edit</button>
-        <button type="button" class="btn-close" onClick="deleteReview('{{ review.id }}')"></button>
-    {% endif %}
+    <div class="review-actions">
+        {% if review.user_id == current_user.id %}
+            <button type="button" class="btn btn-primary" onclick="showEditReviewForm('{{ review.id }}')">Edit</button>
+            <button type="button" class="btn btn-danger" onClick="deleteReview('{{ review.id }}')">Delete</button>
+        {% endif %}
+    </div>
 
     <small>Added by: {{ review.user.username }} on {{ review.date.strftime('%Y-%m-%d %H:%M:%S') }}</small>
 
