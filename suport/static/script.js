@@ -1,29 +1,29 @@
-function deleteNote(noteId) {
-    fetch("/delete-note", {
+function deleteReview(reviewId) {
+    fetch("/delete-review", {
       method: "POST",
-      body: JSON.stringify({ noteId: noteId }),
+      body: JSON.stringify({ reviewId: reviewId }),
     }).then(response => {
-        showConfirmMessage("Note deleted!"); 
+        showConfirmMessage("Rview deleted!"); 
       })
     
     }
 
-  function showEditNoteForm(noteId) {
-    const form = document.getElementById(`edit-note-form-${noteId}`);
+  function showEditReviewForm(reviewId) {
+    const form = document.getElementById(`edit-review-form-${reviewId}`);
     form.style.display = form.style.display === 'none' ? 'block' : 'none';
 }
 
-function saveEditedNote(noteId) {
-    const form = document.getElementById(`edit-note-form-${noteId}`);
+function saveEditedReview(reviewId) {
+    const form = document.getElementById(`edit-review-form-${reviewId}`);
     const newText = form.querySelector('input[name="text"]').value;
 
-    fetch('/edit-note', {
+    fetch('/edit-review', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            noteId: noteId,
+            reviewId: reviewId,
             text: newText
         })
     })
