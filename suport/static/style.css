@@ -22,6 +22,24 @@ body {
     width: 100%;
 }
 
+/*---navbar---*/
+
+.navbar .nav-link {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.navbar .dropdown-menu .dropdown-item {
+    font-size: 1.3rem; 
+    color: black;
+}
+
+.navbar-brand {
+    font-size: 3rem;
+}
+
+
+
 /*---overview---*/
 
 .intro-text {
@@ -67,6 +85,12 @@ body {
 
 h1, h3 {
     text-align: center;
+    font-size: 60px;
+}
+
+i.fa-futbol {
+    font-size: 40px;
+    font-style: normal;
 }
 
 /*---login-form---*/
