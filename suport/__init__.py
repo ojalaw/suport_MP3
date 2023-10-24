@@ -1,3 +1,4 @@
+import os
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from os import path
@@ -9,7 +10,13 @@ db = SQLAlchemy()
 def flask_app():
     app = Flask(__name__)
     app.config['SECRET_KEY'] = 'secretkey'
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:postgres@localhost/test'
+    if os.environ.get('DATABASE_URL'):
+        uri = os.environ.get('DATABASE_URL')
+        if uri.startswith("postgres://"):
+            uri = uri.replace("postgres://", "postgresql://", 1)
+        app.config['SQLALCHEMY_DATABASE_URI'] = uri
+    else:
+        app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:postgres@localhost/test'
     db.init_app(app)
 
     from .views import views
