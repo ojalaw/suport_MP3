@@ -51,7 +51,7 @@ body {
     justify-content: center;
     display: flex;
     flex-wrap: wrap;
-    gap: 16px;
+    gap: 32px;
     max-width: 800px;
 }
 
@@ -79,6 +79,12 @@ body {
     border-radius: 8px;
 }
 
+.buttons {
+    display: flex;
+    gap: 100px;
+    padding-top: 50px;
+  }
+
 /*---general---*/
 
 h1, h3 {
@@ -91,74 +97,60 @@ i.fa-futbol {
     font-style: normal;
 }
 
-/*---login-form---*/
-
-.form-center {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.page-title, .title-text {
     justify-content: center;
-    height: 100vh;
+    text-align: center;
 }
 
-.form-wrapper {
-    position: relative;
-    display: grid;
-    grid-template-columns: 3fr 2fr;
-    max-width: 1200px;
+.title-text {
+    font-size: 2em;
+}
+
+/*---login-form---*/
+
+.form-title {
+    max-width:600px;
+    color: black;
+}
+.form-center {
+    display: flex;
+    margin-top: 50px;
+    align-items: center
 }
 
 .my-form {
     background-color:white;
     display: flex;
     flex-direction: column;
-    justify-content: start;
-    position: relative;
+    justify-content: center;
     gap: 16px;
-    max-width: 460px;
-    min-width: 300px;
-    width: 100%;
+    max-width: 600px;
     padding: 48px 32px;
     height: fit-content;
-    box-shadow: 
-        rgba(100, 100, 111, 0.2)
-        0px 7px 29px 0px;
-}
-
-.form-welcome-row {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    gap: 8px;
-    margin-bottom: 8px;
-}
-
-.form-welcome-row h1 {
-    font-size: 1.6rem;
+    border-radius: 10px;
+    margin: 0 auto;
 }
 
 .my-form__button {
     background-color: var(--primary);
     color: white;
     white-space: nowrap;
-    border: none;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 16px;
     line-height: 50px;
-    outline: none;
     font-size: 18px;
     letter-spacing: .025em;
-    text-decoration: none;
     cursor: pointer;
     font-weight: 800;
     min-height: 50px;
-    width: 100%;
+    max-width: 200px;
     border-radius: 8px;
-    box-shadow: 0 5px 10px rgba(0,0,0,.15);
     transition: all .3s ease;
     -webkit-transition: all .3s ease;
+    text-decoration: none;
+    padding: 10px 15px;
 }
 
 .my-form__actions {
@@ -169,6 +161,7 @@ i.fa-futbol {
     gap: 16px;
     margin-top: 8px;
     font-size: smaller;
+    max-width: 600px;
 }
 
 .my-form__actions a {
@@ -216,8 +209,6 @@ i.fa-futbol {
     color: var(--secondary);
     font-size: 16px;
     font-weight: 500;
-    max-width: 100%;
-    width: 100%;
     border: 1px solid var(--secondary);
     height: 50px;
     letter-spacing: .03rem;
@@ -231,10 +222,6 @@ i.fa-futbol {
 
 .text-field label:focus-within  {
     color: var(--primary);
-}
-
-.text-field {
-    position: relative;
 }
 
 .text-field svg {
@@ -262,6 +249,10 @@ i.fa-futbol {
     font-weight: 600;
     letter-spacing: .03rem;
     z-index: 10;
+}
+
+.text-field {
+    max-width: 600px;
 }
 
 /*---reviews---*/
@@ -305,7 +296,6 @@ form {
     gap: 10px;
     margin-top: 10px; 
 }
-
 
 @media (max-width: 840px) {
     .form-wrapper {

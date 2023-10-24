@@ -20,6 +20,7 @@
                 <a href="{{ url_for('views.football') }}">
                     <img src="/static/images/football.jpg" alt="Football">
                 </a>
+                <figcaption>Football</figcaption>
             </figure>
         </div>
         <div class="card">
@@ -39,8 +40,8 @@
         </div>
         {% if not current_user.is_authenticated %}
         <div class="buttons">
-            <a href="{{ url_for('auth.login') }}" class="btn btn-light">Login</a>
-            <a href="{{ url_for('auth.sign_up') }}" class="btn btn-light">Sign Up</a>
+            <a href="{{ url_for('auth.login') }}" class="my-form__button">Login</a>
+            <a href="{{ url_for('auth.sign_up') }}" class="my-form__button">Sign Up</a>
         </div>
     {% endif %}
     </div>          
