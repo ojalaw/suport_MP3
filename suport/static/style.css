@@ -2,6 +2,9 @@
     --background: #3C343D;
     --primary: navy;
     --secondary: #1D1D1D;
+    --footer: #2C2C2C;
+    --primary-color: white;
+    --secondary-color: #2C2C2C;
 }
 
 *, {
@@ -14,6 +17,13 @@ body {
     color: white;
     margin: 0;
     background-color: var(--background);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    flex: 1; /* make the main content grow and take up any available space */
 }
 
 .background {
@@ -27,6 +37,14 @@ body {
 .navbar .nav-link {
     font-size: 1.5rem;
     color: white;
+}
+
+.nav-link {
+    gap: 20px;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
 }
 
 .navbar .dropdown-menu .dropdown-item {
@@ -296,6 +314,85 @@ form {
     gap: 10px;
     margin-top: 10px; 
 }
+
+/* CSS reset */
+
+.footer-background {
+    background-color: var(--footer);
+    display: grid;
+    place-items: center;
+}
+
+.social-media-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 64px;
+    list-style: none;
+    padding: 40px;
+}
+
+.social-media-buttons li {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: grid;
+    background-color: var(--primary-color);
+    place-items: center;
+    transition: all 0.3s;
+    border: 1px solid var(--primary-color);
+}
+
+.social-media-buttons li a {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    color: var(--primary);
+}
+
+.social-media-buttons li:hover {
+    background-color: var(--primary);
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+}
+
+.social-media-buttons li a svg {
+    height: 48px;
+    width: 48px;
+    stroke: var(--primary);
+    stroke-width: 1.75;
+    transition: 0.8s;
+}
+
+.social-media-buttons li:hover svg {
+    stroke: var(--primary-color);
+    transform: rotateY(360deg);
+    stroke-width: 1.75;
+}
+
+/*--footer--*/
+
+ footer {
+   padding-top: 1.5em; 
+   text-align: center;
+   width: 100%;
+   bottom: 0;
+ }
+
+ footer > a {
+   padding: 0 15px;
+   font-size: 2em; 
+ }
+
+
+ footer > p {
+   font-size: 1.2em; 
+   margin-top: 1em; 
+ }
+
+
 
 @media (max-width: 840px) {
     .form-wrapper {
