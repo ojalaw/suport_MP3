@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, flash, jsonify
+from flask import Blueprint, render_template, request, flash, jsonify, redirect, url_for
 from flask_login import login_required, current_user
 from .models import Post, User
 from . import db
@@ -14,7 +14,8 @@ def football():
         new_post = Post(data=post_data, user_id=current_user.id, sport='football')
         db.session.add(new_post)
         db.session.commit()
-        flash('Post added to Football!', category='success')
+        flash('Post added!', category='success')
+        return redirect(url_for('views.football'))
     posts = Post.query.filter_by(sport='football').all()
     return render_template("football.html", posts=posts)
 
@@ -27,6 +28,7 @@ def formula1():
         db.session.add(new_post)
         db.session.commit()
         flash('Post added to Formula1!', category='success')
+        return redirect(url_for('views.formula1'))
     posts = Post.query.filter_by(sport='formula1').all()
     return render_template("formula1.html", posts=posts)
 
@@ -39,6 +41,7 @@ def rugby():
         db.session.add(new_post)
         db.session.commit()
         flash('Post added to Rugby!', category='success')
+        return redirect(url_for('views.rugby'))
     posts = Post.query.filter_by(sport='rugby').all()
     return render_template("rugby.html", posts=posts)
 

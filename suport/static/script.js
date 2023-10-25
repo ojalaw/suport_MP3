@@ -1,11 +1,21 @@
 function deletePost(postId) {
-    fetch("/delete-post", {
+
+    const post = document.getElementById(`post-${postId}`);
+  
+    post.style.display = 'none';
+  
+    return fetch("/delete-post", {
       method: "POST",
-      body: JSON.stringify({ postId:postId }),
-    }).then(response => {
-        location.reload(true); 
-      })
-    }
+      body: JSON.stringify({ postId: postId})
+    })
+    .then(response => {
+      if(!response.ok) {
+        post.style.display = 'block'; 
+      }
+      return response;
+    })
+  
+  }
     
   function showEditPostForm(postId) {
     const form = document.getElementById(`edit-post-form-${postId}`);
