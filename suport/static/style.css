@@ -269,20 +269,20 @@ i.fa-futbol {
     max-width: 600px;
 }
 
-/*---reviews---*/
+/*---post---*/
 
-.review-title {
+.post-title {
     padding: 20px;
 }
 
-#reviews {
+#posts {
     display: flex;
     flex-direction: column;
     align-items: center; 
     justify-content: center;
 }
 
-.review-image {
+.post-image {
     display: block;
     margin: 20px auto;
     height: 284px;
@@ -290,12 +290,12 @@ i.fa-futbol {
     border-radius: 10px;
 }
 
-.review-text {
+.post-text {
     text-align: center;
     padding: 20px;
 }
 
-#reviews .list-group-item {
+#posts .list-group-item {
     margin-bottom: 10px;
 }
 
@@ -303,7 +303,7 @@ form {
     margin-bottom: 20px;
 }
 
-.review-actions {
+.post-actions {
     display: flex;
     justify-content: flex-start;
     gap: 10px;

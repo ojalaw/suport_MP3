@@ -1,29 +1,30 @@
-function deleteReview(reviewId) {
-    fetch("/delete-review", {
+function deletePost(postId) {
+    fetch("/delete-post", {
       method: "POST",
-      body: JSON.stringify({ reviewId: reviewId }),
+      body: JSON.stringify({ postId: postId }),
     }).then(response => {
-        showConfirmMessage("Rview deleted!"); 
+        showConfirmMessage("Post deleted!")
+        location.reload(); 
       })
     
     }
 
-  function showEditReviewForm(reviewId) {
-    const form = document.getElementById(`edit-review-form-${reviewId}`);
+  function showEditPostForm(postId) {
+    const form = document.getElementById(`edit-post-form-${postId}`);
     form.style.display = form.style.display === 'none' ? 'block' : 'none';
 }
 
-function saveEditedReview(reviewId) {
-    const form = document.getElementById(`edit-review-form-${reviewId}`);
+function saveEditedPost(postId) {
+    const form = document.getElementById(`edit-post-form-${postId}`);
     const newText = form.querySelector('input[name="text"]').value;
 
-    fetch('/edit-review', {
+    fetch('/edit-post', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            reviewId: reviewId,
+            postId: postId,
             text: newText
         })
     })

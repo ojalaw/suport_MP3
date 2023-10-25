@@ -3,45 +3,45 @@
 {% block title %}Rugby{% endblock %}
 
 {% block content %}
-<div class = "review-title">
+<div class = "post-title">
   <h1 class="display-4">Rugby</h1>
   </div>
   
-  <img class = "review-image" src="/static/images/rugby.jpg" alt="Rugby">
+  <img class = "post-image" src="/static/images/rugby.jpg" alt="Rugby">
   
   
-  <div class = "review-text">
-    <p>Let other fans know what you're thinking, post a review on your chosen rugby memory below. </p>
+  <div class = "post-text">
+    <p>Let other fans know what you're thinking, post a post on your chosen rugby memory below. </p>
   </div>
 <form method="POST">
   <div class="row">
     <div class="col">
-      <textarea name="review" id="review" class="form-control"></textarea>
+      <textarea name="post" id="post" class="form-control"></textarea>
     </div>
     <div class="col-auto">
-      <button type="submit" class="btn btn-primary">Add Review</button>
+      <button type="submit" class="btn btn-primary">Add Post</button>
     </div>
   </div>
   <input type="hidden" name="sport" value="rugby">
 </form>
 
-<ul class="list-group" id="reviews">
-  {% for review in reviews %}
+<ul class="list-group" id="posts">
+  {% for post in posts %}
   <li class="list-group-item">
-    {{ review.data }}
+    {{ post.data }}
     
-    <div class="review-actions">
-        {% if review.user_id == current_user.id %}
-            <button type="button" class="btn btn-primary" onclick="showEditReviewForm('{{ review.id }}')">Edit</button>
-            <button type="button" class="btn btn-danger" onClick="deleteReview('{{ review.id }}')">Delete</button>
+    <div class="post-actions">
+        {% if post.user_id == current_user.id %}
+            <button type="button" class="btn btn-primary" onclick="showEditPostForm('{{ post.id }}')">Edit</button>
+            <button type="button" class="btn btn-danger" onClick="deletePost('{{ post.id }}')">Delete</button>
         {% endif %}
     </div>
 
-    <small>Added by: {{ review.user.username }} on {{ review.date.strftime('%Y-%m-%d %H:%M:%S') }}</small>
+    <small>Added by: {{ post.user.username }} on {{ post.date.strftime('%Y-%m-%d %H:%M:%S') }}</small>
 
-    <div id="edit-review-form-{{ review.id }}" class="edit-review-form" style="display: none;">
-        <form onsubmit="event.preventDefault(); saveEditedReview('{{ review.id }}');">
-            <input type="text" name="text" value="{{ review.data }}">
+    <div id="edit-post-form-{{ post.id }}" class="edit-post-form" style="display: none;">
+        <form onsubmit="event.preventDefault(); saveEditedPost('{{ post.id }}');">
+            <input type="text" name="text" value="{{ post.data }}">
             <button type="submit">Save</button>
         </form>
     </div>
