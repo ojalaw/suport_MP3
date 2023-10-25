@@ -324,7 +324,7 @@ form {
     flex-wrap: wrap;
     gap: 64px;
     list-style: none;
-    padding: 40px;
+    padding: 20px;
 }
 
 .social-media-buttons li {
@@ -386,3 +386,17 @@ form {
    font-size: 1.2em; 
    margin-top: 1em; 
  }
+
+ @media (max-width: 450px) {
+    .social-media-buttons {
+        gap: 24px;
+    }
+
+    .post-image {
+        width: 100%; 
+        max-width: 300px;
+        display: block; 
+        margin: 0 auto; 
+    }
+}
+
