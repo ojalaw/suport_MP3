@@ -7,7 +7,7 @@
     --secondary-color: #2C2C2C;
 }
 
-*, {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;  
@@ -394,3 +394,4 @@ form {
         grid-template-columns: 1fr;
         height: 100vh;
     }
+}

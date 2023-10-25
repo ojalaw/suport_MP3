@@ -1,14 +1,12 @@
 function deletePost(postId) {
     fetch("/delete-post", {
       method: "POST",
-      body: JSON.stringify({ postId: postId }),
+      body: JSON.stringify({ postId:postId }),
     }).then(response => {
-        showConfirmMessage("Post deleted!")
-        location.reload(); 
+        location.reload(true); 
       })
-    
     }
-
+    
   function showEditPostForm(postId) {
     const form = document.getElementById(`edit-post-form-${postId}`);
     form.style.display = form.style.display === 'none' ? 'block' : 'none';
