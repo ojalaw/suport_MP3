@@ -8,7 +8,6 @@ db = SQLAlchemy()
 
 
 def flask_app():
-    port = int(os.environ.get('PORT', 5000))
     app = Flask(__name__)  
     app.config['SECRET_KEY'] = 'secretkey'
     if os.environ.get('DATABASE_URL'):
@@ -20,7 +19,6 @@ def flask_app():
         app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:postgres@localhost/test'
     db.init_app(app)
     
-    app.run(host='0.0.0.0', port=port)
 
     from .views import views
     from .auth import auth
