@@ -4,8 +4,11 @@ from .models import Review, User
 from . import db
 import json
 from flask import send_from_directory
+from . import app
 
 views = Blueprint('views', __name__)
+
+app.register_blueprint(views)
 
 @views.route('/football', methods=['GET', 'POST'])
 @login_required
