@@ -14,7 +14,6 @@ function deletePost(postId) {
       }
       return response;
     })
-  
   }
     
   function showEditPostForm(postId) {

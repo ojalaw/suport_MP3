@@ -17,3 +17,11 @@ class User(db.Model, UserMixin):
     password = db.Column(db.String(255))
     username = db.Column(db.String(255))
     posts = db.relationship('Post', backref='user')
+
+
+class Comment(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    content = db.Column(db.String(1000))
+    date = db.Column(db.DateTime(timezone=True), default=func.now())
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    post_id = db.Column(db.Integer, db.ForeignKey('post.id'))

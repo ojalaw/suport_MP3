@@ -1,3 +1,9 @@
+{% block javascript %}
+<script src="{{ url_for('static', filename='script.js') }}"></script> 
+{% endblock %}
+</body>
+</html>
+
 {% extends "base.html" %}
 
 {% block title %}Football{% endblock %}
@@ -12,42 +18,60 @@
 
 
 <div class = "post-text">
-  <p>Let other fans know what you're thinking, post a post on your chosen football memory below. </p>
+<p>Let other fans know what you're thinking, post a post on your chosen football memory below. </p>
 </div>
 <form method="POST">
-  <div class="row">
-    <div class="col">
-      <textarea name="post" id="post" class="form-control"></textarea>
-    </div>
-    <div class="col-auto">
-      <button type="submit" class="btn btn-primary">Add Post</button>
-    </div>
-  </div>
-  <input type="hidden" name="sport" value="football">
+<div class="row">
+<div class="col">
+  <textarea name="post" id="post" class="form-control"></textarea>
+</div>
+<div class="col-auto">
+  <button type="submit" class="btn btn-primary">Add Post</button>
+</div>
+</div>
+<input type="hidden" name="sport" value="football">
 </form>
 
 <ul class="list-group" id="posts">
-  {% for post in posts %}
-  <li id="post-{{post.id}}" class="list-group-item">
-    {{ post.data }}
-    
-    <div class="post-actions">
-        {% if post.user_id == current_user.id %}
-            <button type="button" class="btn btn-primary" onclick="showEditPostForm('{{ post.id }}')">Edit</button>
-            <button type="button" class="btn btn-danger" onClick="deletePost('{{ post.id }}')">Delete</button>
+{% for post in posts %}
+<li id="post-{{post.id}}" class="list-group-item">
+{{ post.data }}
+
+<div class="post-actions">
+    {% if post.user_id == current_user.id %}
+        <button type="button" class="btn btn-primary" onclick="showEditPostForm('{{ post.id }}')">Edit</button>
+        <button type="button" class="btn btn-danger" onClick="deletePost('{{ post.id }}')">Delete</button>
+    {% endif %}
+</div>
+
+<small>Added by: {{ post.user.username }} on {{ post.date.strftime('%Y-%m-%d %H:%M:%S') }}</small>
+
+<div id="edit-post-form-{{ post.id }}" class="edit-post-form" style="display: none;">
+    <form onsubmit="event.preventDefault(); saveEditedPost('{{ post.id }}');">
+        <input type="text" name="text" value="{{ post.data }}">
+        <button type="submit">Save</button>
+    </form>
+</div>
+</li>
+
+  <ul class="list-group">
+    {% for comment in post.comments %}
+      <li class="list-group-item">
+        <small>By {{ comment.author.username }} on {{ comment.date }}</small>
+        {{ comment.content }}
+        {% if comment.author == current_user %}
+          <button>Edit</button>
+          <button>Delete</button>
         {% endif %}
-    </div>
+      </li>
+    {% endfor %}
+  </ul>
 
-    <small>Added by: {{ post.user.username }} on {{ post.date.strftime('%Y-%m-%d %H:%M:%S') }}</small>
-
-    <div id="edit-post-form-{{ post.id }}" class="edit-post-form" style="display: none;">
-        <form onsubmit="event.preventDefault(); saveEditedPost('{{ post.id }}');">
-            <input type="text" name="text" value="{{ post.data }}">
-            <button type="submit">Save</button>
-        </form>
-    </div>
-  </li>
-  {% endfor %}
+  <form method="POST" action="{{ url_for('views.add_comment', post_id=post.id) }}">
+    <textarea name="content" placeholder="Add a comment..."></textarea>
+    <button type="submit">Submit Comment</button>
+  </form>
+{% endfor %}
 </ul>
 
 

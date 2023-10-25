@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, flash, jsonify, redirect, url_for
 from flask_login import login_required, current_user
-from .models import Post, User
+from .models import Post, User, Comment
 from . import db
 import json
 
@@ -75,3 +75,51 @@ def edit_post():
         return jsonify({"message": "Post updated successfully!"})
     else:
         return jsonify({"error": "Post not found or unauthorized!"}), 400
+
+@views.route('/add-comment/<int:post_id>', methods=['POST'])
+@login_required
+def add_comment(post_id):
+    post = Post.query.get_or_404(post_id)
+    content = request.form.get('content')
+    new_comment = Comment(content=content, user_id=current_user.id, post_id=post.id)
+    db.session.add(new_comment)
+    db.session.commit()
+    flash('Comment added!', category='success')
+    return redirect(request.referrer) 
+
+@views.route('/edit-comment/<int:comment_id>', methods=['POST'])
+@login_required
+def edit_comment(comment_id):
+    comment = Comment.query.get_or_404(comment_id)
+    
+    if comment.user_id != current_user.id:
+        flash('You do not have permission to edit this comment.', category='error')
+        return redirect(request.referrer)
+    
+    content = request.form.get('content')
+    if content:
+        comment.content = content
+        db.session.commit()
+        flash('Comment updated!', category='success')
+    else:
+        flash('Comment content cannot be empty.', category='error')
+    
+    return redirect(request.referrer)
+
+@views.route('/delete-comment/<int:comment_id>', methods=['POST'])
+@login_required
+def delete_comment(comment_id):
+    comment = Comment.query.get_or_404(comment_id)
+    
+    if comment.user_id != current_user.id:
+        flash('You do not have permission to delete this comment.', category='error')
+        return redirect(request.referrer)  
+    
+    db.session.delete(comment)
+    db.session.commit()
+    flash('Comment deleted!', category='success')
+    
+    return redirect(request.referrer)
+
+
+
