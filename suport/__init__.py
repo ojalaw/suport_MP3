@@ -43,7 +43,11 @@ def flask_app():
 
     return app
 
+app = flask_app()
 
+if __name__ == '__main__':
+  app.run()
+  
 def create_database(app):
     if not path.exists('suport/'):
         db.create_all(app=app)
