@@ -3,6 +3,7 @@ from flask_login import login_required, current_user
 from .models import Review, User
 from . import db
 import json
+from flask import send_from_directory
 
 views = Blueprint('views', __name__)
 
@@ -72,3 +73,7 @@ def edit_review():
         return jsonify({"message": "Review updated successfully!"})
     else:
         return jsonify({"error": "Review not found or unauthorized!"}), 400
+    
+@views.route('/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static'), 'favicon.ico')
