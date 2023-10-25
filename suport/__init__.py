@@ -42,11 +42,6 @@ def flask_app():
         return User.query.get(int(id))
 
     return app
-
-app = flask_app()
-
-if __name__ == '__main__':
-  app.run()
   
 def create_database(app):
     if not path.exists('suport/'):
