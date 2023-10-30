@@ -22,7 +22,7 @@ def football():
     for post in posts:
         post.comments = Comment.query.filter_by(post_id=post.id).all()
     
-    return render_template("football.html", posts=posts)
+    return render_template("football.html", posts=posts, sport='football')
 
 
 @views.route('/formula1', methods=['GET', 'POST'])
@@ -35,7 +35,12 @@ def formula1():
         db.session.commit()
         flash('Post added to Formula1!', category='success')
         return redirect(url_for('views.formula1'))
+    
     posts = Post.query.filter_by(sport='formula1').all()
+    
+    for post in posts:
+        post.comments = Comment.query.filter_by(post_id=post.id).all()
+    
     return render_template("formula1.html", posts=posts)
 
 @views.route('/rugby', methods=['GET', 'POST'])
@@ -48,7 +53,12 @@ def rugby():
         db.session.commit()
         flash('Post added to Rugby!', category='success')
         return redirect(url_for('views.rugby'))
+    
     posts = Post.query.filter_by(sport='rugby').all()
+    
+    for post in posts:
+        post.comments = Comment.query.filter_by(post_id=post.id).all()
+    
     return render_template("rugby.html", posts=posts)
 
 @views.route('/')
@@ -85,9 +95,9 @@ def edit_post():
     else:
         return jsonify({"error": "Post not found or unauthorized!"}), 400
 
-@views.route('/add-comment/<int:post_id>', methods=['POST'])
+@views.route('/add-comment/<string:sport>/<int:post_id>', methods=['POST'])
 @login_required
-def add_comment(post_id):
+def add_comment(sport, post_id):
     if request.method == 'POST':
         content = request.form.get('content')
         user_id = current_user.id
@@ -101,7 +111,7 @@ def add_comment(post_id):
         else:
             flash('Comment content cannot be empty', 'error')
 
-    return redirect(url_for('views.football'))
+    return redirect(request.referrer)
 
 @views.route('/delete-comment/<int:comment_id>', methods=['POST'])
 @login_required
