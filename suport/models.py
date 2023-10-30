@@ -9,8 +9,8 @@ class Post(db.Model):
     date = db.Column(db.DateTime(timezone=True), default=func.now())
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     sport = db.Column(db.String(50))
-
-
+    
+    
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(255), unique=True)
@@ -24,4 +24,5 @@ class Comment(db.Model):
     content = db.Column(db.String(1000))
     date = db.Column(db.DateTime(timezone=True), default=func.now())
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    user = db.relationship('User', backref='comments')
     post_id = db.Column(db.Integer, db.ForeignKey('post.id'))

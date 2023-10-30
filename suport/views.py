@@ -16,8 +16,14 @@ def football():
         db.session.commit()
         flash('Post added!', category='success')
         return redirect(url_for('views.football'))
+    
     posts = Post.query.filter_by(sport='football').all()
+    
+    for post in posts:
+        post.comments = Comment.query.filter_by(post_id=post.id).all()
+    
     return render_template("football.html", posts=posts)
+
 
 @views.route('/formula1', methods=['GET', 'POST'])
 @login_required
@@ -51,15 +57,18 @@ def overview():
 
 @views.route('/delete-post', methods=['POST'])
 @login_required
-def delete_post():  
-    post = json.loads(request.data)
-    postId = post['postId']
+def delete_post():
+    post_data = json.loads(request.data)
+    postId = post_data['postId']
+    
     post = Post.query.get(postId)
-    if post:
-        if post.user_id == current_user.id:
-            db.session.delete(post)
-            db.session.commit()
-
+    
+    if post and post.user_id == current_user.id:
+        Comment.query.filter_by(post_id=postId).delete()
+        
+        db.session.delete(post)
+        db.session.commit()
+    
     return jsonify({})
 
 @views.route('/edit-post', methods=['POST'])
@@ -77,34 +86,21 @@ def edit_post():
         return jsonify({"error": "Post not found or unauthorized!"}), 400
 
 @views.route('/add-comment/<int:post_id>', methods=['POST'])
-@login_required
 def add_comment(post_id):
-    post = Post.query.get_or_404(post_id)
-    content = request.form.get('content')
-    new_comment = Comment(content=content, user_id=current_user.id, post_id=post.id)
-    db.session.add(new_comment)
-    db.session.commit()
-    flash('Comment added!', category='success')
-    return redirect(request.referrer) 
+    if request.method == 'POST':
+        content = request.form.get('content')
+        user_id = current_user.id
 
-@views.route('/edit-comment/<int:comment_id>', methods=['POST'])
-@login_required
-def edit_comment(comment_id):
-    comment = Comment.query.get_or_404(comment_id)
-    
-    if comment.user_id != current_user.id:
-        flash('You do not have permission to edit this comment.', category='error')
-        return redirect(request.referrer)
-    
-    content = request.form.get('content')
-    if content:
-        comment.content = content
-        db.session.commit()
-        flash('Comment updated!', category='success')
-    else:
-        flash('Comment content cannot be empty.', category='error')
-    
-    return redirect(request.referrer)
+        if content:
+            comment = Comment(content=content, user_id=user_id, post_id=post_id)
+            db.session.add(comment)
+            db.session.commit()
+
+            flash('Comment added successfully', 'success')
+        else:
+            flash('Comment content cannot be empty', 'error')
+
+    return redirect(url_for('views.football'))
 
 @views.route('/delete-comment/<int:comment_id>', methods=['POST'])
 @login_required
@@ -113,13 +109,16 @@ def delete_comment(comment_id):
     
     if comment.user_id != current_user.id:
         flash('You do not have permission to delete this comment.', category='error')
-        return redirect(request.referrer)  
+        return jsonify({"success": False, "message": "Permission denied."}), 403
     
     db.session.delete(comment)
     db.session.commit()
     flash('Comment deleted!', category='success')
     
-    return redirect(request.referrer)
+    return jsonify({"success": True, "message": "Comment deleted successfully."})
+
+
+
 
 
 
