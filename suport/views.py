@@ -141,6 +141,67 @@ def delete_comment(comment_id):
     
     return jsonify({"success": True, "message": "Comment deleted successfully."})
 
+@views.route('/profile', methods=['GET', 'POST', '<int:user_id>'])
+@login_required
+def profile(user_id=None):
+    if user_id is None:
+        user = current_user
+    else:
+        user = User.query.get(user_id)
+    
+    posts = Post.query.filter_by(user_id=user.id).all()
+    comments = Comment.query.filter_by(user_id=user.id).all()
+
+    if request.method == 'POST':
+        favorite_sport = request.form.get('favorite_sport')
+        favorite_team = request.form.get('favorite_team')
+        
+        user.favorite_sport = favorite_sport
+        user.favorite_team = favorite_team
+        db.session.commit()
+
+    return render_template("profile.html", user=user, posts=posts, comments=comments)
+
+
+@views.route('/all-users')
+@login_required
+def all_users():
+    users = User.query.all()
+    return render_template('all-users.html', users=users)
+
+@views.route('/edit_bio', methods=['POST'])
+@login_required
+def edit_bio():
+    user = current_user
+    new_bio = request.form.get('bio')
+    user.bio = new_bio
+    db.session.commit()
+    return redirect(url_for('views.profile', user_id=user.id))
+
+@views.route('/edit_favorite_sport', methods=['POST'])
+@login_required
+def edit_favorite_sport():
+    user = current_user
+    new_sport = request.form.get('favorite_sport')
+    user.favorite_sport = new_sport
+    db.session.commit()
+    return redirect(url_for('views.profile', user_id=user.id))
+
+@views.route('/edit_favorite_team', methods=['POST'])
+@login_required
+def edit_favorite_team():
+    user = current_user
+    new_team = request.form.get('favorite_team')
+    user.favorite_team = new_team
+    db.session.commit()
+    return redirect(url_for('views.profile', user_id=user.id))
+
+
+
+
+
+
+
 
 
 

@@ -46,6 +46,12 @@
           </li>
             {% if current_user.is_authenticated %}
             <li class="nav-item">
+              <a class="nav-link" id="profile" href="/profile">My Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="profile" href="/all-users">Other Users</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" id="logout" href="/logout">Logout</a>
             </li>
             {% else %}

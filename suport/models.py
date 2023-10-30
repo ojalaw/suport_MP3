@@ -9,6 +9,7 @@ class Post(db.Model):
     date = db.Column(db.DateTime(timezone=True), default=func.now())
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     sport = db.Column(db.String(50))
+    comments = db.relationship('Comment', backref='post')
     
     
 class User(db.Model, UserMixin):
@@ -16,6 +17,9 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(255), unique=True)
     password = db.Column(db.String(255))
     username = db.Column(db.String(255))
+    bio = db.Column(db.String(500))
+    favorite_sport = db.Column(db.String(25))
+    favorite_team = db.Column(db.String(25))  
     posts = db.relationship('Post', backref='user')
 
 

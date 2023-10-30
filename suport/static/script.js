@@ -79,3 +79,22 @@ function deleteComment(commentId) {
     console.error('Error:', error);
   });
 }
+
+// Toggle visibility for edit forms on 'my profile'
+document.addEventListener("DOMContentLoaded", function () {
+  const editButtons = document.querySelectorAll(".edit-button");
+
+  editButtons.forEach((button) => {
+      button.addEventListener("click", function () {
+          const field = this.getAttribute("data-field");
+          const correspondingField = document.querySelector(`form[data-field="${field}"]`);
+
+          if (correspondingField.style.display === "none" || correspondingField.style.display === "") {
+              correspondingField.style.display = "block";
+          } else {
+              correspondingField.style.display = "none";
+          }
+      });
+  });
+});
+

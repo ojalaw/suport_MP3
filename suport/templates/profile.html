@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Welcome to your profile, {{ user.username }}!</h1>
+
+  <h2>Your Bio</h2>
+  <p>{{ user.bio }}</p>
+  <button class="edit-button" data-field="bio">Edit Bio</button>
+  <form method="POST" action="/edit_bio" class="edit-field" data-field="bio" style="display: none;">
+      <input type="text" name="bio" value="{{ user.bio }}" maxlength="500" >
+      <button type="submit">Save</button>
+  </form>
+  
+  <h2>Your Favorite Sport</h2>
+  <p>{{ user.favorite_sport }}</p>
+  <button class="edit-button" data-field="favorite_sport">Edit Favorite Sport</button>
+  <form method="POST" action="/edit_favorite_sport" class="edit-field" data-field="favorite_sport" style="display: none;">
+      <input type="text" name="favorite_sport" value="{{ user.favorite_sport }}">
+      <button type="submit">Save</button>
+  </form>
+  
+  <h2>Your Favorite Team</h2>
+  <p>{{ user.favorite_team }}</p>
+  <button class="edit-button" data-field="favorite_team">Edit Favorite Team</button>
+  <form method="POST" action="/edit_favorite_team" class="edit-field" data-field="favorite_team" style="display: none;">
+      <input type="text" name="favorite_team" value="{{ user.favorite_team }}">
+      <button type="submit">Save</button>
+  </form>
+  
+
+  <h2>Your Posts</h2>
+  <ul>
+    {% for post in user.posts %}
+      <li>
+        {{ post.data }}
+        <br>
+        Posted on: {{ post.date.strftime("%Y-%m-%d %H:%M:%S") }}
+      </li>
+    {% endfor %}
+  </ul>
+
+  <h2>Your Comments</h2>
+  <ul>
+    {% for comment in user.comments %}
+      <li>
+        {{ comment.content }}
+        <br>
+        Commented on: {{ comment.date.strftime("%Y-%m-%d %H:M:%S") }}
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}
+
+{% block javascript %}
+<script src="{{ url_for('static', filename='script.js') }}"></script> 
+{% endblock %}
