@@ -145,9 +145,9 @@ i.fa-futbol {
     margin: 0 auto;
 }
 
-.my-form__button {
+.my-form-button {
     background-color: var(--primary);
-    color: white;
+    color: var(--primary-color);
     white-space: nowrap;
     display: flex;
     justify-content: center;
@@ -167,56 +167,9 @@ i.fa-futbol {
     padding: 10px 15px;
 }
 
-.my-form__actions {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    color: var(--secondary);
-    gap: 16px;
-    margin-top: 8px;
-    font-size: smaller;
-    max-width: 600px;
-}
-
-.my-form__actions a {
+.my-form-button:hover {
+    background-color: var(--primary-color);
     color: var(--primary);
-    font-weight: 600;
-    font-size: 1rem;
-    text-decoration: none;
-}
-
-.my-form__actions a:first-child {
-    text-align: left;
-}
-
-
-.my-form__actions a:last-child {
-    text-align: right;
-}
-
-.my-form__actions a:hover {
-    text-decoration: underline;
-}
-
-.my-form__row {
-    display: flex;
-    justify-content: space-between;
-}
-
-.my-form__signup {
-    display: flex;
-    justify-content: center;
-}
-
-.my-form__signup a {
-    color: var(--primary);
-    font-weight: 800;
-    text-decoration: none;
-    font-size: 18px;
-}
-
-.my-form__signup a:hover {
-    text-decoration: underline;
 }
 
 .text-field input {
@@ -308,6 +261,20 @@ form {
     justify-content: flex-start;
     gap: 10px;
     margin-top: 10px; 
+}
+
+.post-content {
+    font-size: 26px; 
+}
+
+.comment-content {
+    font-size: 20px; 
+}
+
+.post-username,
+.comment-username {
+    font-size: 24px;
+    font-weight: bold;
 }
 
 /* CSS reset */
