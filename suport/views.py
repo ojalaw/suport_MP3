@@ -11,18 +11,22 @@ views = Blueprint('views', __name__)
 def football():
     if request.method == 'POST':
         post_data = request.form.get('post')
-        new_post = Post(data=post_data, user_id=current_user.id, sport='football')
-        db.session.add(new_post)
-        db.session.commit()
-        flash('Post added!', category='success')
-        return redirect(url_for('views.football'))
+        
+        if len(post_data) < 10:
+            flash('Post must be at least 10 characters long.', category='error')
+        else:
+            new_post = Post(data=post_data, user_id=current_user.id, sport='football')
+            db.session.add(new_post)
+            db.session.commit()
+            flash('Post added!', category='success')
+            return redirect(url_for('views.football'))
     
     posts = Post.query.filter_by(sport='football').all()
     
     for post in posts:
         post.comments = Comment.query.filter_by(post_id=post.id).all()
     
-    return render_template("football.html", posts=posts, sport='football')
+    return render_template("football.html", posts=posts)
 
 
 @views.route('/formula1', methods=['GET', 'POST'])
@@ -30,11 +34,15 @@ def football():
 def formula1():
     if request.method == 'POST':
         post_data = request.form.get('post')
-        new_post = Post(data=post_data, user_id=current_user.id, sport='formula1')
-        db.session.add(new_post)
-        db.session.commit()
-        flash('Post added to Formula1!', category='success')
-        return redirect(url_for('views.formula1'))
+        
+        if len(post_data) < 10:
+            flash('Post must be at least 10 characters long.', category='error')
+        else:
+            new_post = Post(data=post_data, user_id=current_user.id, sport='formula1')
+            db.session.add(new_post)
+            db.session.commit()
+            flash('Post added to Formula 1!', category='success')
+            return redirect(url_for('views.formula1'))
     
     posts = Post.query.filter_by(sport='formula1').all()
     
@@ -48,11 +56,15 @@ def formula1():
 def rugby():
     if request.method == 'POST':
         post_data = request.form.get('post')
-        new_post = Post(data=post_data, user_id=current_user.id, sport='rugby')
-        db.session.add(new_post)
-        db.session.commit()
-        flash('Post added to Rugby!', category='success')
-        return redirect(url_for('views.rugby'))
+        
+        if len(post_data) < 10:
+            flash('Post must be at least 10 characters long.', category='error')
+        else:
+            new_post = Post(data=post_data, user_id=current_user.id, sport='rugby')
+            db.session.add(new_post)
+            db.session.commit()
+            flash('Post added to Rugby!', category='success')
+            return redirect(url_for('views.rugby'))
     
     posts = Post.query.filter_by(sport='rugby').all()
     
@@ -60,6 +72,7 @@ def rugby():
         post.comments = Comment.query.filter_by(post_id=post.id).all()
     
     return render_template("rugby.html", posts=posts)
+
 
 @views.route('/')
 def overview():
