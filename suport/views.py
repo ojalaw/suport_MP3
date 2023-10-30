@@ -86,6 +86,7 @@ def edit_post():
         return jsonify({"error": "Post not found or unauthorized!"}), 400
 
 @views.route('/add-comment/<int:post_id>', methods=['POST'])
+@login_required
 def add_comment(post_id):
     if request.method == 'POST':
         content = request.form.get('content')
