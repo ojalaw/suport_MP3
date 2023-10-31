@@ -1,5 +1,5 @@
 # Suport
-Suport is a web application that empowers users to create, read, update, and delete sports reviews for football, rugby, and Formula 1. Built using HTML, CSS, JavaScript, Python with Flask, and PostgreSQL, Suport is a versatile platform that allows sports enthusiasts to share their insights and opinions. Whether you want to publish reviews, explore others' perspectives, or manage your own content, Suport provides the tools and features to help you do just that. This project aims to inform readers about its capabilities, offering a dynamic and user-friendly environment for sports enthusiasts to interact and engage with sports reviews effortlessly.
+Suport is a web application that empowers users to create, read, update, and delete sports posts for football, rugby, and Formula 1. Built using HTML, CSS, JavaScript, Python with Flask, and PostgreSQL, Suport is a versatile platform that allows sports enthusiasts to share their insights and opinions. Whether you want to publish posts, explore others' perspectives, or manage your own content, Suport provides the tools and features to help you do just that. This project aims to inform readers about its capabilities, offering a dynamic and user-friendly environment for sports enthusiasts to interact and engage with sports posts effortlessly.
 
 This is Milestone Project 3 for a Level 5 Diploma in Web Application Development.    
 
@@ -51,7 +51,7 @@ As a committed sports fan, I'm eager to engage with other enthusiasts across var
 
 
 **User Story 3:** 
-As a regular user of sports blog sites, I'm looking for a platform that offers a seamless experience for reading and interacting with sports content. I want to easily discover and read detailed reviews and articles on my favorite sports without any hassles.
+As a regular user of sports blog sites, I'm looking for a platform that offers a seamless experience for reading and interacting with sports content. I want to easily discover and read detailed posts and articles on my favorite sports without any hassles.
 
 
 **User Story 4:** 
