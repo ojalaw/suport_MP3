@@ -308,6 +308,19 @@ form {
     font-weight: bold;
 }
 
+/*---profile---*/
+
+.profile-content {
+    text-align: center;
+    justify-content: center;
+}
+
+.profile-button {
+    display: block;
+    margin: 0 auto; 
+  }
+
+
 /* CSS reset */
 
 .footer-background {

@@ -3,31 +3,35 @@
 {% block content %}
   <h1>Welcome to your profile, {{ user.username }}!</h1>
 
+  <div class="profile-content">
+    <div id="profile-bio">
   <h2>Your Bio</h2>
   <p>{{ user.bio }}</p>
-  <button class="edit-button" data-field="bio">Edit Bio</button>
+  <button class="my-form-button profile-button" data-field="bio">Edit Bio</button>
   <form method="POST" action="/edit_bio" class="edit-field" data-field="bio" style="display: none;">
       <input type="text" name="bio" value="{{ user.bio }}" maxlength="500" >
       <button type="submit">Save</button>
   </form>
-  
+</div>
+<div id="profile-fav-sport">
   <h2>Your Favorite Sport</h2>
   <p>{{ user.favorite_sport }}</p>
-  <button class="edit-button" data-field="favorite_sport">Edit Favorite Sport</button>
+  <button class="my-form-button profile-button" data-field="favorite_sport">Edit Favorite Sport</button>
   <form method="POST" action="/edit_favorite_sport" class="edit-field" data-field="favorite_sport" style="display: none;">
       <input type="text" name="favorite_sport" value="{{ user.favorite_sport }}">
       <button type="submit">Save</button>
   </form>
-  
+</div>
+<div id="profile-fav-team">
   <h2>Your Favorite Team</h2>
   <p>{{ user.favorite_team }}</p>
-  <button class="edit-button" data-field="favorite_team">Edit Favorite Team</button>
+  <button class="my-form-button profile-button" data-field="favorite_team">Edit Favorite Team</button>
   <form method="POST" action="/edit_favorite_team" class="edit-field" data-field="favorite_team" style="display: none;">
       <input type="text" name="favorite_team" value="{{ user.favorite_team }}">
       <button type="submit">Save</button>
   </form>
-  
-
+</div>
+<div id="profile-posts">
   <h2>Your Posts</h2>
   <ul>
     {% for post in user.posts %}
@@ -38,7 +42,8 @@
       </li>
     {% endfor %}
   </ul>
-
+</div>
+<div id="profile-comments">
   <h2>Your Comments</h2>
   <ul>
     {% for comment in user.comments %}
@@ -49,6 +54,8 @@
       </li>
     {% endfor %}
   </ul>
+</div>
+</div>
 {% endblock %}
 
 {% block javascript %}

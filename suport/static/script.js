@@ -82,7 +82,7 @@ function deleteComment(commentId) {
 
 // Toggle visibility for edit forms on 'my profile'
 document.addEventListener("DOMContentLoaded", function () {
-  const editButtons = document.querySelectorAll(".edit-button");
+  const editButtons = document.querySelectorAll(".profile-button");
 
   editButtons.forEach((button) => {
       button.addEventListener("click", function () {
