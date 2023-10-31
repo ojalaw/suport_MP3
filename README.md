@@ -91,7 +91,7 @@ The layout of the Suport website is built using the Bootstrap framework, which p
 
 ### Wireframes
 
-[Suport Wireframe](README-images/suport-mp3-Wireframe.pdf "Link to Suport wireframe")  
+[Suport Wireframe](README-images/suport-mp3-wireframe.pdf "Link to Suport wireframe")  
 There have been some changes since the wireframe was created. The intial plan for the site was for users to be able to create an account and make posts about sports. The general principle remains the same, I have just added a comment ability to the posts and implemented a user profile that includes the users 'Favourite Sport' and 'Favourite team', they can also add a bio.  
 
 
