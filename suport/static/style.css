@@ -2,7 +2,6 @@
     --background: #3C343D;
     --primary: navy;
     --secondary: #1D1D1D;
-    --footer: #2C2C2C;
     --primary-color: white;
     --secondary-color: #2C2C2C;
 }
@@ -14,7 +13,8 @@
 }
 
 body {
-    color: white;
+    color: var(--primary-color);
+    font-family: 'Ubuntu', sans-serif;
     margin: 0;
     background-color: var(--background);
     display: flex;
@@ -23,7 +23,7 @@ body {
 }
 
 .container {
-    flex: 1; /* make the main content grow and take up any available space */
+    flex: 1;
 }
 
 .background {
@@ -36,7 +36,7 @@ body {
 
 .navbar .nav-link {
     font-size: 1.5rem;
-    color: white;
+    color: var(--primary-color);
 }
 
 .nav-link:hover {
@@ -45,7 +45,7 @@ body {
 
 .navbar .dropdown-menu .dropdown-item {
     font-size: 1.3rem; 
-    color: black;
+    color: var(--secondary-color)
 }
 
 .navbar-brand {
@@ -124,7 +124,7 @@ i.fa-futbol {
 
 .form-title {
     max-width:600px;
-    color: black;
+    color: var(--secondary-color);
 }
 .form-center {
     display: flex;
@@ -133,7 +133,7 @@ i.fa-futbol {
 }
 
 .my-form {
-    background-color:white;
+    background-color: var(--primary-color);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -280,7 +280,7 @@ form {
 /* CSS reset */
 
 .footer-background {
-    background-color: var(--footer);
+    background-color: var(--secondary-color);
     display: grid;
     place-items: center;
 }
