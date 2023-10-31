@@ -3,7 +3,7 @@ Suport is a web application that empowers users to create, read, update, and del
 
 This is Milestone Project 3 for a Level 5 Diploma in Web Application Development.    
 
-Link to live site: 
+Link to live site: https://suport-mp3-51225a2ca7c0.herokuapp.com/
 
 ## CONTENTS
 
@@ -62,15 +62,21 @@ As a sports super blogger who contributes to multiple sports blogs, I'm excited 
 
 ### Colour Scheme
 
-Initial color scheme is general Dark theme with Black and Grey used for background colors white predominantly used for text and Red used as an accent colour. I have used this to give the site a modern contemporary feel, the colour scheme is also similar to that of Formula One and has been used for symbolic purposes.
+Initial color scheme is general dark theme for a contemporary look, I have included navy blue and white as accent colours which will also provide good accessibility scores.  
+
+![Image of color pallete in the project](README-images/color-wheel.png "Optional title")
 
 
 
 ### Typography
 
+The font used throughout the site is 'Ubuntu', I have chosen this font because I consider it to be clean and easy to read.  
+
 
 
 ### Layout
+
+The layout of the Suport website is built using the Bootstrap framework, which provides a responsive grid system that allows the website to adapt to different screen sizes and devices. The use of a grid system helps to create a consistent layout on necessary pages of the website, which makes navigation and exploration more intuitive for visitors.  
 
 
 ### Symbology  
@@ -85,7 +91,8 @@ Initial color scheme is general Dark theme with Black and Grey used for backgrou
 
 ### Wireframes
 
-
+[Suport Wireframe](README-images/suport-mp3-Wireframe.pdf "Link to Suport wireframe")  
+There have been some changes since the wireframe was created. The intial plan for the site was for users to be able to create an account and make posts about sports. The general principle remains the same, I have just added a comment ability to the posts and implemented a user profile that includes the users 'Favourite Sport' and 'Favourite team', they can also add a bio.  
 
 
 ### Future updates
@@ -94,6 +101,38 @@ Initial color scheme is general Dark theme with Black and Grey used for backgrou
 ## Features
 
 ### General features
+Sign up  
+Users have the ability to sign up, choosing their favourite sport and team in the process.  
+
+Log in  
+Users can login using the inofrmation that they provided at the sign up process.  
+
+Overview page  
+Users are presented with an overview page that includes interactive images of the 3 sports that the site currently facilitates (Football, Formula 1 and Rugby). When users hover over the images, they expand causing more of the image to be visible, leading to a better user experience.  
+
+Football page  
+Individual sport page where users can go to post and interact with other users about Football.
+
+Formula 1 page  
+Individual sport page where users can go to post and interact with other users about Formula 1.  
+
+Rugby page
+Individual sport page where users can go to post and interact with other users about Rugby.  
+
+Post feature  
+Users have the ability to post content onto individual sports pages, they can also browse other posts that users have already posted.  
+
+Comment feature  
+Users have the ability to comment on posts made by themselves or other users, comments can be deleted once they have been added.  
+
+My profile  
+Users have the ability to navigate to the 'My profile' page, here they can add to their bio, change their favourite team/sport that is displayed on their profile page. They can also views historic posts/comments.  
+
+Other Users  
+Users have the ability to navigate to the 'Other users' page to view the other users that have created accounts.  
+
+Logout  
+Once users are finished on the site, they have the ability to click the logout button which will take them to the overview page.  
 
 
 ### Future Implementations
