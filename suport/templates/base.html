@@ -35,11 +35,11 @@
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             
             <li class="nav-item">
-              <a class="nav-link" id="home" href="/">Home</a>
+              <a class="nav-link" id="home" href="/"><i class="fa-solid fa-house"></i> Home</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" id="sportsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Sports
+                <i class="fa-regular fa-futbol"></i> Sports
               </a>
               <ul class="dropdown-menu" aria-labelledby="sportsDropdown">
                   <li><a class="dropdown-item" href="/football">Football</a></li>
@@ -49,20 +49,20 @@
           </li>
             {% if current_user.is_authenticated %}
             <li class="nav-item">
-              <a class="nav-link" id="profile" href="/profile">My Profile</a>
+              <a class="nav-link" id="profile" href="/profile"><i class="fa-solid fa-user"></i> My Profile</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" id="profile" href="/all-users">Other Users</a>
+              <a class="nav-link" id="profile" href="/all-users"><i class="fa-solid fa-users"></i> Other Users</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" id="logout" href="/logout">Logout</a>
+              <a class="nav-link" id="logout" href="/logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
             </li>
             {% else %}
             <li class="nav-item">
-              <a class="nav-link" id="login" href="/login">Login</a>
+              <a class="nav-link" id="login" href="/login"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" id="signUp" href="/sign-up">Sign Up</a>
+              <a class="nav-link" id="signUp" href="/sign-up"><i class="fa-solid fa-user-plus"></i> Sign Up</a>
             </li>
             {% endif %}
           </ul>

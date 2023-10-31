@@ -54,6 +54,12 @@ body {
 
 /*---overview---*/
 
+.sport-choice-text {
+    font-weight:bold ;
+    text-align: center;
+    font-size: 24px;
+}
+
 .intro-text {
     justify-content: center;
     text-align: center;
@@ -82,6 +88,27 @@ body {
     flex: 0.25;
 }
 
+.card:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tooltip {
+    font-size: 24px;
+    font-weight: bold;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary-color);
+    color: var(--background);
+    padding: 5px 10px;
+    border-radius: 5px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
 .card img {
     height: 560px;
 }
@@ -99,6 +126,10 @@ body {
     padding-top: 50px;
   }
 
+  .sport-name {
+    display: none;
+}
+
 /*---general---*/
 
 h1, h3 {
@@ -106,7 +137,7 @@ h1, h3 {
     font-size: 60px;
 }
 
-i.fa-futbol {
+.intro-text .fa-futbol, .navbar-brand .fa-futbol {
     font-size: 40px;
     font-style: normal;
 }
@@ -348,11 +379,45 @@ form {
    font-size: 2em; 
  }
 
-
  footer > p {
    font-size: 1.2em; 
    margin-top: 1em; 
  }
+
+ @media (max-width: 991.98px) {
+    .card {
+        flex: 0 0 calc(33.33% - 6.67px);
+        max-width: calc(33.33% - 6.67px);
+        margin: 0;
+        padding: 0; 
+    }
+
+    .gallery {
+        display: flex;
+        gap: 10px;
+        justify-content: space-between;
+    }
+
+    .card figure img {
+        transform: scale(1)!important;
+    }
+
+    .sport-name {
+        display: block;
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: rgba(0,0,0,0.6);
+        padding: 5px 10px;
+        border-radius: 5px;
+        color: white;
+    }
+
+    .tooltip {
+        display: none;
+    }
+}
 
  @media (max-width: 450px) {
     .social-media-buttons {

@@ -11,6 +11,9 @@
 <div>
     <p>Interacting with other fans about the sports you love</p>
 </div>
+<div>
+    <p class="sport-choice-text">Choose your sport below and start posting!</p>
+</div>
 </div>
 
 <div class="background">
@@ -19,23 +22,28 @@
             <figure>
                 <a href="{{ url_for('views.football') }}">
                     <img src="/static/images/football.jpg" alt="Football">
+                    <span class="sport-name">Football</span>
                 </a>
-                <figcaption>Football</figcaption>
             </figure>
+            <div class="tooltip">Football</div>
         </div>
         <div class="card">
             <figure>
                 <a href="{{ url_for('views.formula1') }}">
                     <img src="/static/images/formula1.jpg" alt="Preview">
+                    <span class="sport-name">F1</span>
                 </a>
             </figure>
+            <div class="tooltip">Formula 1</div>
         </div>
         <div class="card">
             <figure>
                 <a href="{{ url_for('views.rugby') }}">
                     <img src="/static/images/rugby.jpg" alt="Preview">
+                    <span class="sport-name">Rugby</span>
                 </a>
             </figure>
+            <div class="tooltip">Rugby</div>
         </div>
         </div>
         {% if not current_user.is_authenticated %}
