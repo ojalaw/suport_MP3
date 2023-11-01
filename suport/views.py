@@ -153,11 +153,11 @@ def profile(user_id=None):
     comments = Comment.query.filter_by(user_id=user.id).all()
 
     if request.method == 'POST':
-        favorite_sport = request.form.get('favorite_sport')
-        favorite_team = request.form.get('favorite_team')
+        favourite_sport = request.form.get('favourite_sport')
+        favourite_team = request.form.get('favourite_team')
         
-        user.favorite_sport = favorite_sport
-        user.favorite_team = favorite_team
+        user.favourite_sport = favourite_sport
+        user.favourite_team = favourite_team
         db.session.commit()
 
     return render_template("profile.html", user=user, posts=posts, comments=comments)
@@ -178,21 +178,21 @@ def edit_bio():
     db.session.commit()
     return redirect(url_for('views.profile', user_id=user.id))
 
-@views.route('/edit_favorite_sport', methods=['POST'])
+@views.route('/edit_favourite_sport', methods=['POST'])
 @login_required
-def edit_favorite_sport():
+def edit_favourite_sport():
     user = current_user
-    new_sport = request.form.get('favorite_sport')
-    user.favorite_sport = new_sport
+    new_sport = request.form.get('favourite_sport')
+    user.favourite_sport = new_sport
     db.session.commit()
     return redirect(url_for('views.profile', user_id=user.id))
 
-@views.route('/edit_favorite_team', methods=['POST'])
+@views.route('/edit_favourite_team', methods=['POST'])
 @login_required
-def edit_favorite_team():
+def edit_favourite_team():
     user = current_user
-    new_team = request.form.get('favorite_team')
-    user.favorite_team = new_team
+    new_team = request.form.get('favourite_team')
+    user.favourite_team = new_team
     db.session.commit()
     return redirect(url_for('views.profile', user_id=user.id))
 

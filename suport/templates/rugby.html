@@ -61,7 +61,7 @@
                 </div>
                 {% if comment.user == current_user %}
                 <div class="comment-actions">
-                    <button class="my-form-button" onclick="deleteComment({{ comment.id }})">Delete</button>
+                    <button class="my-form-button" onclick="deleteComment('{{comment.id}}')">Delete</button>
                 </div>
                 {% endif %}
             </li>

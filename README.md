@@ -134,8 +134,19 @@ See database schema [here](README-images/database-schema-mp3.pdf "Link to Suport
 - Each comment has one user who authored it.  
 - User property gives that user object.
 
-### Security
+### Security  
 
+A number of different security considerations were taken into account when putting together this project.  
+
+
+**Password Hashing** 
+Passwords are not stored in plaintext in the database. Instead, they are hashed using the generate_password_hash function from Werkzeug. The hashing method specified is sha256, which is a cryptographic hash function. When checking if a provided password is correct, the check_password_hash function is used. This function hashes the input password and compares it to the stored hash to verify authenticity without ever exposing or comparing the plaintext passwords.  
+
+**Input Validation**  
+The code checks if the email already exists in the database to prevent duplicate registrations. Validation checks on the length of the email, username, and password ensure that users provide sufficiently complex information. Passwords entered during the registration process are confirmed by having the user enter them twice. If they don't match, an error is shown.  
+
+**Feedback to Users**  
+Flash messages provide feedback to users about the status of their actions. For example, 'successful login or reasons for authentication failure'. However, care is taken not to provide overly specific errors. For example, rather than saying "incorrect password for given email," the feedback messages are generalised like 'Email does not exist' or 'Incorrect password, try again.'  
 
 
 

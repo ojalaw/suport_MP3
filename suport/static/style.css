@@ -326,6 +326,14 @@ form {
 
 /*---profile---*/
 
+.profile-info, .user-content {
+    background-color: var(--primary-color);
+    color: var(--primary);
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
 .profile-content {
     text-align: center;
     justify-content: center;
@@ -336,8 +344,24 @@ form {
     margin: 0 auto; 
   }
 
+  #profile-posts ul, 
+#profile-comments ul {
+    list-style-type: none;
+}
 
-/* CSS reset */
+input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.edit-field {
+    margin: 10px;
+}
+
+
+/*---CSS reset---*/
 
 .footer-background {
     background-color: var(--secondary-color);

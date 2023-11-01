@@ -18,8 +18,8 @@ class User(db.Model, UserMixin):
     password = db.Column(db.String(255))
     username = db.Column(db.String(255))
     bio = db.Column(db.String(500))
-    favorite_sport = db.Column(db.String(25))
-    favorite_team = db.Column(db.String(25))  
+    favourite_sport = db.Column(db.String(25))
+    favourite_team = db.Column(db.String(25))  
     posts = db.relationship('Post', backref='user')
 
 
