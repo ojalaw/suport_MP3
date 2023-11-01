@@ -3,13 +3,12 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from os import path
 from flask_login import LoginManager
-from .env import SECRET_KEY
 
 db = SQLAlchemy()
 
 def flask_app():
     app = Flask(__name__)  
-    app.config['SECRET_KEY'] = SECRET_KEY
+    app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'default_fallback_key')
     if os.environ.get('DATABASE_URL'):
         uri = os.environ.get('DATABASE_URL')
         if uri.startswith("postgres://"):
