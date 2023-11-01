@@ -326,17 +326,29 @@ form {
 
 /*---profile---*/
 
+.profile-bio, .profile-fav-sport, .profile-posts, .profile-fav-team, .profile-comments {
+    padding: 10px;
+    margin: 10px;
+}
+
 .profile-info, .user-content {
+    display: block;
+    width: calc(50% - 20px);
+}
+
+.profile-content-body, .profile-info-body {
+    display: inline-block;
     background-color: var(--primary-color);
     color: var(--primary);
+    border-radius: 10px;
     padding: 20px;
     margin: 10px;
-    border-radius: 10px;
 }
 
 .profile-content {
+    display: flex;
+    justify-content: space-between;
     text-align: center;
-    justify-content: center;
 }
 
 .profile-button {
@@ -344,8 +356,8 @@ form {
     margin: 0 auto; 
   }
 
-  #profile-posts ul, 
-#profile-comments ul {
+  .profile-posts ul, 
+.profile-comments ul {
     list-style-type: none;
 }
 
@@ -361,7 +373,7 @@ input[type="text"] {
 }
 
 
-/*---CSS reset---*/
+/*---socials-footer---*/
 
 .footer-background {
     background-color: var(--secondary-color);
@@ -469,6 +481,17 @@ input[type="text"] {
 
     .tooltip {
         display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .profile-info, .user-content {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .profile-content {
+        flex-direction: column; 
     }
 }
 
