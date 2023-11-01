@@ -3,86 +3,82 @@
 {% block title %}Formula 1{% endblock %}
 
 {% block content %}
-<div class = "post-title">
+<div class="post-title">
   <h1 class="display-4">Formula 1</h1>
-  </div>
-  
-  <img class = "post-image" src="/static/images/formula1.jpg" alt="Formula1">
-  
-  
-  <div class = "post-text">
-    <p>Let other fans know what you're thinking, post a post on your chosen formula 1 memory below. </p>
-  </div>
-  <form method="POST">
-    <div class="row">
-        <div class="col">
-            <textarea name="post" id="post" class="form-control"></textarea>
-        </div>
-        <div class="col-auto">
-            <button type="submit" class="my-form-button">Add Post</button>
-        </div>
+</div>
+<img class="post-image" src="/static/images/formula1.jpg" alt="Formula1">
+<div class="post-text">
+  <p>Let other fans know what you're thinking, post a post on your chosen formula 1 memory below. </p>
+</div>
+<form method="POST">
+  <div class="row">
+    <div class="col">
+      <textarea name="post" id="post" class="form-control"></textarea>
     </div>
-    <input type="hidden" name="sport" value="formula1">
+    <div class="col-auto">
+      <button type="submit" class="my-form-button">Add Post</button>
+    </div>
+  </div>
+  <input type="hidden" name="sport" value="formula1">
 </form>
-
 <ul class="list-group" id="posts">
-    {% for post in posts %}
-    <li id="post-{{post.id}}" class="list-group-item">
-      <div class="post-header">
-        <span class="post-username">{{ post.user.username }}</span>
-      </div>
-      <div class="post-content">
-        {{ post.data }}
-      </div>
-      <div class="post-time" data-postdate="{{ post.date.strftime('%Y-%m-%dT%H:%M:%SZ') }}">
+  {% for post in posts %}
+  <li id="post-{{post.id}}" class="list-group-item post-item">
+    <div class="post-header">
+      <span class="post-username">{{ post.user.username }}</span>
     </div>
-      <div class="post-actions">
-        {% if post.user_id == current_user.id %}
-        <button type="button" class="my-form-button" onclick="showEditPostForm('{{ post.id }}')">Edit</button>
-        <button type="button" class="my-form-button" onclick="deletePost('{{ post.id }}')">Delete</button>
-        <button type="button" class="my-form-button" onclick="toggleCommentForm('{{ post.id }}')">Comment</button>
+    <div class="post-content">
+      {{ post.data }}
+    </div>
+    <div class="post-time" data-postdate="{{ post.date.strftime('%Y-%m-%dT%H:%M:%SZ') }}">
+    </div>
+    <div class="post-actions">
+      {% if post.user_id == current_user.id %}
+      <button type="button" class="my-form-button" onclick="showEditPostForm('{{ post.id }}')">Edit</button>
+      <button type="button" class="my-form-button" onclick="deletePost('{{ post.id }}')">Delete</button>
+      {% endif %}
+      <button type="button" class="my-form-button" onclick="toggleCommentForm('{{ post.id }}')">Comment</button>
+    </div>
+    <div id="edit-post-form-{{ post.id }}" class="edit-post-form" style="display: none;">
+      <form onsubmit="event.preventDefault(); saveEditedPost('{{ post.id }}');">
+        <input type="text" name="text" value="{{ post.data }}">
+        <button type="submit">Save</button>
+      </form>
+    </div>
+    {% if post.comments|length > 0 %}
+        <div class="comments-section">
+            <div class="comments-header">Comments</div>
+            <ul class="list-group">
+                {% for comment in post.comments %}
+                <li class="list-group-item" data-comment-id="{{ comment.id }}" data-commentDate="{{ comment.date.strftime('%Y-%m-%dT%H:%M:%SZ') }}">
+                    <div class="comment-header">
+                        <span class="comment-username">{{ comment.user.username }}</span>
+                    </div>
+                    <div class="comment-content">
+                        {{ comment.content }}
+                    </div>
+                    <div class="comment-time" data-commentdate="{{ comment.date.strftime('%Y-%m-%dT%H:%M:%SZ') }}">
+                    </div>
+                    {% if comment.user == current_user %}
+                    <div class="comment-actions">
+                        <button class="my-form-button" onclick="deleteComment({{ comment.id }})">Delete</button>
+                    </div>
+                    {% endif %}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
         {% endif %}
-      </div>
-  
-      <div id="edit-post-form-{{ post.id }}" class="edit-post-form" style="display: none;">
-        <form onsubmit="event.preventDefault(); saveEditedPost('{{ post.id }}');">
-          <input type="text" name="text" value="{{ post.data }}">
-          <button type="submit">Save</button>
-        </form>
-      </div>
-  
-      <ul class="list-group">
-        {% for comment in post.comments %}
-        <li class="list-group-item" data-comment-id="{{ comment.id }}" data-commentDate="{{ comment.date.strftime('%Y-%m-%dT%H:%M:%SZ') }}">
-            <div class="comment-header">
-                <span class="comment-username">{{ comment.user.username }}</span>
-            </div>
-            <div class="comment-content">
-                {{ comment.content }}
-            </div>
-            <div class="comment-time" data-commentdate="{{ comment.date.strftime('%Y-%m-%dT%H:%M:%SZ') }}">
-            </div>
-            {% if comment.user == current_user %}
-            <div class="comment-actions">
-                <button class="my-form-button" onclick="deleteComment({{ comment.id }})">Delete</button>
-            </div>
-            {% endif %}
-        </li>
-        {% endfor %}
-    </ul>
-  
-      <div id="comment-form-{{ post.id }}" class="comment-form" sport="football" style="display: none;">
-        <form method="POST" action="{{ url_for('views.add_comment', sport='football', post_id=post.id) }}">
-          <textarea name="content" placeholder="Add a comment..."></textarea>
-          <button class="my-form-button" type="submit">Submit Comment</button>
-        </form>
-      </div>
-    </li>
-    {% endfor %}
-  </ul>
-        
-        {% endblock %}
-        
-        {% block javascript %}
-        <script src="{{ url_for('static', filename='script.js') }}"></script> 
-        {% endblock %}
+    <div id="comment-form-{{ post.id }}" class="comment-form" sport="formula1" style="display: none;">
+      <form method="POST" action="{{ url_for('views.add_comment', sport='formula1', post_id=post.id) }}">
+        <textarea name="content" placeholder="Add a comment..."></textarea>
+        <button class="my-form-button" type="submit">Submit Comment</button>
+      </form>
+    </div>
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}
+{% block javascript %}
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+{% endblock %}
