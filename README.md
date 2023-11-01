@@ -16,6 +16,8 @@ Link to live site: https://suport-mp3-51225a2ca7c0.herokuapp.com/
   * [Layout](#layout)
   * [Imagery](#imagery)
   * [Wireframes](#wireframes)
+  * [Data Model](#data-model)
+  * [Security](#security)
   * [Future Updates](#future-updates)
 
 * [Features](#features)
@@ -84,6 +86,8 @@ The layout of the Suport website is built using the Bootstrap framework, which p
 
 
 ### Accessibility  
+
+Used contrasting colours to enhance accessibility.
  
 
 ### Imagery
@@ -94,44 +98,85 @@ The layout of the Suport website is built using the Bootstrap framework, which p
 [Suport Wireframe](README-images/suport-mp3-wireframe.pdf "Link to Suport wireframe")  
 There have been some changes since the wireframe was created. The intial plan for the site was for users to be able to create an account and make posts about sports. The general principle remains the same, I have just added a comment ability to the posts and implemented a user profile that includes the users 'Favourite Sport' and 'Favourite team', they can also add a bio.  
 
+### Data Model  
 
-### Future updates
+See database schema [here](README-images/database-schema-mp3.pdf "Link to Suport database schema")
+
+**User to Posts**  
+- One to Many.  
+- One user can have multiple posts.  
+- User object will have a posts property that queries all related posts.
+  
+**Post to User**  
+- Many to One.  
+- Each post belongs to one user.  
+- Post will have a user property to query the related user object.  
+
+**Post to Comments**  
+- One to Many.  
+- One post can have multiple comments.  
+- Post has a comments property to get all comments.  
+
+**Comment to Post**  
+- Many to One.  
+- Each comment belongs to one post.  
+- Post property on Comment to access that post.
+  
+**User to Comments**
+- One to Many.  
+- A user can make many comments.  
+- User has comments property to fetch all comments.  
+
+**Comment to User**
+- Many to One.  
+- Each comment has one user who authored it.  
+- User property gives that user object.
+
+### Security
+
+
+
+
+### Future updates  
+- Adding more sports.
+- Adding message feature between users.
+- 
 
 
 ## Features
 
-### General features
-Sign up  
+### General features  
+**Sign up**  
 Users have the ability to sign up, choosing their favourite sport and team in the process.  
 
-Log in  
+**Log in**  
 Users can login using the inofrmation that they provided at the sign up process.  
 
-Overview page  
+**Overview page**  
 Users are presented with an overview page that includes interactive images of the 3 sports that the site currently facilitates (Football, Formula 1 and Rugby). When users hover over the images, they expand causing more of the image to be visible, leading to a better user experience.  
 
-Football page  
+**Football page**  
 Individual sport page where users can go to post and interact with other users about Football.
 
-Formula 1 page  
+**Formula 1 page**  
 Individual sport page where users can go to post and interact with other users about Formula 1.  
 
-Rugby page
+**Rugby page**
 Individual sport page where users can go to post and interact with other users about Rugby.  
 
-Post feature  
+**Post feature**  
 Users have the ability to post content onto individual sports pages, they can also browse other posts that users have already posted.  
 
-Comment feature  
+**Comment feature**  
 Users have the ability to comment on posts made by themselves or other users, comments can be deleted once they have been added.  
 
-My profile  
+**My profile**  
 Users have the ability to navigate to the 'My profile' page, here they can add to their bio, change their favourite team/sport that is displayed on their profile page. They can also views historic posts/comments.  
 
-Other Users  
+**Other Users**  
 Users have the ability to navigate to the 'Other users' page to view the other users that have created accounts.  
 
-Logout  
+**Logout**  
 Once users are finished on the site, they have the ability to click the logout button which will take them to the overview page.  
 
 
@@ -148,6 +193,9 @@ Used for creation of markup for the website content.
 **CSS**  
 Cascading style sheets used to style the individual pages.  
 **Javascript**  
+Used to toggle visibility of certain aspects of the site.  
+**Python**  
+Used to run the app.  
 
 
 ### Frameworks, Libraries & Programs Used
@@ -195,7 +243,7 @@ Google Chrome Dev Tools was used during the testing phase to test the responsive
 
 
 ## Testing 
-
+Testing process can be found [here]  
 
 
 ## Deployment
@@ -205,7 +253,16 @@ Google Chrome Dev Tools was used during the testing phase to test the responsive
 The website was initially deployed on Heroku.
 
 **Deploying on Heroku**  
+The following steps will need to be taken to deploy the application using Heroku.
 
+- Create a requirements.txt file.  
+- Create a Procfile by typing echo web: python app.py > Procfile. Ensure it starts with a capital P.  
+- Go to Heroku. Log in or create an account.  
+- Click the 'New' button and click 'Create new app'.  
+- Enter a unique name for your project with no capital letters or spaces and select your region. Click 'Create App'.  
+- Inside your project, go to the Resources tab and create a Heroku Postgres Database.  
+- Inside your project, go to the 'Settings' tab. Scroll down and click 'Reveal Config Vars'.  
+- Add in the following variables.  
 
 **Create a new repository on GitHub**  
 - Add the necessary files to the repository.
@@ -215,14 +272,14 @@ The website was initially deployed on Heroku.
 
 **How to clone the repository**
 
-- Go to the https://github.com/ojalaw/Formula_One_Quiz_MP2  repository on GitHub.
+- Go to the (https://github.com/ojalaw/suport_MP3)  repository on GitHub.
 - Click the "Code" button to the right of the screen, click HTTPs and copy the link there.
 - Open a GitBash terminal and navigate to the directory where you want to locate the clone.
 - On the command line, type "git clone" then paste in the copied url and press the Enter key to begin the clone process.  
 
 **How to Fork the repository**  
 
-- Go to the https://github.com/ojalaw/Formula_One_Quiz_MP2 repository on GitHub.
+- Go to the https://github.com/ojalaw/suport_MP3 repository on GitHub.
 - Click on the 'Fork' option towards the top left of the page.  
 - Click the dropdown button and click 'create a new fork'.  
 - This will bring up a page with details of the repository, fill in boxes as required.
