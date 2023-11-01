@@ -58,25 +58,21 @@ form.style.display = form.style.display === 'none' ? 'block' : 'none';
 // Delete comment function
 function deleteComment(commentId) {
   fetch(`/delete-comment/${commentId}`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
+      method: 'POST',
   })
   .then(response => response.json())
   .then(data => {
-    if (data.success) {
-      alert(data.message);
-      const commentElement = document.getElementById(`comment-${commentId}`);
-      if (commentElement) {
-        commentElement.remove();
+      if (data.success) {
+          const commentElement = document.querySelector(`[data-comment-id="${commentId}"]`);
+          if (commentElement) {
+              commentElement.style.display = 'none';
+          }
+      } else {
+          console.error('Failed to delete comment:', data.message);
       }
-    } else {
-      alert(data.message);
-    }
   })
   .catch(error => {
-    console.error('Error:', error);
+      console.error('Error deleting comment:', error);
   });
 }
 

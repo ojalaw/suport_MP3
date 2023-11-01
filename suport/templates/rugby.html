@@ -53,23 +53,23 @@
   
       <ul class="list-group">
         {% for comment in post.comments %}
-        <li class="list-group-item">
-          <div class="comment-header">
-            <span class="comment-username">{{ comment.user.username }}</span>
-          </div>
-          <div class="comment-content">
-            {{ comment.content }}
-          </div>
-          <div class="comment-time" data-commentdate="{{ comment.date.strftime('%Y-%m-%dT%H:%M:%SZ') }}">
-        </div>
-          {% if comment.user == current_user %}
-          <div class="comment-actions">
-            <button class="my-form-button" onclick="deleteComment({{ comment.id }})">Delete</button>
-          </div>
-          {% endif %}
+        <li class="list-group-item" data-comment-id="{{ comment.id }}" data-commentDate="{{ comment.date.strftime('%Y-%m-%dT%H:%M:%SZ') }}">
+            <div class="comment-header">
+                <span class="comment-username">{{ comment.user.username }}</span>
+            </div>
+            <div class="comment-content">
+                {{ comment.content }}
+            </div>
+            <div class="comment-time" data-commentdate="{{ comment.date.strftime('%Y-%m-%dT%H:%M:%SZ') }}">
+            </div>
+            {% if comment.user == current_user %}
+            <div class="comment-actions">
+                <button class="my-form-button" onclick="deleteComment({{ comment.id }})">Delete</button>
+            </div>
+            {% endif %}
         </li>
         {% endfor %}
-      </ul>
+    </ul>
   
       <div id="comment-form-{{ post.id }}" class="comment-form" sport="football" style="display: none;">
         <form method="POST" action="{{ url_for('views.add_comment', sport='football', post_id=post.id) }}">

@@ -54,7 +54,7 @@
 
         <ul class="list-group">
             {% for comment in post.comments %}
-            <li class="list-group-item" data-commentDate="{{ comment.date.strftime('%Y-%m-%dT%H:%M:%SZ') }}">
+            <li class="list-group-item" data-comment-id="{{ comment.id }}" data-commentDate="{{ comment.date.strftime('%Y-%m-%dT%H:%M:%SZ') }}">
                 <div class="comment-header">
                     <span class="comment-username">{{ comment.user.username }}</span>
                 </div>
