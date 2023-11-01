@@ -139,7 +139,7 @@ See database schema [here](README-images/database-schema-mp3.pdf "Link to Suport
 A number of different security considerations were taken into account when putting together this project.  
 
 
-**Password Hashing** 
+**Password Hashing**  
 Passwords are not stored in plaintext in the database. Instead, they are hashed using the generate_password_hash function from Werkzeug. The hashing method specified is sha256, which is a cryptographic hash function. When checking if a provided password is correct, the check_password_hash function is used. This function hashes the input password and compares it to the stored hash to verify authenticity without ever exposing or comparing the plaintext passwords.  
 
 **Input Validation**  
