@@ -3,6 +3,8 @@ Suport is a web application that empowers users to create, read, update, and del
 
 This is Milestone Project 3 for a Level 5 Diploma in Web Application Development.    
 
+![alt text](README-images/website-mockup.png "Website Mockup")  
+
 Link to live site: https://suport-mp3-51225a2ca7c0.herokuapp.com/
 
 ## CONTENTS
