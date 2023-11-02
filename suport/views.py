@@ -104,9 +104,10 @@ def edit_post():
     if post and post.user_id == current_user.id:
         post.data = newText
         db.session.commit()
-        return jsonify({"message": "Post updated successfully!"})
+        flash("Post updated successfully!", 'success')
     else:
-        return jsonify({"error": "Post not found or unauthorized!"}), 400
+        flash("Post not found or unauthorized!", 'error')
+    return redirect(url_for('views.football'))
 
 @views.route('/add-comment/<string:sport>/<int:post_id>', methods=['POST'])
 @login_required
@@ -129,15 +130,17 @@ def add_comment(sport, post_id):
 @views.route('/delete-comment/<int:comment_id>', methods=['POST'])
 @login_required
 def delete_comment(comment_id):
-    comment = Comment.query.get_or_404(comment_id);
+    comment = Comment.query.get_or_404(comment_id)
     
     if comment.user_id != current_user.id:
-        return jsonify({"status": "error", "message": "Permission denied."})
-
+        flash("Permission denied.", 'error')
+        return redirect(request.referrer)
+    
     db.session.delete(comment)
     db.session.commit()
+    flash("Comment deleted successfully.", 'success')
     
-    return jsonify({"status": "success", "message": "Comment deleted successfully."})
+    return redirect(request.referrer)
 
 @views.route('/profile', methods=['GET', 'POST', '<int:user_id>'])
 @login_required

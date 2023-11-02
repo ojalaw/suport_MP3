@@ -255,6 +255,27 @@ h1, h3 {
 
 /*---post---*/
 
+.post-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.post-inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width:
+}
+
+.post-textarea {
+    width: 100%;
+    height: 150px;
+    resize: none;
+    margin-bottom: 15px;
+}
+
 .post-title {
     padding: 20px;
 }
@@ -299,6 +320,22 @@ form {
     font-size: 26px; 
 }
 
+.post-input-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.post-edit-textarea {
+    width: 90%; 
+    max-width: 600px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--secondary);
+}
+
 .comment-content {
     font-size: 20px; 
 }
@@ -322,6 +359,34 @@ form {
 .comments-header {
     font-weight: bold;
     margin-bottom: 10px;
+}
+
+.comment-form {
+    padding: 10px 0;
+}
+
+.comment-input-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.comment-form textarea {
+    padding: 10px;
+    margin: 10px 0;
+    width: 90%;
+}
+
+.comment-form button {
+    margin-top: 5px;
+}
+
+.post-form-buttons, .comment-form-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 10px;
 }
 
 .modal-body {

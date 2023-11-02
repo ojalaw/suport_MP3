@@ -31,16 +31,22 @@ function hideConfirm() {
   myModal.hide();
 }
 
-// Edit post form reveal
+// Function to reveal the Edit Post form.
 function showEditPostForm(postId) {
   const form = document.getElementById(`edit-post-form-${postId}`);
   form.style.display = form.style.display === 'none' ? 'block' : 'none';
 }
 
-// Save edit post
+// Function to hide the Edit Post form when the "Cancel" button is clicked.
+function hideEditPostForm(postId) {
+  const form = document.getElementById(`edit-post-form-${postId}`);
+  form.style.display = 'none';
+}
+
+// edit post
 function saveEditedPost(postId) {
   const form = document.getElementById(`edit-post-form-${postId}`);
-  const newText = form.querySelector('input[name="text"]').value;
+  const newText = form.querySelector('textarea[name="text"]').value;
 
   fetch('/edit-post', {
       method: 'POST',
@@ -52,14 +58,8 @@ function saveEditedPost(postId) {
           text: newText
       })
   })
-  .then(response => response.json())
-  .then(data => {
-      if (data.error) {
-          alert(data.error);
-      } else {
-          alert(data.message);
-          location.reload();
-      }
+  .then(() => {
+      location.reload();
   });
 }
 
