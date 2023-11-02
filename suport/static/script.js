@@ -7,14 +7,28 @@ function deletePost(postId) {
 
   return fetch("/delete-post", {
     method: "POST",
-    body: JSON.stringify({ postId: postId})
+    body: JSON.stringify({ postId: postId })
   })
   .then(response => {
     if(!response.ok) {
       post.style.display = 'block'; 
+    } else {
+      hideConfirm();
     }
     return response;
   })
+}
+
+// Delete Modal
+function showConfirmDelete(postId) {
+  document.getElementById("confirm-delete-button").setAttribute("onclick", `deletePost('${postId}')`);
+  var myModal = new bootstrap.Modal(document.getElementById('confirm-modal'));
+  myModal.show();
+}
+
+function hideConfirm() {
+  var myModal = bootstrap.Modal.getInstance(document.getElementById('confirm-modal'));
+  myModal.hide();
 }
 
 // Edit post form reveal
@@ -55,25 +69,36 @@ const form = document.getElementById(`comment-form-${postId}`);
 form.style.display = form.style.display === 'none' ? 'block' : 'none';
 }
 
-// Delete comment function
+// Delete Comment function
 function deleteComment(commentId) {
-  fetch(`/delete-comment/${commentId}`, {
-      method: 'POST',
+  const comment = document.getElementById(`comment-${commentId}`);
+
+  comment.style.display = 'none';
+
+  return fetch(`/delete-comment/${commentId}`, {
+    method: "POST"
   })
-  .then(response => response.json())
-  .then(data => {
-      if (data.success) {
-          const commentElement = document.querySelector(`[data-comment-id="${commentId}"]`);
-          if (commentElement) {
-              commentElement.style.display = 'none';
-          }
-      } else {
-          console.error('Failed to delete comment:', data.message);
-      }
+  .then(response => {
+    if(!response.ok) {
+      comment.style.display = 'block'; 
+    } else {
+      hideCommentConfirm();
+    }
+    return response;
   })
-  .catch(error => {
-      console.error('Error deleting comment:', error);
-  });
+}
+
+// Show Delete Comment Modal
+function showCommentConfirmDelete(commentId) {
+  document.getElementById("confirm-comment-delete-button").setAttribute("onclick", `deleteComment('${commentId}')`);
+  var myModal = new bootstrap.Modal(document.getElementById('confirm-comment-delete-modal'));
+  myModal.show();
+}
+
+// Hide Delete Comment Modal
+function hideCommentConfirm() {
+  var myModal = bootstrap.Modal.getInstance(document.getElementById('confirm-comment-delete-modal'));
+  myModal.hide();
 }
 
 // Toggle visibility for edit forms on 'my profile'

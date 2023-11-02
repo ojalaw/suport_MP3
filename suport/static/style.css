@@ -324,6 +324,10 @@ form {
     margin-bottom: 10px;
 }
 
+.modal-body {
+    color: var(--secondary);
+}
+
 /*---profile---*/
 
 .profile-bio, .profile-fav-sport, .profile-posts, .profile-fav-team, .profile-comments {

@@ -129,17 +129,15 @@ def add_comment(sport, post_id):
 @views.route('/delete-comment/<int:comment_id>', methods=['POST'])
 @login_required
 def delete_comment(comment_id):
-    comment = Comment.query.get_or_404(comment_id)
+    comment = Comment.query.get_or_404(comment_id);
     
     if comment.user_id != current_user.id:
-        flash('You do not have permission to delete this comment.', category='error')
-        return jsonify({"success": False, "message": "Permission denied."}), 403
-    
+        return jsonify({"status": "error", "message": "Permission denied."})
+
     db.session.delete(comment)
     db.session.commit()
-    flash('Comment deleted!', category='success')
     
-    return jsonify({"success": True, "message": "Comment deleted successfully."})
+    return jsonify({"status": "success", "message": "Comment deleted successfully."})
 
 @views.route('/profile', methods=['GET', 'POST', '<int:user_id>'])
 @login_required

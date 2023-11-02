@@ -1,5 +1,5 @@
 .vscode
-suport/__pycache__
+__pycache__
 creds.json
 env.py
 __pycache__/app.cpython-311.pyc
