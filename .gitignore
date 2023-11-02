@@ -2,6 +2,7 @@
 __pycache__
 creds.json
 env.py
+.env
 __pycache__/app.cpython-311.pyc
 myenv/Lib/site-packages/alembic-1.12.1.dist-info/entry_points.txt
 myenv/Lib/site-packages/alembic-1.12.1.dist-info/INSTALLER
