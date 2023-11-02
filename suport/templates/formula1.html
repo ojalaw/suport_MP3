@@ -18,7 +18,7 @@
   <input type="hidden" name="sport" value="formula1">
 </form>
 <ul class="list-group" id="posts">
-  {% for post in posts %}
+  {% for post in posts|reverse %}
   <li id="post-{{post.id}}" class="list-group-item post-item" data-postDate="{{ post.date.strftime('%Y-%m-%dT%H:%M:%SZ') }}">
     <div class="post-header">
         <span class="post-username">{{ post.user.username }}</span>
@@ -50,7 +50,7 @@
     <div class="comments-section">
       <div class="comments-header">Comments</div>
       <ul class="list-group">
-          {% for comment in post.comments %}
+          {% for comment in post.comments|reverse %}
           <li class="list-group-item" id="comment-{{ comment.id }}" data-commentDate="{{ comment.date.strftime('%Y-%m-%dT%H:%M:%SZ') }}">
               <div class="comment-header">
                   <span class="comment-username">{{ comment.user.username }}</span>

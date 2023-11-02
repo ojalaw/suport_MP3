@@ -91,8 +91,13 @@ def delete_post():
         
         db.session.delete(post)
         db.session.commit()
+        
+        flash("Post deleted successfully!", 'success')
+    else:
+        flash("Post not found or unauthorized!", 'error')
     
     return jsonify({})
+
 
 @views.route('/edit-post', methods=['POST'])
 @login_required

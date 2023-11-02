@@ -314,7 +314,11 @@ form {
 }
 
 .post-content {
-    font-size: 26px; 
+    font-size: 26px;
+    max-width: 100%;
+    overflow: hidden;
+    white-space: normal;
+    overflow-wrap: break-word;
 }
 
 .post-input-wrapper {
