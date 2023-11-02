@@ -12,8 +12,11 @@
   <p>{{ user.bio }}</p>
   <button class="my-form-button profile-button" data-field="bio">Edit Bio</button>
   <form method="POST" action="/edit_bio" class="edit-field" data-field="bio" style="display: none;">
-      <input class ="edit-field" type="text" name="bio" value="{{ user.bio }}" maxlength="500" >
-      <button class="my-form-button profile-button" type="submit">Save</button>
+      <input class ="edit-bio-field" type="text" name="bio" value="{{ user.bio }}" maxlength="500" >
+      <div class="edit-field-buttons">
+        <button class="my-form-button profile-button" type="submit">Save</button>
+        <button class="my-form-button profile-button cancel-button">Cancel</button>
+    </div>
   </form>
 </div>
 <div class="profile-fav-sport">
@@ -22,7 +25,10 @@
   <button class="my-form-button profile-button" data-field="favourite_sport">Edit Favourite Sport</button>
   <form method="POST" action="/edit_favourite_sport" class="edit-field" data-field="favourite_sport" style="display: none;">
       <input class ="edit-field" type="text" name="favourite_sport" value="{{ user.favourite_sport }}">
-      <button class="my-form-button profile-button" type="submit">Save</button>
+      <div class="edit-field-buttons">
+        <button class="my-form-button profile-button" type="submit">Save</button>
+        <button class="my-form-button profile-button cancel-button">Cancel</button>
+    </div>
   </form>
 </div>
 <div class="profile-fav-team">
@@ -31,7 +37,10 @@
   <button class="my-form-button profile-button" data-field="favourite_team">Edit Favourite Team</button>
   <form method="POST" action="/edit_favourite_team" class="edit-field" data-field="favourite_team" style="display: none;">
       <input class ="edit-field" type="text" name="favourite_team" value="{{ user.favourite_team }}">
-      <button class="my-form-button profile-button" type="submit">Save</button>
+      <div class="edit-field-buttons">
+        <button class="my-form-button profile-button" type="submit">Save</button>
+        <button class="my-form-button profile-button cancel-button">Cancel</button>
+    </div>
   </form>
 </div>
 </div>

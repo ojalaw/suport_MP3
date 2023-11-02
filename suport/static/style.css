@@ -183,7 +183,6 @@ h1, h3 {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 16px;
     line-height: 50px;
     font-size: 18px;
     letter-spacing: .025em;
@@ -266,7 +265,6 @@ h1, h3 {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    max-width:
 }
 
 .post-textarea {
@@ -313,7 +311,6 @@ form {
     justify-content: center;
     align-items: center;
     gap: 10px;
-    margin-top: 10px; 
 }
 
 .post-content {
@@ -347,12 +344,12 @@ form {
 }
 
 .post-item {
-    width: 50%; 
+    width: 80%; 
     margin: 0 auto;
 }
 
 .comments-section {
-    width: 50%; 
+    width: 80%; 
     margin: 20px auto;
 }
 
@@ -379,14 +376,14 @@ form {
 }
 
 .comment-form button {
-    margin-top: 5px;
+    margin: 5px;
 }
 
 .post-form-buttons, .comment-form-buttons {
     display: flex;
     gap: 10px;
     justify-content: center;
-    margin-top: 10px;
+    margin: 10px;
 }
 
 .modal-body {
@@ -418,6 +415,7 @@ form {
     display: flex;
     justify-content: space-between;
     text-align: center;
+    margin-top: 50px;
 }
 
 .profile-button {
@@ -441,7 +439,16 @@ input[type="text"] {
     margin: 10px;
 }
 
+.edit-field-buttons {
+    display: flex;
+    gap: 20px;
+    margin: 10px;
+}
 
+.edit-bio-field {
+    width: 100%; 
+    height: 300px; 
+}
 /*---socials-footer---*/
 
 .footer-background {
@@ -561,6 +568,17 @@ input[type="text"] {
 
     .profile-content {
         flex-direction: column; 
+    }
+
+    .post-actions, .comment-actions {
+        flex-wrap: wrap; 
+        justify-content: center; 
+    }
+
+    .post-actions button, .comment-actions button {
+        flex-basis: calc(33.33% - 10px);
+        max-width: calc(33.33% - 10px);
+        font-size: 14px;
     }
 }
 
