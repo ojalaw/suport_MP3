@@ -12,7 +12,7 @@
   <p>{{ user.bio }}</p>
   <button class="my-form-button profile-button" data-field="bio">Edit Bio</button>
   <form method="POST" action="/edit_bio" class="edit-field" data-field="bio" style="display: none;">
-      <input class ="edit-bio-field" type="text" name="bio" value="{{ user.bio }}" maxlength="500" >
+    <textarea class="edit-bio-field" name="bio" maxlength="500">{{ user.bio }}</textarea>
       <div class="edit-field-buttons">
         <button class="my-form-button profile-button" type="submit">Save</button>
         <button class="my-form-button profile-button cancel-button">Cancel</button>
