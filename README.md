@@ -138,6 +138,11 @@ See database schema [here](README-images/database-schema-mp3.pdf "Link to Suport
 
 A number of different security considerations were taken into account when putting together this project.  
 
+**Use of .env file**  
+Important credentials including DATABASE_URL and SECRET_KEY are located within .env file which is subsequently in .gitignore file to ensure it remains secure. SECRET_KEY was initally located in __init__.py file, it has since been changed and moved to a more secure location in .env file.  
+
+**Defensive Programming**  
+Measures have been put in place throughout the site to prevent users from doing things they are not authorised to do. For example, A user who has not signed up to the site, cannot access any of the individual sports pages to add a post. This has been implemented using @login_required decorators.  
 
 **Password Hashing**  
 Passwords are not stored in plaintext in the database. Instead, they are hashed using the generate_password_hash function from Werkzeug. The hashing method specified is sha256, which is a cryptographic hash function. When checking if a provided password is correct, the check_password_hash function is used. This function hashes the input password and compares it to the stored hash to verify authenticity without ever exposing or comparing the plaintext passwords.  
