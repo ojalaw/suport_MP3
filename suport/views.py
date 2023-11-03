@@ -109,6 +109,7 @@ def edit_post():
     if post and post.user_id == current_user.id:
         post.data = newText
         db.session.commit()
+        
         flash("Post updated successfully!", 'success')
     else:
         flash("Post not found or unauthorized!", 'error')
@@ -143,6 +144,7 @@ def delete_comment(comment_id):
     
     db.session.delete(comment)
     db.session.commit()
+    
     flash("Comment deleted successfully.", 'success')
     
     return redirect(request.referrer)

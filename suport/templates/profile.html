@@ -5,7 +5,7 @@
 {% block content %}
   <div class="profile-content">
     <div class="profile-info">
-      <h1><i class="fa-solid fa-user"></i> Profile Info</h1>
+      <h1><i class="fa-solid fa-user"></i> Your Info</h1>
       <div class="profile-info-body">
 <div class="profile-bio">
   <h2>Your Bio</h2>
@@ -46,32 +46,34 @@
 </div>
 </div>
 <div class ="user-content">
-  <h1><i class="fa-solid fa-pen-to-square"></i> Profile Content</h1>
+  <h1><i class="fa-solid fa-pen-to-square"></i> Your Content</h1>
   <div class="profile-content-body">
-<div class="profile-posts">
-  <h2>Your Posts</h2>
-  <ul>
-    {% for post in user.posts %}
-      <li>
-        {{ post.data }}
-        <br>
-        Posted on: {{ post.date.strftime("%Y-%m-%d %H:%M:%S") }}
-      </li>
-    {% endfor %}
-  </ul>
-</div>
-<div class="profile-comments">
-  <h2>Your Comments</h2>
-  <ul>
-    {% for comment in user.comments %}
-      <li>
-        {{ comment.content }}
-        <br>
-        Commented on: {{ comment.date.strftime("%Y-%m-%d %H:%M:%S") }}
-      </li>
-    {% endfor %}
-  </ul>
-</div>
+    <div class="profile-posts">
+      <h2>Your Posts</h2>
+      <ul>
+        {% for post in user.posts %}
+          <li class="post-item">
+            {{ post.data }}<br>
+            <strong>Posted on:</strong> {{ post.date.strftime("%Y-%m-%d %H:%M:%S") }}
+            <br>
+            <strong>Page:</strong> {{ post.sport }}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="profile-comments">
+      <h2>Your Comments</h2>
+      <ul>
+        {% for comment in user.comments %}
+          <li class="comment-item">
+            {{ comment.content }}<br>
+            <strong>Commented on:</strong> {{ comment.date.strftime("%Y-%m-%d %H:%M:%S") }}
+            <br>
+            <strong>Page:</strong> {{ comment.post.sport }}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
 </div>
 </div>
 </div>
