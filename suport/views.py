@@ -6,7 +6,7 @@ import json
 
 views = Blueprint('views', __name__)
 
-@views.route('/football', methods=['GET', 'POST'])
+@views.route('/football-post', methods=['GET', 'POST'])
 @login_required
 def football():
     if request.method == 'POST':
@@ -19,7 +19,7 @@ def football():
             db.session.add(new_post)
             db.session.commit()
             flash('Post added!', category='success')
-            return redirect(url_for('views.football'))
+            return redirect(url_for('views.football-post'))
     
     posts = Post.query.filter_by(sport='football').all()
     
@@ -29,7 +29,7 @@ def football():
     return render_template("football.html", posts=posts)
 
 
-@views.route('/formula1', methods=['GET', 'POST'])
+@views.route('/formula1-post', methods=['GET', 'POST'])
 @login_required
 def formula1():
     if request.method == 'POST':
@@ -42,7 +42,7 @@ def formula1():
             db.session.add(new_post)
             db.session.commit()
             flash('Post added to Formula 1!', category='success')
-            return redirect(url_for('views.formula1'))
+            return redirect(url_for('views.formula1-post'))
     
     posts = Post.query.filter_by(sport='formula1').all()
     
@@ -51,7 +51,7 @@ def formula1():
     
     return render_template("formula1.html", posts=posts)
 
-@views.route('/rugby', methods=['GET', 'POST'])
+@views.route('/rugby-post', methods=['GET', 'POST'])
 @login_required
 def rugby():
     if request.method == 'POST':
@@ -64,7 +64,7 @@ def rugby():
             db.session.add(new_post)
             db.session.commit()
             flash('Post added to Rugby!', category='success')
-            return redirect(url_for('views.rugby'))
+            return redirect(url_for('views.rugby-post'))
     
     posts = Post.query.filter_by(sport='rugby').all()
     
