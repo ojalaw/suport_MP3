@@ -83,21 +83,21 @@ The font used throughout the site is 'Ubuntu', I have chosen this font because I
 The layout of the Suport website is built using the Bootstrap framework, which provides a responsive grid system that allows the website to adapt to different screen sizes and devices. The use of a grid system helps to create a consistent layout on necessary pages of the website, which makes navigation and exploration more intuitive for visitors.  
 
 
-### Symbology  
-
-
-
 ### Accessibility  
 
-Used contrasting colours to enhance accessibility.
+- Used contrasting colours to enhance accessibility.
+-  Use semantic HTML elements appropriately to structure the content. For example, use headings (<h1>, <h2>, etc.) to create a hierarchical structure, lists for lists, and form elements for forms.  
  
 
-### Imagery
+### Imagery  
+
+Picked high quality images to enhance user experience.  
 
 
 ### Wireframes
 
 [Suport Wireframe](README-images/suport-mp3-wireframe.pdf "Link to Suport wireframe")  
+
 There have been some changes since the wireframe was created. The intial plan for the site was for users to be able to create an account and make posts about sports. The general principle remains the same, I have just added a comment ability to the posts and implemented a user profile that includes the users 'Favourite Sport' and 'Favourite team', they can also add a bio.  
 
 ### Data Model  
@@ -158,7 +158,7 @@ Flash messages provide feedback to users about the status of their actions. For 
 ### Future updates  
 - Adding more sports.
 - Adding message feature between users.
-- 
+- Adding an API that imports sports data for user to post about.
 
 
 ## Features
