@@ -68,7 +68,7 @@ As a sports super blogger who contributes to multiple sports blogs, I'm excited 
 
 Initial color scheme is general dark theme for a contemporary look, I have included navy blue and white as accent colours which will also provide good accessibility scores.  
 
-![Image of color pallete in the project](README-images/color-wheel.pdf "Colour Scheme")
+![Image of color pallete in the project](README-images/color-wheel.png "Colour Scheme")
 
 
 
