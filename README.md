@@ -66,7 +66,7 @@ As a sports super blogger who contributes to multiple sports blogs, I'm excited 
 
 ### Colour Scheme
 
-Initial color scheme is general dark theme for a contemporary look, I have included navy blue and white as accent colours which will also provide good accessibility scores.  
+Initial colour scheme is general dark theme for a contemporary look, I have included navy blue and white as accent colours which will also provide good accessibility scores.  
 
 ![Image of color pallete in the project](README-images/color-wheel.png "Colour Scheme")
 
@@ -82,22 +82,17 @@ The font used throughout the site is 'Ubuntu', I have chosen this font because I
 
 The layout of the Suport website is built using the Bootstrap framework, which provides a responsive grid system that allows the website to adapt to different screen sizes and devices. The use of a grid system helps to create a consistent layout on necessary pages of the website, which makes navigation and exploration more intuitive for visitors.  
 
-
 ### Accessibility  
 
-- Used contrasting colours to enhance accessibility.
--  Use semantic HTML elements appropriately to structure the content. For example, use headings (<h1>, <h2>, etc.) to create a hierarchical structure, lists for lists, and form elements for forms.  
+Used contrasting colours to enhance accessibility.
  
 
-### Imagery  
-
-Picked high quality images to enhance user experience.  
+### Imagery
 
 
 ### Wireframes
 
 [Suport Wireframe](README-images/suport-mp3-wireframe.pdf "Link to Suport wireframe")  
-
 There have been some changes since the wireframe was created. The intial plan for the site was for users to be able to create an account and make posts about sports. The general principle remains the same, I have just added a comment ability to the posts and implemented a user profile that includes the users 'Favourite Sport' and 'Favourite team', they can also add a bio.  
 
 ### Data Model  
@@ -228,19 +223,21 @@ Used to run the app.
 CDN jsdeliver was used to serve static assets bootstrap and jquery to improve performance and reliability.
 
 [Google Fonts](https://fonts.google.com/)  
+Used to import 'Ubuntu' font.  
 
 
 [Font awesome](https://fontawesome.com/)  
+Used to import icons on to the site to improve user experience.  
 
 
 [Github](https://github.com/)   
-GitHub is used to store the projects code after being pushed from Git.
+GitHub is used to store the projects code after being pushed from Git.  
 
-[Drawio](https://draw.io)  
-Drawio was used to create the wireframes during the design process.
+[Balsamiq](https:/balsamiq.com)  
+Balsamiq was used to create the wireframes during the design process.  
 
 [Visual Studio Code](https://code.visualstudio.com/download)  
-Visual Studio Code was use to create files pages and where i produced the code for the project.
+Visual Studio Code was use to create files pages and where i produced the code for the project.  
 
 [Compressor.io](https://compressor.io)  
 
