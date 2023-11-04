@@ -7,17 +7,23 @@
     <h1 class="display-4">Football</h1>
 </div>
 <div class="container">
-  {% block sport_carousel %}
+  {% block sport_carousel_football %}
 <div id="sport-carousel" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="/static/images/football.jpg" alt="Football 1" class="d-block w-100 carousel-img">
+      <div class="image-container">
+        <img src="/static/images/football.jpg" alt="Football 1" class="d-block w-100 carousel-img">
+      </div>
     </div>
     <div class="carousel-item">
-      <img src="/static/images/bohemka.jpg" alt="Football 2" class="d-block w-100 carousel-img">
+      <div class="image-container">
+        <img src="/static/images/bohemka.jpg" alt="Football 2" class="d-block w-100 carousel-img">
+      </div>
     </div>
     <div class="carousel-item">
-      <img src="/static/images/football-pitch.jpg" alt="Football 2" class="d-block w-100 carousel-img">
+      <div class="image-container">
+        <img src="/static/images/football-pitch.jpg" alt="Football 3" class="d-block w-100 carousel-img">
+      </div>
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#sport-carousel" data-bs-slide="prev">
@@ -30,9 +36,6 @@
   </button>
 </div>
 {% endblock %}
-
-  
-
 
   <div class="post-text">
     <p>Let other fans know what you're thinking, post a post on your chosen football memory below.</p>
