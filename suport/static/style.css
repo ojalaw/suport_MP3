@@ -130,6 +130,26 @@ body {
     display: none;
 }
 
+/*---sports---*/
+
+.carousel-inner {
+    border-radius: 10px; 
+  }
+  
+  .carousel-item img {
+    width: 100%; 
+    height: 870px;
+    object-fit: cover;
+    border-radius: 10px; 
+  }
+
+  .carousel-img {
+    object-fit: cover;
+    object-position: center;
+    height: 100%;
+  }
+  
+
 /*---general---*/
 
 h1, h3 {
@@ -557,6 +577,11 @@ input[type="text"] {
  }
 
  @media (max-width: 991.98px) {
+    .carousel-img {
+        height: auto;
+        max-width: 100%;
+      }
+
     .card {
         flex: 0 0 calc(33.33% - 6.67px);
         max-width: calc(33.33% - 6.67px);
