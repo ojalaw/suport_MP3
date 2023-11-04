@@ -45,38 +45,36 @@
 </div>
 </div>
 </div>
-<div class ="user-content">
-  <h1><i class="fa-solid fa-pen-to-square"></i> Your Content</h1>
-  <div class="profile-content-body">
-    <div class="profile-posts">
-      <h2>Your Posts</h2>
-      <ul>
-        {% for post in user.posts %}
-          <li class="post-item">
-            {{ post.data }}<br>
-            <strong>Posted on:</strong> {{ post.date.strftime("%Y-%m-%d %H:%M:%S") }}
-            <br>
-            <strong>Page:</strong> {{ post.sport }}
-          </li>
-        {% endfor %}
-      </ul>
+    <div class ="user-content">
+      <h1><i class="fa-solid fa-pen-to-square"></i> Your Content</h1>
+      <div class="profile-content-body">
+        <div class="profile-posts">
+          <h2>Your Posts</h2>
+          <ul>
+            {% for post in user.posts %}
+              <li class="profile-post-item">
+                {{ post.data }}<br>
+                <strong>Posted on:</strong><br> {{ post.date.strftime("%Y-%m-%d %H:%M:%S") }}<br>
+                <strong>Page:</strong><br> {{ post.sport }}
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="profile-comments">
+          <h2>Your Comments</h2>
+          <ul>
+            {% for comment in user.comments %}
+              <li class="profile-comment-item">
+                {{ comment.content }}<br>
+                <strong>Commented on:</strong><br> {{ comment.date.strftime("%Y-%m-%d %H:%M:%S") }}<br>
+                <strong>Page:</strong><br> {{ comment.post.sport }}
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
     </div>
-    <div class="profile-comments">
-      <h2>Your Comments</h2>
-      <ul>
-        {% for comment in user.comments %}
-          <li class="comment-item">
-            {{ comment.content }}<br>
-            <strong>Commented on:</strong> {{ comment.date.strftime("%Y-%m-%d %H:%M:%S") }}
-            <br>
-            <strong>Page:</strong> {{ comment.post.sport }}
-          </li>
-        {% endfor %}
-      </ul>
-    </div>
-</div>
-</div>
-</div>
+  </div>
 {% endblock %}
 
 {% block javascript %}
