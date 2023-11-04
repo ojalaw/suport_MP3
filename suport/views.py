@@ -113,7 +113,7 @@ def edit_post():
         flash("Post updated successfully!", 'success')
     else:
         flash("Post not found or unauthorized!", 'error')
-    return redirect(url_for('views.football'))
+    return redirect(request.referrer)
 
 @views.route('/add-comment/<string:sport>/<int:post_id>', methods=['POST'])
 @login_required
@@ -184,6 +184,9 @@ def edit_bio():
     new_bio = request.form.get('bio')
     user.bio = new_bio
     db.session.commit()
+    
+    flash("Bio updated successfully!", 'success')
+    
     return redirect(url_for('views.profile', user_id=user.id))
 
 @views.route('/edit_favourite_sport', methods=['POST'])
@@ -193,6 +196,9 @@ def edit_favourite_sport():
     new_sport = request.form.get('favourite_sport')
     user.favourite_sport = new_sport
     db.session.commit()
+    
+    flash("Favorite sport updated successfully!", 'success')
+    
     return redirect(url_for('views.profile', user_id=user.id))
 
 @views.route('/edit_favourite_team', methods=['POST'])
@@ -202,6 +208,9 @@ def edit_favourite_team():
     new_team = request.form.get('favourite_team')
     user.favourite_team = new_team
     db.session.commit()
+    
+    flash("Favorite team updated successfully!", 'success')
+    
     return redirect(url_for('views.profile', user_id=user.id))
 
 
