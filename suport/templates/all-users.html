@@ -3,7 +3,7 @@
 {% block title %}All Users{% endblock %}
 
 {% block content %}
-  <h1 class="text-center">All Users</h1>
+  <h1 class="page-title">All Users</h1>
 
   <div class="container">
     <div class="row">
@@ -16,8 +16,8 @@
               </div>
               <div class="user-info">
                 <h2>{{ user.username }}</h2>
-                <p>Favorite Sport: {{ user.favourite_sport }}</p>
-                <p>Favorite Team: {{ user.favourite_team }}</p>
+                <p><strong>Favorite Sport:</strong><br>{{ user.favourite_sport }}</p>
+                <p><strong>Favorite Team:</strong><br>{{ user.favourite_team }}</p>
               </div>
             </div>
           </div>

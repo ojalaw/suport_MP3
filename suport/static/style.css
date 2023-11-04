@@ -498,6 +498,10 @@ input[type="text"] {
 
 /*---other-users---*/
 
+.page-title {
+    padding: 20px;
+}
+
 .user-card {
     background-color: var(--primary-color);
     color: var(--primary);
