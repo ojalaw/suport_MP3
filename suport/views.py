@@ -19,7 +19,7 @@ def football():
             db.session.add(new_post)
             db.session.commit()
             flash('Post added!', category='success')
-            return redirect(url_for('views.football-post'))
+            return redirect(url_for('views.football'))
     
     posts = Post.query.filter_by(sport='football').all()
     
@@ -42,7 +42,7 @@ def formula1():
             db.session.add(new_post)
             db.session.commit()
             flash('Post added to Formula 1!', category='success')
-            return redirect(url_for('views.formula1-post'))
+            return redirect(url_for('views.formula1'))
     
     posts = Post.query.filter_by(sport='formula1').all()
     
@@ -64,7 +64,7 @@ def rugby():
             db.session.add(new_post)
             db.session.commit()
             flash('Post added to Rugby!', category='success')
-            return redirect(url_for('views.rugby-post'))
+            return redirect(url_for('views.rugby'))
     
     posts = Post.query.filter_by(sport='rugby').all()
     
@@ -96,7 +96,7 @@ def delete_post():
     else:
         flash("Post not found or unauthorized!", 'error')
     
-    return jsonify({})
+    return jsonify({"redirect": url_for('views.football')})
 
 
 @views.route('/edit-post', methods=['POST'])
@@ -140,14 +140,14 @@ def delete_comment(comment_id):
     
     if comment.user_id != current_user.id:
         flash("Permission denied.", 'error')
-        return redirect(request.referrer)
+        return jsonify({"redirect": request.referrer})
     
     db.session.delete(comment)
     db.session.commit()
     
     flash("Comment deleted successfully.", 'success')
     
-    return redirect(request.referrer)
+    return jsonify({"redirect": request.referrer})
 
 @views.route('/profile', methods=['GET', 'POST', '<int:user_id>'])
 @login_required

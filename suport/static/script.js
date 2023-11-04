@@ -15,7 +15,7 @@ function deletePost(postId) {
     } else {
       hideConfirm();
     }
-    return response;
+    window.location.reload();;
   })
 }
 
@@ -83,6 +83,7 @@ function deleteComment(commentId) {
       comment.style.display = 'block'; 
     } else {
       hideCommentConfirm();
+      window.location.reload();
     }
     return response;
   })
