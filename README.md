@@ -87,7 +87,8 @@ The layout of the Suport website is built using the Bootstrap framework, which p
 Used contrasting colours to enhance accessibility.
  
 
-### Imagery
+### Imagery  
+Used a combination of imagery from Pixabay (See media below) and an image that i had taken myself. Images are all of a similar size and quality for consistency throughotu the site.  
 
 
 ### Wireframes
@@ -306,9 +307,15 @@ Forking this repository will allow changes to be made without affecting the orig
 
 ### Code Used
 
-Bootstrap v5.3.0
+Bootstrap v5.3.0  
 
-Code Institute training material
+Code Institute training material  
+
+Followed tutorials from [Corey Schafer](https://www.youtube.com/@coreyms) to better understanding  
+
+Followed tutorials from [Tech with Tim](https://www.youtube.com/@TechWithTim)  
+
+Used [Flask tutorials](https://flask.palletsprojects.com/en/2.3.x/tutorial/views/) to better understanding  
 
 ### Content
 
@@ -317,11 +324,15 @@ Code Institute training material
 
 **Images**  
 
-
-**Audio**  
-
-
-
+football - Image by Michal Jarmoluk from Pixabay - https://pixabay.com/photos/soccer-ball-stadium-field-488700/  
+Formula 1 - Image by Sandor Foszto from Pixabay - https://pixabay.com/photos/red-bull-verstappen-f1-formula-1-8143008/  
+Rugby - Image by Kate Baucherel from Pixabay - https://pixabay.com/photos/rugby-heineken-cup-saracens-4498376/  
+football-pitch - Image by congerdesign from Pixabay - https://pixabay.com/photos/football-pitch-playing-field-stadium-4994688/  
+formula1-wing - Image by Toby Parsons from Pixabay - https://pixabay.com/photos/f1-formula-1-car-f1-car-mercedes-3169297/  
+formula1-mcclaren - Image by Guy from Pixabay - https://pixabay.com/photos/lando-norris-formula-one-race-6633950/  
+wilko - Image by patrick Blaise from Pixabay - https://pixabay.com/photos/rugby-velodrome-stadium-marseille-573459/  
+rugby2 - Image by Monica Volpin from Pixabay - https://pixabay.com/photos/rugby-players-world-cup-stadium-1210842/  
+bohemka - Presonal image taken by myself  
   
 ###  Acknowledgments
 
