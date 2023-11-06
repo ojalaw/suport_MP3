@@ -2,6 +2,7 @@ from flask import Blueprint, render_template, request, flash, jsonify, redirect,
 from flask_login import login_required, current_user
 from .models import Post, User, Comment
 from . import db
+from sqlalchemy import desc
 import json
 
 views = Blueprint('views', __name__)
@@ -21,7 +22,7 @@ def football():
             flash('Post added!', category='success')
             return redirect(url_for('views.football'))
     
-    posts = Post.query.filter_by(sport='football').all()
+    posts = Post.query.filter_by(sport='football').order_by(desc(Post.date)).all()
     
     for post in posts:
         post.comments = Comment.query.filter_by(post_id=post.id).all()
@@ -44,7 +45,7 @@ def formula1():
             flash('Post added to Formula 1!', category='success')
             return redirect(url_for('views.formula1'))
     
-    posts = Post.query.filter_by(sport='formula1').all()
+    posts = Post.query.filter_by(sport='formula1').order_by(desc(Post.date)).all()
     
     for post in posts:
         post.comments = Comment.query.filter_by(post_id=post.id).all()
@@ -66,7 +67,7 @@ def rugby():
             flash('Post added to Rugby!', category='success')
             return redirect(url_for('views.rugby'))
     
-    posts = Post.query.filter_by(sport='rugby').all()
+    posts = Post.query.filter_by(sport='rugby').order_by(desc(Post.date)).all()
     
     for post in posts:
         post.comments = Comment.query.filter_by(post_id=post.id).all()
@@ -106,14 +107,21 @@ def edit_post():
     postId = data['postId']
     newText = data['text']
     post = Post.query.get(postId)
+    
     if post and post.user_id == current_user.id:
         post.data = newText
         db.session.commit()
-        
         flash("Post updated successfully!", 'success')
+        return jsonify({
+            'status': 'success',
+            'message': 'Post updated successfully!'
+        })
     else:
         flash("Post not found or unauthorized!", 'error')
-    return redirect(request.referrer)
+        return jsonify({
+            'status': 'error',
+            'message': 'Post not found or unauthorized!'
+        })
 
 @views.route('/add-comment/<string:sport>/<int:post_id>', methods=['POST'])
 @login_required
@@ -182,10 +190,11 @@ def all_users():
 def edit_bio():
     user = current_user
     new_bio = request.form.get('bio')
-    user.bio = new_bio
-    db.session.commit()
     
-    flash("Bio updated successfully!", 'success')
+    if new_bio != user.bio:
+        user.bio = new_bio
+        db.session.commit()
+        flash("Bio updated successfully!", 'success')
     
     return redirect(url_for('views.profile', user_id=user.id))
 
@@ -194,10 +203,12 @@ def edit_bio():
 def edit_favourite_sport():
     user = current_user
     new_sport = request.form.get('favourite_sport')
-    user.favourite_sport = new_sport
-    db.session.commit()
     
-    flash("Favorite sport updated successfully!", 'success')
+    if new_sport != user.favourite_sport:
+        user.favourite_sport = new_sport
+        db.session.commit()
+    
+        flash("Favorite sport updated successfully!", 'success')
     
     return redirect(url_for('views.profile', user_id=user.id))
 
@@ -206,21 +217,11 @@ def edit_favourite_sport():
 def edit_favourite_team():
     user = current_user
     new_team = request.form.get('favourite_team')
-    user.favourite_team = new_team
-    db.session.commit()
     
-    flash("Favorite team updated successfully!", 'success')
+    if new_team != user.favourite_team:
+        user.favourite_team = new_team
+        db.session.commit()
+    
+        flash("Favorite team updated successfully!", 'success')
     
     return redirect(url_for('views.profile', user_id=user.id))
-
-
-
-
-
-
-
-
-
-
-
-

@@ -44,6 +44,7 @@ function hideEditPostForm(postId) {
 }
 
 // edit post
+
 function saveEditedPost(postId) {
   const form = document.getElementById(`edit-post-form-${postId}`);
   const newText = form.querySelector('textarea[name="text"]').value;
@@ -162,6 +163,3 @@ document.addEventListener("DOMContentLoaded", function() {
   })
 
 });
-
-
-
