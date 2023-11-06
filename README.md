@@ -168,6 +168,9 @@ Users can login using the inofrmation that they provided at the sign up process.
 **Overview page**  
 Users are presented with an overview page that includes interactive images of the 3 sports that the site currently facilitates (Football, Formula 1 and Rugby). When users hover over the images, they expand causing more of the image to be visible, leading to a better user experience.  
 
+**Image Carousel**  
+A Bootstrap image carousel was used on individual sports pages to enance user experience.  
+
 **Football page**  
 Individual sport page where users can go to post and interact with other users about Football.
 
@@ -214,10 +217,7 @@ Used to run the app.
 ### Frameworks, Libraries & Programs Used
 
 [Bootstrap 5.3.0](https://getbootstrap.com/)  
-
-
-[jQuery](https://jquery.com/)  
-
+Boostrap was predominantly used throughout the site for responsiveness, modals to confrim deleting posts/comments and image carousel.
 
 [CDN jsdelivr](https://www.jsdelivr.com/)  
 CDN jsdeliver was used to serve static assets bootstrap and jquery to improve performance and reliability.
@@ -239,26 +239,20 @@ Balsamiq was used to create the wireframes during the design process.
 [Visual Studio Code](https://code.visualstudio.com/download)  
 Visual Studio Code was use to create files pages and where i produced the code for the project.  
 
-[Compressor.io](https://compressor.io)  
-
-
-[Canva](https://www.canva.com/en_gb/)  
- 
-
 [Google Chrome Dev Tools](https://developer.chrome.com/docs/devtools/)    
 Google Chrome Dev Tools was used during the testing phase to test the responsiveness of the site and to check for any bugs.
 
-[Shutterstock](https://www.shutterstock.com/)  
+[Pixabay](https://www.pixabay.com/)  
+Pixabay was used to source images used throughout the individual sports pages and overview page.  
  
-
 [W3schools](https://www.w3schools.com/)    
-
+W3schools was used as a guide for HTML, CSS and Python basic principles.  
 
 [PageSpeed Insights](https://pagespeed.web.dev/)   
 
 
 ## Testing 
-Testing process can be found [here]  
+Testing process can be found [here](https://github.com/ojalaw/suport_MP3/blob/main/TESTING.md) 
 
 
 ## Deployment
@@ -277,7 +271,11 @@ The following steps will need to be taken to deploy the application using Heroku
 - Enter a unique name for your project with no capital letters or spaces and select your region. Click 'Create App'.  
 - Inside your project, go to the Resources tab and create a Heroku Postgres Database.  
 - Inside your project, go to the 'Settings' tab. Scroll down and click 'Reveal Config Vars'.  
-- Add in the following variables.  
+- Add in the following variables.
+   - SECRET_KEY : Your secret key
+   - DATABASE_URL: your postgres database URL
+- Deploy your project by going to the Deploy tab and choose 'Connect to Github'
+- Find your repository name and select Connect.
 
 **Create a new repository on GitHub**  
 - Add the necessary files to the repository.
