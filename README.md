@@ -87,7 +87,8 @@ The layout of the Suport website is built using the Bootstrap framework, which p
 Used contrasting colours to enhance accessibility.
  
 
-### Imagery
+### Imagery  
+Used a combination of imagery from Pixabay (See media below) and an image that i had taken myself. Images are all of a similar size and quality for consistency throughotu the site.  
 
 
 ### Wireframes
@@ -168,6 +169,9 @@ Users can login using the inofrmation that they provided at the sign up process.
 **Overview page**  
 Users are presented with an overview page that includes interactive images of the 3 sports that the site currently facilitates (Football, Formula 1 and Rugby). When users hover over the images, they expand causing more of the image to be visible, leading to a better user experience.  
 
+**Image Carousel**  
+A Bootstrap image carousel was used on individual sports pages to enance user experience.  
+
 **Football page**  
 Individual sport page where users can go to post and interact with other users about Football.
 
@@ -214,10 +218,7 @@ Used to run the app.
 ### Frameworks, Libraries & Programs Used
 
 [Bootstrap 5.3.0](https://getbootstrap.com/)  
-
-
-[jQuery](https://jquery.com/)  
-
+Boostrap was predominantly used throughout the site for responsiveness, modals to confrim deleting posts/comments and image carousel.
 
 [CDN jsdelivr](https://www.jsdelivr.com/)  
 CDN jsdeliver was used to serve static assets bootstrap and jquery to improve performance and reliability.
@@ -239,26 +240,20 @@ Balsamiq was used to create the wireframes during the design process.
 [Visual Studio Code](https://code.visualstudio.com/download)  
 Visual Studio Code was use to create files pages and where i produced the code for the project.  
 
-[Compressor.io](https://compressor.io)  
-
-
-[Canva](https://www.canva.com/en_gb/)  
- 
-
 [Google Chrome Dev Tools](https://developer.chrome.com/docs/devtools/)    
 Google Chrome Dev Tools was used during the testing phase to test the responsiveness of the site and to check for any bugs.
 
-[Shutterstock](https://www.shutterstock.com/)  
+[Pixabay](https://www.pixabay.com/)  
+Pixabay was used to source images used throughout the individual sports pages and overview page.  
  
-
 [W3schools](https://www.w3schools.com/)    
-
+W3schools was used as a guide for HTML, CSS and Python basic principles.  
 
 [PageSpeed Insights](https://pagespeed.web.dev/)   
 
 
 ## Testing 
-Testing process can be found [here]  
+Testing process can be found [here](https://github.com/ojalaw/suport_MP3/blob/main/TESTING.md) 
 
 
 ## Deployment
@@ -277,7 +272,11 @@ The following steps will need to be taken to deploy the application using Heroku
 - Enter a unique name for your project with no capital letters or spaces and select your region. Click 'Create App'.  
 - Inside your project, go to the Resources tab and create a Heroku Postgres Database.  
 - Inside your project, go to the 'Settings' tab. Scroll down and click 'Reveal Config Vars'.  
-- Add in the following variables.  
+- Add in the following variables.
+   - SECRET_KEY : Your secret key
+   - DATABASE_URL: your postgres database URL
+- Deploy your project by going to the Deploy tab and choose 'Connect to Github'
+- Find your repository name and select Connect.
 
 **Create a new repository on GitHub**  
 - Add the necessary files to the repository.
@@ -308,9 +307,15 @@ Forking this repository will allow changes to be made without affecting the orig
 
 ### Code Used
 
-Bootstrap v5.3.0
+Bootstrap v5.3.0  
 
-Code Institute training material
+Code Institute training material  
+
+Followed tutorials from [Corey Schafer](https://www.youtube.com/@coreyms) to better understanding  
+
+Followed tutorials from [Tech with Tim](https://www.youtube.com/@TechWithTim)  
+
+Used [Flask tutorials](https://flask.palletsprojects.com/en/2.3.x/tutorial/views/) to better understanding  
 
 ### Content
 
@@ -319,11 +324,15 @@ Code Institute training material
 
 **Images**  
 
-
-**Audio**  
-
-
-
+football - Image by Michal Jarmoluk from Pixabay - https://pixabay.com/photos/soccer-ball-stadium-field-488700/  
+Formula 1 - Image by Sandor Foszto from Pixabay - https://pixabay.com/photos/red-bull-verstappen-f1-formula-1-8143008/  
+Rugby - Image by Kate Baucherel from Pixabay - https://pixabay.com/photos/rugby-heineken-cup-saracens-4498376/  
+football-pitch - Image by congerdesign from Pixabay - https://pixabay.com/photos/football-pitch-playing-field-stadium-4994688/  
+formula1-wing - Image by Toby Parsons from Pixabay - https://pixabay.com/photos/f1-formula-1-car-f1-car-mercedes-3169297/  
+formula1-mcclaren - Image by Guy from Pixabay - https://pixabay.com/photos/lando-norris-formula-one-race-6633950/  
+wilko - Image by patrick Blaise from Pixabay - https://pixabay.com/photos/rugby-velodrome-stadium-marseille-573459/  
+rugby2 - Image by Monica Volpin from Pixabay - https://pixabay.com/photos/rugby-players-world-cup-stadium-1210842/  
+bohemka - Presonal image taken by myself  
   
 ###  Acknowledgments
 
