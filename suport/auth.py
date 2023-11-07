@@ -45,13 +45,17 @@ def sign_up():
         favourite_team = request.form.get('favourite_team')
         favourite_sport = request.form.get('favourite_sport')
 
-        user = User.query.filter_by(email=email).first()
-        if user:
-            flash('Email already exists.', category='error')
+        user_email = User.query.filter_by(email=email).first()
+        user_username = User.query.filter_by(username=username).first()
+
+        if user_email:
+            flash('Email already exists. Please log in.', category='error')
+        elif user_username:
+            flash('Username already exists. Please choose another username.', category='error')
         elif len(email) < 4:
             flash('Email must be greater than 3 characters.', category='error')
         elif len(username) < 3:
-            flash('Username must be greater than 2 character.', category='error')
+            flash('Username must be greater than 2 characters.', category='error')
         elif password1 != password2:
             flash('Passwords don\'t match.', category='error')
         elif len(password1) < 7:
@@ -61,8 +65,7 @@ def sign_up():
                 password1, method='sha256'), favourite_team=favourite_team, favourite_sport=favourite_sport)
             db.session.add(new_user)
             db.session.commit()
-            login_user(new_user, remember=True)
-            flash('You created an account!', category='success')
-            return redirect(url_for('auth.login'))
+            flash('You created an account! Please log in.', category='success')
+            return redirect(url_for('auth.login')) 
 
     return render_template("sign-up.html", user=current_user)
