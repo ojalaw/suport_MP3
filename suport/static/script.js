@@ -108,11 +108,17 @@ document.querySelectorAll('.profile-button').forEach(function (button) {
   button.addEventListener('click', function () {
     const field = this.getAttribute('data-field');
     const editForm = document.querySelector(`.edit-field[data-field="${field}"]`);
-    const cancelButton = editForm.querySelector('.cancel-button'); 
+    const cancelButton = editForm.querySelector('.cancel-button');
 
-    editForm.style.display = 'block';
-    cancelButton.style.display = 'inline-block'; 
-    this.style.display = 'none';
+    if (editForm.style.display === 'none' || editForm.style.display === '') {
+      editForm.style.display = 'block';
+      cancelButton.style.display = 'inline-block';
+      this.style.display = 'none';
+    } else {
+      editForm.style.display = 'none';
+      cancelButton.style.display = 'none';
+      this.style.display = 'inline-block';
+    }
   });
 });
 

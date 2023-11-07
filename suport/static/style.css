@@ -333,7 +333,7 @@ h1, h3 {
 }
 
 #posts .list-group-item {
-    margin-bottom: 10px;
+    margin: 10px;
 }
 
 form {
@@ -382,13 +382,13 @@ form {
 }
 
 .post-item {
-    width: 80%; 
+    width: 100%; 
     margin: 0 auto;
 }
 
 .comments-section {
-    width: 80%; 
-    margin: 20px auto;
+    width: 100%; 
+    margin: 10px auto;
 }
 
 .comments-header {
@@ -425,6 +425,10 @@ form {
 }
 
 .modal-body {
+    color: var(--secondary);
+}
+
+.modal-title {
     color: var(--secondary);
 }
 
@@ -655,7 +659,8 @@ input[type="text"] {
     .post-actions button, .comment-actions button {
         flex-basis: calc(33.33% - 10px);
         max-width: calc(33.33% - 10px);
-        font-size: 14px;
+        font-size: 12px;
+        padding: 10px 20px;
     }
 }
 

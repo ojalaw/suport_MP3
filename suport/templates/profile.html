@@ -10,7 +10,7 @@
 <div class="profile-bio">
   <h2>Your Bio</h2>
   <p>{{ user.bio }}</p>
-  <button class="my-form-button profile-button" data-field="bio">Edit Bio</button>
+  <button class="my-form-button profile-button" data-field="bio">Edit</button>
   <form method="POST" action="/edit_bio" class="edit-field" data-field="bio" style="display: none;">
     <textarea class="edit-bio-field" name="bio" maxlength="500">{{ user.bio }}</textarea>
       <div class="edit-field-buttons">
@@ -22,7 +22,7 @@
 <div class="profile-fav-sport">
   <h2>Your Favourite Sport</h2>
   <p>{{ user.favourite_sport }}</p>
-  <button class="my-form-button profile-button" data-field="favourite_sport">Edit Favourite Sport</button>
+  <button class="my-form-button profile-button" data-field="favourite_sport">Edit</button>
   <form method="POST" action="/edit_favourite_sport" class="edit-field" data-field="favourite_sport" style="display: none;">
       <input class ="edit-field" type="text" name="favourite_sport" value="{{ user.favourite_sport }}">
       <div class="edit-field-buttons">
@@ -34,7 +34,7 @@
 <div class="profile-fav-team">
   <h2>Your Favourite Team</h2>
   <p>{{ user.favourite_team }}</p>
-  <button class="my-form-button profile-button" data-field="favourite_team">Edit Favourite Team</button>
+  <button class="my-form-button profile-button" data-field="favourite_team">Edit</button>
   <form method="POST" action="/edit_favourite_team" class="edit-field" data-field="favourite_team" style="display: none;">
       <input class ="edit-field" type="text" name="favourite_team" value="{{ user.favourite_team }}">
       <div class="edit-field-buttons">
