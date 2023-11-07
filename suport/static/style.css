@@ -432,6 +432,10 @@ form {
     color: var(--secondary);
 }
 
+.my-form-actions a {
+    color: var(--primary);
+}
+
 /*---profile---*/
 
 .profile-bio, .profile-fav-sport, .profile-posts, .profile-fav-team, .profile-comments {
