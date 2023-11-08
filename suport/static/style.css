@@ -273,6 +273,10 @@ h1, h3 {
 
 /*---post---*/
 
+.hidden {
+    display: none;
+}
+
 .post-textarea, .post-edit-textarea, .comment-text-area {
     font-size: 26px;
 }
