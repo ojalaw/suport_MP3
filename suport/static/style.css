@@ -273,6 +273,10 @@ h1, h3 {
 
 /*---post---*/
 
+.post-textarea, .post-edit-textarea, .comment-text-area {
+    font-size: 26px;
+}
+
 .post-form {
     display: flex;
     flex-direction: column;
@@ -315,6 +319,7 @@ h1, h3 {
 .post-text {
     text-align: center;
     padding: 20px;
+    font-size: 32px;
 }
 
 #posts .list-group-item {
