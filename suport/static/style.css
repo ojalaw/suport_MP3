@@ -132,8 +132,21 @@ body {
 
 /*---sports---*/
 
-.carousel-inner {
-    border-radius: 10px; 
+#overview-sports-carousel .carousel-inner {
+    border-radius: 10px;
+  }
+  
+  #overview-sports-carousel .carousel-item img {
+    width: 100%;
+    height: 870px; 
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  #overview-sports-carousel .carousel-img {
+    object-fit: cover;
+    object-position: center;
+    height: auto; 
   }
   
   .carousel-item img {

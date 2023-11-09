@@ -15,8 +15,29 @@
     <p class="sport-choice-text">Choose your sport below and start posting!</p>
 </div>
 </div>
-
 <div class="background">
+    <!-- Carousel, shown only on small to medium devices (below lg breakpoint, which is 992px) -->
+    <div id="overview-sports-carousel" class="carousel slide d-lg-none" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="/static/images/football.jpg" class="d-block w-100" alt="Football">
+            </div>
+            <div class="carousel-item">
+                <img src="/static/images/formula1.jpg" class="d-block w-100" alt="Formula 1">
+            </div>
+            <div class="carousel-item">
+                <img src="/static/images/rugby.jpg" class="d-block w-100" alt="Rugby">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#overview-sports-carousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#overview-sports-carousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
     <div class="gallery">
         <div class="card">
             <figure>
