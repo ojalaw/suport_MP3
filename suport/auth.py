@@ -49,6 +49,18 @@ def sign_up():
         user_email = User.query.filter_by(email=email).first()
         user_username = User.query.filter_by(username=username).first()
 
+        if len(username) > 25:
+            flash('Username must be less than 25 characters', category='error')
+            return redirect(url_for('auth.sign_up'))
+        if len(password1) > 25:
+             flash('Password must be less than 25 characters', category='error')
+             return redirect(url_for('auth.sign_up'))
+        if len(favourite_team) > 25:
+            flash('Favorite team must be less than 25 characters', category='error')  
+            return redirect(url_for('auth.sign_up'))
+        if len(favourite_sport) > 25:
+            flash('Favorite sport must be less than 25 characters', category='error')
+            return redirect(url_for('auth.sign_up'))
         if user_email:
             flash('Email already exists. Please log in.', category='error')
         elif user_username:
