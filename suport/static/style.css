@@ -185,7 +185,11 @@ h1, h3 {
     font-size: 2em;
 }
 
-/*---login-form---*/
+/*---login-form/sign-up---*/
+
+#password-requirements {
+    color: var(--secondary);
+}
 
 .form-title {
     max-width:600px;
@@ -649,6 +653,10 @@ input[type="text"] {
     }
 
     .tooltip {
+        display: none;
+    }
+
+    .gallery {
         display: none;
     }
 }

@@ -44,10 +44,18 @@
                     id="password1" 
                     name="password1"
                     placeholder="Password"
+                    onfocus="showPasswordRequirements()"
                     required
                 >
             </label>
         </div>
+        <div id="password-requirements" class="hidden">
+            <ul>
+              <li>At least one uppercase letter</li>  
+              <li>At least one lowercase letter</li>
+              <li>At least one number</li>
+            </ul>
+          </div>
         <div class="text-field">
             <label for="password2">Re-enter Password:
                 <input

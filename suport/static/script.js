@@ -1,3 +1,8 @@
+// Password reqwuirements
+function showPasswordRequirements() {
+  document.getElementById("password-requirements").style.display = "block";
+}
+
 // Delete post function
 function deletePost(postId) {
 
