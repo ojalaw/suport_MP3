@@ -60,6 +60,10 @@ body {
     font-size: 24px;
 }
 
+.overview-title {
+    word-break: break-word;
+}
+
 .intro-text {
     justify-content: center;
     text-align: center;
@@ -131,6 +135,12 @@ body {
 }
 
 /*---sports---*/
+
+.carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        font-size: 2rem;
+        color: #fff;
+    }
 
 #overview-sports-carousel .carousel-caption {
     background-color: rgba(0, 0, 0, 0.5);
