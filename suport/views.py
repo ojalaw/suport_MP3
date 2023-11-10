@@ -190,7 +190,9 @@ def edit_bio():
     user = current_user
     new_bio = request.form.get('bio')
     
-    if new_bio != user.bio:
+    if len(new_bio) > 500:
+        flash("Bio must be 500 characters or less.", 'error')
+    elif new_bio != user.bio:
         user.bio = new_bio
         db.session.commit()
         flash("Bio updated successfully!", 'success')
@@ -203,10 +205,11 @@ def edit_favourite_sport():
     user = current_user
     new_sport = request.form.get('favourite_sport')
     
-    if new_sport != user.favourite_sport:
+    if len(new_sport) > 25:
+        flash("Favorite sport must be 25 characters or less.", 'error')
+    elif new_sport != user.favourite_sport:
         user.favourite_sport = new_sport
         db.session.commit()
-    
         flash("Favorite sport updated successfully!", 'success')
     
     return redirect(url_for('views.profile', user_id=user.id))
@@ -217,10 +220,11 @@ def edit_favourite_team():
     user = current_user
     new_team = request.form.get('favourite_team')
     
-    if new_team != user.favourite_team:
+    if len(new_team) > 25:
+        flash("Favorite team must be 25 characters or less.", 'error')
+    elif new_team != user.favourite_team:
         user.favourite_team = new_team
         db.session.commit()
-    
         flash("Favorite team updated successfully!", 'success')
     
     return redirect(url_for('views.profile', user_id=user.id))

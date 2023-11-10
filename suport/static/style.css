@@ -144,7 +144,7 @@ body {
   
   #overview-sports-carousel .carousel-item img {
     width: 100%;
-    height: 870px; 
+    height: 500px; 
     object-fit: cover;
     border-radius: 10px;
   }
@@ -458,6 +458,7 @@ form {
 .profile-bio, .profile-fav-sport, .profile-posts, .profile-fav-team, .profile-comments {
     padding: 10px;
     margin: 10px;
+    word-break: break-word;
 }
 
 .profile-info, .user-content {
@@ -479,6 +480,7 @@ form {
     padding: 10px;
     margin: 10px;
     border-radius: 10px;
+    word-break: break-word;
   }
 
 .profile-content {
