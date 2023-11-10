@@ -20,8 +20,8 @@ function deletePost(postId) {
     } else {
       hideConfirm();
     }
-    window.location.reload();;
-  })
+    window.location.reload();
+  });
 }
 
 // Delete Modal
@@ -92,7 +92,7 @@ function deleteComment(commentId) {
       window.location.reload();
     }
     return response;
-  })
+  });
 }
 
 // Show Delete Comment Modal
@@ -164,13 +164,13 @@ document.addEventListener("DOMContentLoaded", function() {
   postEls.forEach(el => {
     let timestamp = new Date(el.dataset.postdate); 
     el.innerText = timeSince(timestamp);
-  })
+  });
 
   let commentEls = document.querySelectorAll('.comment-time');
 
   commentEls.forEach(el => {
     let timestamp = new Date(el.dataset.commentdate);
     el.innerText = timeSince(timestamp); 
-  })
+  });
 
 });
