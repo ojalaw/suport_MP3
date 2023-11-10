@@ -163,14 +163,22 @@ Flash messages provide feedback to users about the status of their actions. For 
 **Sign up**  
 Users have the ability to sign up, choosing their favourite sport and team in the process.  
 
+![Image of sign-up page](README-images/sign-up.png "Optional title")
+
 **Log in**  
 Users can login using the inofrmation that they provided at the sign up process.  
+
+![Image of login page](README-images/login.png "Optional title")
 
 **Overview page**  
 Users are presented with an overview page that includes interactive images of the 3 sports that the site currently facilitates (Football, Formula 1 and Rugby). When users hover over the images, they expand causing more of the image to be visible, leading to a better user experience. This is hidden on smaller screens and replaced with an image carousel.  
 
+![Image of overview page](README-images/overview.png "Optional title")
+
 **Image Carousel**  
 A Bootstrap image carousel was used on individual sports pages to enance user experience.  
+
+![Image of image carousel](README-images/image-carousel.png "Optional title")
 
 **Football page**  
 Individual sport page where users can go to post and interact with other users about Football.
@@ -184,23 +192,35 @@ Individual sport page where users can go to post and interact with other users a
 **Post feature**  
 Users have the ability to post content onto individual sports pages, they can also browse other posts that users have already posted.  
 
+![Image of post feature](README-images/post.png "Optional title")
+
 **Comment feature**  
 Users have the ability to comment on posts made by themselves or other users, comments can be deleted once they have been added.  
 
+![Image of comment feature](README-images/comment.png "Optional title")
+
 **Delete modal**  
-Users have the ability to delete posts and comments once they have added them. A confirmation 'delete modal' is displayed once the user clicks the 'delete' button.
+Users have the ability to delete posts and comments once they have added them. A confirmation 'delete modal' is displayed once the user clicks the 'delete' button.  
+
+![Image of delete modal](README-images/delete-modal.png "Optional title")
 
 **My profile**  
 Users have the ability to navigate to the 'My profile' page, here they can add to their bio, change their favourite team/sport that is displayed on their profile page. They can also views historic posts/comments.  
 
+![Image profile page](README-images/profile.png "Optional title")
+
 **Other Users**  
 Users have the ability to navigate to the 'Other users' page to view the other users that have created accounts.  
+
+![Image of other users page](README-images/other-users.png "Optional title")
 
 **Logout**  
 Once users are finished on the site, they have the ability to click the logout button which will take them to the overview page.  
 
 **Footer**  
 Users can navigate to respective social media sites that are present in the footer. On non-touchscreen devices, an animation has been added causing the icons to rotate utilising SVG.  
+
+![Image of footer](README-images/footer.png "Optional title")
 
 
 
