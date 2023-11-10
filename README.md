@@ -167,7 +167,7 @@ Users have the ability to sign up, choosing their favourite sport and team in th
 Users can login using the inofrmation that they provided at the sign up process.  
 
 **Overview page**  
-Users are presented with an overview page that includes interactive images of the 3 sports that the site currently facilitates (Football, Formula 1 and Rugby). When users hover over the images, they expand causing more of the image to be visible, leading to a better user experience.  
+Users are presented with an overview page that includes interactive images of the 3 sports that the site currently facilitates (Football, Formula 1 and Rugby). When users hover over the images, they expand causing more of the image to be visible, leading to a better user experience. This is hidden on smaller screens and replaced with an image carousel.  
 
 **Image Carousel**  
 A Bootstrap image carousel was used on individual sports pages to enance user experience.  
@@ -187,6 +187,9 @@ Users have the ability to post content onto individual sports pages, they can al
 **Comment feature**  
 Users have the ability to comment on posts made by themselves or other users, comments can be deleted once they have been added.  
 
+**Delete modal**  
+Users have the ability to delete posts and comments once they have added them. A confirmation 'delete modal' is displayed once the user clicks the 'delete' button.
+
 **My profile**  
 Users have the ability to navigate to the 'My profile' page, here they can add to their bio, change their favourite team/sport that is displayed on their profile page. They can also views historic posts/comments.  
 
@@ -195,6 +198,10 @@ Users have the ability to navigate to the 'Other users' page to view the other u
 
 **Logout**  
 Once users are finished on the site, they have the ability to click the logout button which will take them to the overview page.  
+
+**Footer**  
+Users can navigate to respective social media sites that are present in the footer. On non-touchscreen devices, an animation has been added causing the icons to rotate utilising SVG.  
+
 
 
 ### Future Implementations
