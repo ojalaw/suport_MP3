@@ -178,7 +178,6 @@ def profile(user_id=None):
 
     return render_template("profile.html", user=user, posts=posts, comments=comments)
 
-
 @views.route('/all-users')
 @login_required
 def all_users():

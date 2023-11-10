@@ -100,8 +100,8 @@ body {
     bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
-    background: var(--primary-color);
-    color: var(--background);
+    background: rgba(0, 0, 0, 0.5);
+    color: var(--primary-color);
     padding: 5px 10px;
     border-radius: 5px;
     visibility: hidden;
@@ -131,6 +131,12 @@ body {
 }
 
 /*---sports---*/
+
+#overview-sports-carousel .carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: var(--primary-color);
+    border-radius: 10px;
+}
 
 #overview-sports-carousel .carousel-inner {
     border-radius: 10px;
