@@ -335,14 +335,19 @@ Forking this repository will allow changes to be made without affecting the orig
 ### Code Used
 
 Bootstrap v5.3.0  
+- Image carousels used from bootstrap.
+- Delete Modal used from bootstrap.  
 
 Code Institute training material  
 
-Followed tutorials from [Corey Schafer](https://www.youtube.com/@coreyms) to better understanding  
+Followed front-end tutorials from [Atheros] https://www.youtube.com/@Atheroslearning for footer and overview cards.
+- Code referenced in html and CSS files that was inspired by Atheros learning.  
 
-Followed tutorials from [Tech with Tim](https://www.youtube.com/@TechWithTim)  
+Followed tutorials from [Corey Schafer](https://www.youtube.com/@coreyms) to better understanding.  
 
-Used [Flask tutorials](https://flask.palletsprojects.com/en/2.3.x/tutorial/views/) to better understanding  
+Followed tutorials from [Tech with Tim](https://www.youtube.com/@TechWithTim) to understand flask.  
+
+Used [Flask tutorials](https://flask.palletsprojects.com/en/2.3.x/tutorial/views/) to better understanding.  
 
 ### Content
 
