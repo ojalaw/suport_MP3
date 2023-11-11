@@ -55,7 +55,7 @@ Mobile
 Desktop  
 ![Image of sign in desktop lighthouse score](README-images/login-desktop-lighthouse.png "Optional title")  
 
-Mobile
+Mobile  
 ![Image of sign up mobile lighthouse score](README-images/login-mobile-lighthouse.png "Optional title")  
 
 **Overview**  
@@ -69,7 +69,7 @@ Mobile
 Desktop  
 ![Image of football desktop lighthouse score](README-images/football-desktop-lighthouse.png "Optional title")  
 
-Mobile
+Mobile  
 ![Image of overview mobile lighthouse score](README-images/overview-mobile-lighthouse.png "Optional title")  
 
 **Formula 1**  
@@ -83,13 +83,14 @@ Mobile
 Desktop  
 ![Image of Rugby desktop lighthouse score](README-images/rugby-desktop-lighthouse.png "Optional title")  
 
+Mobile  
 ![Image of Rugby mobile lighthouse score](README-images/rugby-mobile-lighthouse.png "Optional title")  
 
 **Profile**  
 Desktop  
 ![Image of Profile desktop lighthouse score](README-images/profile-desktop-lighthouse.png "Optional title")  
 
-Mobile
+Mobile  
 ![Image of Profile mobile lighthouse score](README-images/profile-mobile-lighthouse.png "Optional title")  
 
 **All Users**  
