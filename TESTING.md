@@ -105,20 +105,48 @@ Mobile
   
 **Desktop**  
 
+| Browser            | Version                                               | Bugs  |
+| -------------      |:-------------:                                        | -----:|
+| Google Chrome      | Version 112.0.5615.138 (Official Build) (64-bit)      | None  |
+| Microsoft Edge     | Version 112.0.1722.58 (Official build) (64-bit)       | None  |
+| Firefox            | 112.0.1 (64-bit)                                      | None  |  
+
 
 **Mobile**  
+
+| Device                   | Operating system | Bugs  |
+| -------------            |:-------------:   | -----:|
+| iPhone 14                | iOS 16.3.1       | None  |
+| iPhone 14 pro            | iOS 16.0         | None  |
+| iPad 10                  | iOS              | None  |
 
 
 
 ## Automatic Testing  
-
+End point testing.  
+Button testing tbc. 
 
 
 
 ## Manual Testing  
-
-
-
+Navbar links.
+Sign up.
+Login.
+Flash messages.
+Overview cards.
+Image carousels.
+Post function. 
+Edit Post.
+Delete Post
+Comment.
+Delete Comment.
+Edit Bio.
+Edit fav team.
+Edit fav sport.
+save/cancel button.
+Social media footer.
+Delete modal.
+Logout.
 
 #### Functionality
 
@@ -131,6 +159,8 @@ Mobile
 
 
 **Responsiveness**  
+
+Breakpoints - bootstrap.
 
 
 
