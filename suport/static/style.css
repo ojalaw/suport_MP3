@@ -71,6 +71,8 @@ body {
     padding: 20px;
 }
 
+/*---Inspired by atheros---*/
+
 .gallery {
     justify-content: center;
     display: flex;
@@ -123,6 +125,8 @@ body {
     cursor: pointer;
     border-radius: 8px;
 }
+
+/*---end of inspired by atheros---*/
 
 .buttons {
     display: flex;
@@ -559,6 +563,7 @@ input[type="text"] {
   }
 
 /*---socials-footer---*/
+/*---Atheros code inspired by atheros---*/
 
 .footer-background {
     background-color: var(--secondary-color);
@@ -614,6 +619,8 @@ input[type="text"] {
     transform: rotateY(360deg);
     stroke-width: 1.75;
 }
+
+/*---end of Atheros code inspired by atheros---*/
 
 /*--footer--*/
 
