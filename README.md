@@ -225,8 +225,11 @@ Users can navigate to respective social media sites that are present in the foot
 
 
 ### Future Implementations
-
-
+There are a number of different features that could be implemented in the future;
+- API that displays live/gistoric sports data.
+- Private messaging function that allows users to message directly.
+- More interactive profiles that allow users to upload images and other content.
+- The ability to view other users profiles.  
 
 ## Technologies Used
 
@@ -253,10 +256,8 @@ CDN jsdeliver was used to serve static assets bootstrap and jquery to improve pe
 [Google Fonts](https://fonts.google.com/)  
 Used to import 'Ubuntu' font.  
 
-
 [Font awesome](https://fontawesome.com/)  
 Used to import icons on to the site to improve user experience.  
-
 
 [Github](https://github.com/)   
 GitHub is used to store the projects code after being pushed from Git.  
@@ -275,8 +276,6 @@ Pixabay was used to source images used throughout the individual sports pages an
  
 [W3schools](https://www.w3schools.com/)    
 W3schools was used as a guide for HTML, CSS and Python basic principles.  
-
-[PageSpeed Insights](https://pagespeed.web.dev/)   
 
 
 ## Testing 
@@ -356,16 +355,26 @@ Used [Flask tutorials](https://flask.palletsprojects.com/en/2.3.x/tutorial/views
 
 **Images**  
 
-football - Image by Michal Jarmoluk from Pixabay - https://pixabay.com/photos/soccer-ball-stadium-field-488700/  
-Formula 1 - Image by Sandor Foszto from Pixabay - https://pixabay.com/photos/red-bull-verstappen-f1-formula-1-8143008/  
-Rugby - Image by Kate Baucherel from Pixabay - https://pixabay.com/photos/rugby-heineken-cup-saracens-4498376/  
-football-pitch - Image by congerdesign from Pixabay - https://pixabay.com/photos/football-pitch-playing-field-stadium-4994688/  
-formula1-wing - Image by Toby Parsons from Pixabay - https://pixabay.com/photos/f1-formula-1-car-f1-car-mercedes-3169297/  
-formula1-mcclaren - Image by Guy from Pixabay - https://pixabay.com/photos/lando-norris-formula-one-race-6633950/  
-wilko - Image by patrick Blaise from Pixabay - https://pixabay.com/photos/rugby-velodrome-stadium-marseille-573459/  
-rugby2 - Image by Monica Volpin from Pixabay - https://pixabay.com/photos/rugby-players-world-cup-stadium-1210842/  
-bohemka - Presonal image taken by myself  
+football - Image by Michal Jarmoluk from Pixabay  
+https://pixabay.com/photos/soccer-ball-stadium-field-488700/  
+Formula 1 - Image by Sandor Foszto from Pixabay  
+https://pixabay.com/photos/red-bull-verstappen-f1-formula-1-8143008/  
+Rugby - Image by Kate Baucherel from Pixabay  
+https://pixabay.com/photos/rugby-heineken-cup-saracens-4498376/  
+football-pitch - Image by congerdesign from Pixabay  
+https://pixabay.com/photos/football-pitch-playing-field-stadium-4994688/  
+formula1-wing - Image by Toby Parsons from Pixabay  
+https://pixabay.com/photos/f1-formula-1-car-f1-car-mercedes-3169297/  
+formula1-mcclaren - Image by Guy from Pixabay  
+https://pixabay.com/photos/lando-norris-formula-one-race-6633950/  
+wilko - Image by patrick Blaise from Pixabay  
+https://pixabay.com/photos/rugby-velodrome-stadium-marseille-573459/  
+rugby2 - Image by Monica Volpin from Pixabay  
+https://pixabay.com/photos/rugby-players-world-cup-stadium-1210842/  
+bohemka  
+Personal image taken by myself  
   
 ###  Acknowledgments
 
 Code Institute training material  
+Mentor - Chris Quinn  
