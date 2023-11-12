@@ -60,7 +60,7 @@ body {
     font-size: 24px;
 }
 
-.overview-title {
+.overview-title, .comment-content {
     word-break: break-word;
 }
 
