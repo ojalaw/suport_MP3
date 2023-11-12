@@ -40,7 +40,7 @@ There were no errors when running javascript file through JShint validator.
 
 ## Lighthouse Testing  
 
-All pages passed lighthouse testing scoring particularaly highly throughout.  
+All pages passed lighthouse testing scoring particularly highly throughout.  
 
 **Sign up**  
 Desktop lighthouse score [here](README-images/sign-up-desktop-lighthouse.png "Optional title")  
@@ -102,54 +102,105 @@ Mobile lighthouse score [here](README-images/all-users-mobile-lighthouse.png "Op
 | iPhone 14 pro            | iOS 16.0         | None  |
 | iPad 10                  | iOS              | None  |
 
-
-
 ## Automatic Testing  
-End point testing.  
-Button testing tbc. 
+I decided to employ a certain degree of automated testing during the project in the form of unittest, the python built-in module for writing/testing. The tests can be found in the test_views.py file and are summarised below.  
 
+**Sanity Testing**  
+The SanityTest class contains a basic sanity test. It verifies fundamental functionality by testing a simple addition function (add_numbers). This ensures that the most basic operations of the environment are working as expected.  
 
+**Feature Testing**  
+The TestPostFeature class performs feature testing for creating posts and adding comments. It tests the functionality of the application's features by sending POST requests to the routes handling post creation (/football-post) and comment addition (/add-comment/football/1). It checks if the correct status code (302, indicating a redirect) is returned, which implies successful execution of these features.  
+
+**Endpoint Testing**  
+The TestOverviewRoute and TestSportsRoutes classes are focused on endpoint testing. They test various routes of the application to ensure they are functioning as expected:  
+
+TestOverviewRoute tests the main overview route ('/'), verifying that it returns a 200 status code and contains specific content in the response.  
+TestSportsRoutes tests several sports-related routes (/football-post, /formula1-post, /rugby-post). It checks that these routes return a 302 status code and redirect to the login page, indicating that the routes are accessible but require user authentication.  
+
+![Automatic testing screenshot](README-images/automated-testing.png "Optional title")  
 
 ## Manual Testing  
-Navbar links.
-Sign up.
-Login.
-Flash messages.
-Overview cards.
-Image carousels.
-Post function. 
-Edit Post.
-Delete Post
-Comment.
-Delete Comment.
-Edit Bio.
-Edit fav team.
-Edit fav sport.
-save/cancel button.
-Social media footer.
-Delete modal.
-Logout.
+
+During the manual testing, I tested the sites functionality, usability and responsiveness.  
+
+I have kept the basic functionality of the site the same throughout the entire project. Initially leaning towards a note/review site, moving towards a social media site that allows users to create, edit and delete posts.  
+
+**Overview page**  
+During the manual testing phase, I changed the images on the overview.html page. A test user suggested that the images could not be seen clearly and a change would make it a better user experience. Due to this feedback, I transitioned to a bootstrap image carousel, similar to what is used on inidivdual sports pages.  
+
+**Sports pages**
+Similarly to the overview page, during testing, i felt that the individual sports pages were rather static and needed something to add interest. I added the bootstrap carousel to allow users to see multiple images relating to the chosen sport.  
+
+**Profile**  
+Another change made while testing the site was the introduction of a 'Bio', 'Favourite team' and 'favourite sport'. I included these to give users a chance for them to input their preference and give them the opportunity to see other users and the sort of fans that the site attracts.  
 
 #### Functionality
 
+**General**
 
+Navbar links - All navbar links work as expected.  
+Sign up - Signup works as expected with errors handled as expected.  
+Login - Login works as expected.  
+Flash messages - All flash messages are correctly implemented, both success and error flash messages are displayed correctly.  
+Overview cards - The interactive sports cards work as expected on the overview page.  
+Image carousels - The image carousels work as expected on indivdual sports pages and on the overview page on smaller devices.  
 
+**Sports pages** 
 
+Post function - The post feature works as expected.  
+Edit Post - Edit post feature works as expected.  
+Delete Post - Delete post works as expected.  
+Comment - The comment feature works as expected.  
+Delete Comment - The delete comment feature works as expected.  
+
+**Profile**
+
+Edit Bio - The edit bio feature works as expected.  
+Edit fav team - The edit fav team works as expected.  
+Edit fav sport - The edit fav sport works as expected.  
+Save/cancel button - The save and cancal buttons both work as expected.
+Social media footer - The social media icons work as expected, responding on hover and openeing new tab.  
+Delete modal - The delete modal opens as expected and deletes content when clicked.  
+Logout - The logout feature works as expeced.  
 
 **Usability**  
 
-
+- As previously mentioned, users felt that different images could have been used on the overview page, I implemented an image carousel on mobile devices.  
 
 **Responsiveness**  
 
-Breakpoints - bootstrap.
+I used the following break points for responsiveness.  
 
+- 450px  
+- 768px  
+- 992px  
+- 1200px
 
-
-
+Generic bootstrap breakpoints were also used sporadically throughout the site.  
 
 ## Bug Reporting
+Throughout the development phase of the site, I came across a variety of different bugs/errors that eventually overcame.  
 
+- When I added the 'Favourite Sport' and 'Favourite Team' to the database, there were issues with migration and i was displayed with a 500 internal server error. To correct this, i reset the database.
 
+- - When adding 'Favourite Sport' and 'Favourite Team', I did not include them in my auth.py, so when users were signing up, they were not being added to the database.   
+
+- When deploying to heroku for the first time, i was encountered with an 500 internal server error. This time it was due to trying to connect to a local database rather than my PostgreSQL Heroku database.  
+
+- One issue that i had very early on was conflicting packages/modules to do with flask. To get around this, I used older versions of different modules to deconflict the issue. I have been displayed with the following message multiple times. C:\Users\olly-\Documents\GitHub\suport_MP3\suport\auth.py:19: UserWarning: The 'sha256' password method is deprecated and will be removed in Werkzeug 2.4. Migrate to the 'scrypt' method. Moving forward I would intedn to use the most up to date modules, it was just not possible for me this time.  
+
+- A bug that was noticed during testing was that when posts containing words that contained alot of characters were posted/commented, they overflowed their div. To correct this, I used the following CSS 'word-break: break-word;'  
+
+- Clicking 'cancel' button on profile page was causing content to save and reveal flash message, i added javascript to handle the toggle reveal/hide.  
+
+- Buttons too small on mobile devices, changed width to 100%.  
+
+- Duplicated usernames were allowed, applied same logic as email to prevent users to sign up with usernames already in the database.  
+
+- Users were being logged in automatically rather than being redirected to the login page, I added code to direct users to the login page.  
+
+- When 'Favourite Team' and 'Favourite Sport' were over the 25 charcter limit, it caused 500 Internal server error. Added code to handle the error.
+
+- Changed from interactive image cards to image carousel on overview page on smaller screens.
 
 [Back to README.md](https://github.com/ojalaw/suport_MP3)
