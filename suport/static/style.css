@@ -740,3 +740,30 @@ input[type="text"] {
     
 }
 
+@media (min-width: 768px) and (max-width: 992px) {
+    .user-card, .card-body {
+        display: flex;
+        flex-direction: column;
+        height: 100%; 
+    }
+
+    .user-info {
+        flex-grow: 1; 
+    }
+
+    .profile-content-body {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .profile-info, .user-content {
+        flex: 1 1 48%;
+
+    }
+
+    .profile-info h1, .user-content h1 {
+        font-size: 50px; 
+    }
+}
+
