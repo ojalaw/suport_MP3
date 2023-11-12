@@ -15,6 +15,8 @@ def football():
         
         if len(post_data) < 10:
             flash('Post must be at least 10 characters long.', category='error')
+        elif len(post_data) > 1000:
+            flash('Post must be no more than 1000 characters long.', category='error')
         else:
             new_post = Post(data=post_data, user_id=current_user.id, sport='football')
             db.session.add(new_post)
@@ -38,6 +40,8 @@ def formula1():
         
         if len(post_data) < 10:
             flash('Post must be at least 10 characters long.', category='error')
+        elif len(post_data) > 1000:
+            flash('Post must be no more than 1000 characters long.', category='error')
         else:
             new_post = Post(data=post_data, user_id=current_user.id, sport='formula1')
             db.session.add(new_post)
@@ -60,6 +64,8 @@ def rugby():
         
         if len(post_data) < 10:
             flash('Post must be at least 10 characters long.', category='error')
+        elif len(post_data) > 1000:
+            flash('Post must be no more than 1000 characters long.', category='error')
         else:
             new_post = Post(data=post_data, user_id=current_user.id, sport='rugby')
             db.session.add(new_post)
@@ -130,14 +136,15 @@ def add_comment(sport, post_id):
         content = request.form.get('content')
         user_id = current_user.id
 
-        if content:
+        if not content:
+            flash('Comment content cannot be empty', 'error')
+        elif len(content) > 1000:
+            flash('Comment must be no more than 1000 characters long.', 'error')
+        else:
             comment = Comment(content=content, user_id=user_id, post_id=post_id)
             db.session.add(comment)
             db.session.commit()
-
             flash('Comment added successfully', 'success')
-        else:
-            flash('Comment content cannot be empty', 'error')
 
     return redirect(request.referrer)
 
