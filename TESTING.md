@@ -43,62 +43,44 @@ There were no errors when running javascript file through JShint validator.
 All pages passed lighthouse testing scoring particularaly highly throughout.  
 
 **Sign up**  
-Desktop  
+Desktop lighthouse score [here](README-images/sign-up-desktop-lighthouse.png "Optional title")  
 
-![Image of sign up desktop lighthouse score](README-images/sign-up-desktop-lighthouse.png "Optional title")  
-
-Mobile  
-
-![Image of sign up mobile lighthouse score](README-images/sign-up-mobile-lighthouse.png "Optional title")  
+Mobile lighthouse score [here](README-images/sign-up-mobile-lighthouse.png "Optional title")  
 
 **Sign in**  
-Desktop  
-![Image of sign in desktop lighthouse score](README-images/login-desktop-lighthouse.png "Optional title")  
+Desktop lighthouse score [here](README-images/login-desktop-lighthouse.png "Optional title")  
 
-Mobile  
-![Image of sign up mobile lighthouse score](README-images/login-mobile-lighthouse.png "Optional title")  
+Mobile lighthouse score [here](README-images/login-mobile-lighthouse.png "Optional title")  
 
 **Overview**  
-Desktop  
-![Image of overview desktop lighthouse score](README-images/overview-desktop-lighthouse.png "Optional title")  
+Desktop lighthouse score [here](README-images/overview-desktop-lighthouse.png "Optional title")  
 
-Mobile  
-![Image of overview mobile lighthouse score](README-images/overview-mobile-lighthouse.png "Optional title")  
+Mobile lighthouse score [here](README-images/overview-mobile-lighthouse.png "Optional title")  
 
 **Football**  
-Desktop  
-![Image of football desktop lighthouse score](README-images/football-desktop-lighthouse.png "Optional title")  
+Desktop lighthouse score [here](README-images/football-desktop-lighthouse.png "Optional title")  
 
-Mobile  
-![Image of overview mobile lighthouse score](README-images/overview-mobile-lighthouse.png "Optional title")  
+Mobile lighthouse score [here](README-images/overview-mobile-lighthouse.png "Optional title")  
 
 **Formula 1**  
-Desktop  
-![Image of Formula 1 desktop lighthouse score](README-images/f1-desktop-lighthouse.png "Optional title")  
+Desktop lighthouse score [here](README-images/f1-desktop-lighthouse.png "Optional title")  
 
-Mobile  
-![Image of Formula 1 mobile lighthouse score](README-images/f1-mobile-lighthouse.png "Optional title")  
+Mobile lighthouse score [here](README-images/f1-mobile-lighthouse.png "Optional title")  
 
 **Rugby**  
-Desktop  
-![Image of Rugby desktop lighthouse score](README-images/rugby-desktop-lighthouse.png "Optional title")  
+Desktop lighthouse score [here](README-images/rugby-desktop-lighthouse.png "Optional title")  
 
-Mobile  
-![Image of Rugby mobile lighthouse score](README-images/rugby-mobile-lighthouse.png "Optional title")  
+Mobile lighthouse score [here](README-images/rugby-mobile-lighthouse.png "Optional title")  
 
 **Profile**  
-Desktop  
-![Image of Profile desktop lighthouse score](README-images/profile-desktop-lighthouse.png "Optional title")  
+Desktop lighthouse score [here](README-images/profile-desktop-lighthouse.png "Optional title")  
 
-Mobile  
-![Image of Profile mobile lighthouse score](README-images/profile-mobile-lighthouse.png "Optional title")  
+Mobile lighthouse score [here](README-images/profile-mobile-lighthouse.png "Optional title")  
 
 **All Users**  
-Desktop  
-![Image of All users mobile lighthouse score](README-images/all-users-desktop-lighthouse.png "Optional title")  
+Desktop lighthouse score [here](README-images/all-users-desktop-lighthouse.png "Optional title")  
 
-Mobile  
-![Image of All users mobile lighthouse score](README-images/all-users-mobile-lighthouse.png "Optional title")  
+Mobile lighthouse score [here](README-images/all-users-mobile-lighthouse.png "Optional title")  
 
 
 ## Browser Compatibility 
