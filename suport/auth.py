@@ -7,6 +7,7 @@ import re
 
 auth = Blueprint('auth', __name__)
 
+
 @auth.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
@@ -26,11 +27,13 @@ def login():
 
     return render_template("login.html", user=current_user)
 
+
 @auth.route('/logout')
 @login_required
 def logout():
     logout_user()
     return redirect(url_for('auth.login'))
+
 
 @auth.route('/sign-up', methods=['GET', 'POST'])
 def sign_up():
@@ -52,7 +55,7 @@ def sign_up():
              flash('Password must be less than 25 characters', category='error')
              return redirect(url_for('auth.sign_up'))
         if len(favourite_team) > 25:
-            flash('Favorite team must be less than 25 characters', category='error')  
+            flash('Favorite team must be less than 25 characters', category='error')
             return redirect(url_for('auth.sign_up'))
         if len(favourite_sport) > 25:
             flash('Favorite sport must be less than 25 characters', category='error')
@@ -77,6 +80,6 @@ def sign_up():
             db.session.add(new_user)
             db.session.commit()
             flash('You created an account! Please log in.', category='success')
-            return redirect(url_for('auth.login')) 
+            return redirect(url_for('auth.login'))
 
     return render_template("sign-up.html", user=current_user)
