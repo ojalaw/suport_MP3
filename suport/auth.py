@@ -56,28 +56,39 @@ def sign_up():
             flash('Password must be less than 25 characters', category='error')
             return redirect(url_for('auth.sign_up'))
         if len(favourite_team) > 25:
-            flash('Favorite team must be less than 25 characters', category='error')
+            flash('Favorite team must be less than 25 characters',
+                  category='error')
             return redirect(url_for('auth.sign_up'))
         if len(favourite_sport) > 25:
-            flash('Favorite sport must be less than 25 characters', category='error')
+            flash('Favorite sport must be less than 25 characters',
+                  category='error')
             return redirect(url_for('auth.sign_up'))
         if user_email:
             flash('Email already exists. Please log in.', category='error')
         elif user_username:
-            flash('Username already exists. Please choose another username.', category='error')
+            flash('Username already exists. Please choose another username.',
+                  category='error')
         elif len(email) < 4:
             flash('Email must be greater than 3 characters.', category='error')
         elif len(username) < 3:
-            flash('Username must be greater than 2 characters.', category='error')
+            flash('Username must be greater than 2 characters.',
+                  category='error')
         elif password1 != password2:
             flash('Passwords don\'t match.', category='error')
         elif len(password1) < 7:
             flash('Password must be at least 7 characters.', category='error')
         elif not re.match(r"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$", password1):
-            flash('Password must contain an uppercase letter, a lowercase letter, and a number.', category='error')
+            flash('Password must contain:'
+                  '- An uppercase letter'
+                  '- A lowercase letter'
+                  '- A number', category='error')
+
         else:
-            new_user = User(email=email, username=username, password=generate_password_hash(
-                password1, method='sha256'), favourite_team=favourite_team, favourite_sport=favourite_sport)
+            new_user = User(email=email, username=username,
+                            password=generate_password_hash(
+                             password1, method='sha256'),
+                            favourite_team=favourite_team,
+                            favourite_sport=favourite_sport)
             db.session.add(new_user)
             db.session.commit()
             flash('You created an account! Please log in.', category='success')

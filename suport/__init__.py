@@ -11,7 +11,8 @@ db = SQLAlchemy()
 
 def flask_app():
     app = Flask(__name__)
-    app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'default_fallback_key')
+    app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY',
+                                              'default_fallback_key')
 
     uri = os.environ['DATABASE_URL']
     if uri.startswith("postgres://"):

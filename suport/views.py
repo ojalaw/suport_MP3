@@ -1,4 +1,5 @@
-from flask import Blueprint, render_template, request, flash, jsonify, redirect, url_for
+from flask import (Blueprint, render_template, request, flash,
+                   jsonify, redirect, url_for)
 from flask_login import login_required, current_user
 from .models import Post, User, Comment
 from . import db
@@ -15,17 +16,21 @@ def football():
         post_data = request.form.get('post')
 
         if len(post_data) < 10:
-            flash('Post must be at least 10 characters long.', category='error')
+            flash('Post must be at least 10 characters long.',
+                  category='error')
         elif len(post_data) > 1000:
-            flash('Post must be no more than 1000 characters long.', category='error')
+            flash('Post must be no more than 1000 characters long.',
+                  category='error')
         else:
-            new_post = Post(data=post_data, user_id=current_user.id, sport='football')
+            new_post = Post(data=post_data, user_id=current_user.id,
+                            sport='football')
             db.session.add(new_post)
             db.session.commit()
             flash('Post added!', category='success')
             return redirect(url_for('views.football'))
 
-    posts = Post.query.filter_by(sport='football').order_by(desc(Post.date)).all()
+    posts = Post.query.filter_by(sport='football')\
+        .order_by(desc(Post.date)).all()
 
     for post in posts:
         post.comments = Comment.query.filter_by(post_id=post.id).all()
@@ -40,17 +45,21 @@ def formula1():
         post_data = request.form.get('post')
 
         if len(post_data) < 10:
-            flash('Post must be at least 10 characters long.', category='error')
+            flash('Post must be at least 10 characters long.',
+                  category='error')
         elif len(post_data) > 1000:
-            flash('Post must be no more than 1000 characters long.', category='error')
+            flash('Post must be no more than 1000 characters long.',
+                  category='error')
         else:
-            new_post = Post(data=post_data, user_id=current_user.id, sport='formula1')
+            new_post = Post(data=post_data, user_id=current_user.id,
+                            sport='formula1')
             db.session.add(new_post)
             db.session.commit()
             flash('Post added to Formula 1!', category='success')
             return redirect(url_for('views.formula1'))
 
-    posts = Post.query.filter_by(sport='formula1').order_by(desc(Post.date)).all()
+    posts = Post.query.filter_by(sport='formula1')\
+        .order_by(desc(Post.date)).all()
 
     for post in posts:
         post.comments = Comment.query.filter_by(post_id=post.id).all()
@@ -65,11 +74,14 @@ def rugby():
         post_data = request.form.get('post')
 
         if len(post_data) < 10:
-            flash('Post must be at least 10 characters long.', category='error')
+            flash('Post must be at least 10 characters long.',
+                  category='error')
         elif len(post_data) > 1000:
-            flash('Post must be no more than 1000 characters long.', category='error')
+            flash('Post must be no more than 1000 characters long.',
+                  category='error')
         else:
-            new_post = Post(data=post_data, user_id=current_user.id, sport='rugby')
+            new_post = Post(data=post_data, user_id=current_user.id,
+                            sport='rugby')
             db.session.add(new_post)
             db.session.commit()
             flash('Post added to Rugby!', category='success')
@@ -143,9 +155,11 @@ def add_comment(sport, post_id):
         if not content:
             flash('Comment content cannot be empty', 'error')
         elif len(content) > 1000:
-            flash('Comment must be no more than 1000 characters long.', 'error')
+            flash('Comment must be no more than 1000 characters long.',
+                  'error')
         else:
-            comment = Comment(content=content, user_id=user_id, post_id=post_id)
+            comment = Comment(content=content, user_id=user_id,
+                              post_id=post_id)
             db.session.add(comment)
             db.session.commit()
             flash('Comment added successfully', 'success')
@@ -189,7 +203,8 @@ def profile(user_id=None):
         user.favourite_team = favourite_team
         db.session.commit()
 
-    return render_template("profile.html", user=user, posts=posts, comments=comments)
+    return render_template("profile.html", user=user, posts=posts,
+                           comments=comments)
 
 
 @views.route('/all-users')
@@ -245,3 +260,4 @@ def edit_favourite_team():
         flash("Favorite team updated successfully!", 'success')
 
     return redirect(url_for('views.profile', user_id=user.id))
+    

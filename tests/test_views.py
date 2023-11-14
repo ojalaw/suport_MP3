@@ -24,11 +24,13 @@ class TestPostFeature(unittest.TestCase):
         ), follow_redirects=True)
 
     def test_create_post(self):
-        response = self.app.post('/football-post', data={'post': 'This is a new football post.'})
+        response = self.app.post('/football-post',
+                                 data={'post': 'This is a new football post.'})
         self.assertEqual(response.status_code, 302)
 
     def test_add_comment(self):
-        response = self.app.post('/add-comment/football/1', data={'content': 'This is a comment.'})
+        response = self.app.post('/add-comment/football/1',
+                                 data={'content': 'This is a comment.'})
         self.assertEqual(response.status_code, 302)
 
 
@@ -39,7 +41,8 @@ class TestOverviewRoute(unittest.TestCase):
     def test_overview_route(self):
         response = self.app.get('/')
         self.assertEqual(response.status_code, 200)
-        self.assertIn(b'Welcome to Sup<i class="fa-regular fa-futbol"></i>rt', response.data)
+        self.assertIn(b'Welcome to Sup<i class="fa-regular fa-futbol"></i>rt',
+                      response.data)
 
 
 class TestSportsRoutes(unittest.TestCase):
