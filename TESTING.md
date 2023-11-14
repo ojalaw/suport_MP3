@@ -21,9 +21,13 @@ This site has been tested using the following testing procedures
 
 The site has been run through [W3C](https://validator.w3.org/), [WC3 CSS](https://jigsaw.w3.org/css-validator/), [JSHint](https://www.jslint.com/) javascript validator and CI [PEP8 validator](https://pep8ci.herokuapp.com/) 
 
+**HTML** 
+
 ![Image of validator testing](README-images/html-test.png "Optional title")  
 
 No warnings/errors were present when running my site through W3C validator.  
+
+**CSS**
 
 ![Image of CSS validator testing](README-images/css-test.png "Optional title")  
 
@@ -33,9 +37,15 @@ No errors were present when running my site through W3C CSS validator.
 
 There were 9 warnings, none of which affect accessibility or functionality of site. I intend to implement changes in future.  
 
+**Javascript**
+
 ![Image of jshint validator testing](README-images/js-testing.png "Optional title")  
 
 There were no errors when running javascript file through JShint validator.  
+
+**Python**
+
+There were no errors when running python files through pep8 validator, however there were some warnings about characters exceeding 79 on views.py, auth.py and init.py. There were also no errors present in the terminal or console.  
 
 ![Image of pep8 validator testing](README-images/views-pep8.png "Optional title")  
 Views.py warnings.  
@@ -45,8 +55,6 @@ Auth.py warnings.
 
 ![Image of pep8 validator testing](README-images/init-pep8.png "Optional title")  
 init.py warnings.
-
-There were no errors when running python files through pep8 validator, however there were some warnings about characters exceeding 79 on views.py, auth.py and init.py. There were also no errors present in the terminal or console.  
 
 ## Lighthouse Testing  
 
