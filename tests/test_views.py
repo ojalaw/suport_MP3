@@ -1,14 +1,17 @@
 import unittest
 from app import flask_app
 
+
 def add_numbers(a, b):
     return a + b
+
 
 class SanityTest(unittest.TestCase):
     def test_addition(self):
         result = add_numbers(2, 3)
         self.assertEqual(result, 5)
-        
+
+
 class TestPostFeature(unittest.TestCase):
     def setUp(self):
         self.app = flask_app().test_client()
@@ -19,14 +22,15 @@ class TestPostFeature(unittest.TestCase):
             username='testuser',
             password='Testpassword1'
         ), follow_redirects=True)
-        
+
     def test_create_post(self):
         response = self.app.post('/football-post', data={'post': 'This is a new football post.'})
         self.assertEqual(response.status_code, 302)
-        
+
     def test_add_comment(self):
         response = self.app.post('/add-comment/football/1', data={'content': 'This is a comment.'})
         self.assertEqual(response.status_code, 302)
+
 
 class TestOverviewRoute(unittest.TestCase):
     def setUp(self):
@@ -36,7 +40,8 @@ class TestOverviewRoute(unittest.TestCase):
         response = self.app.get('/')
         self.assertEqual(response.status_code, 200)
         self.assertIn(b'Welcome to Sup<i class="fa-regular fa-futbol"></i>rt', response.data)
-        
+
+
 class TestSportsRoutes(unittest.TestCase):
     def setUp(self):
         self.app = flask_app().test_client()
@@ -54,6 +59,7 @@ class TestSportsRoutes(unittest.TestCase):
         response = self.app.get(route)
         self.assertEqual(response.status_code, 302)
         self.assertIn('/login', response.location)
+
 
 if __name__ == '__main__':
     unittest.main()

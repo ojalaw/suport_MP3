@@ -52,8 +52,8 @@ def sign_up():
             flash('Username must be less than 25 characters', category='error')
             return redirect(url_for('auth.sign_up'))
         if len(password1) > 25:
-             flash('Password must be less than 25 characters', category='error')
-             return redirect(url_for('auth.sign_up'))
+            flash('Password must be less than 25 characters', category='error')
+            return redirect(url_for('auth.sign_up'))
         if len(favourite_team) > 25:
             flash('Favorite team must be less than 25 characters', category='error')
             return redirect(url_for('auth.sign_up'))
