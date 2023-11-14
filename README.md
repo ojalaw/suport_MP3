@@ -397,6 +397,8 @@ Personal image taken by myself
   
 ###  Acknowledgments
 
-Code Institute training material  
-Mentor - Chris Quinn  
+Code Institute training material.  
+Chris Quinn  - CI Mentor.  
+Peter Brookes-Smith - External Mentor.  
+
 
