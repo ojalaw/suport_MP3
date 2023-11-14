@@ -19,7 +19,7 @@ This site has been tested using the following testing procedures
 
 ## Code Validation    
 
-The site has been run through W3C, WC3 CSS validators and JSHint javascript validators.  
+The site has been run through [W3C](https://validator.w3.org/), [WC3 CSS](https://jigsaw.w3.org/css-validator/), [JSHint](https://www.jslint.com/) javascript validator and CI [PEP8 validator](https://pep8ci.herokuapp.com/) 
 
 ![Image of validator testing](README-images/html-test.png "Optional title")  
 
@@ -37,6 +37,16 @@ There were 9 warnings, none of which affect accessibility or functionality of si
 
 There were no errors when running javascript file through JShint validator.  
 
+![Image of pep8 validator testing](README-images/views-pep8.png "Optional title")  
+Views.py warnings.  
+
+![Image of pep8 validator testing](README-images/auth-pep8.png "Optional title")  
+Auth.py warnings.  
+
+![Image of pep8 validator testing](README-images/init-pep8.png "Optional title")  
+init.py warnings.
+
+There were no errors when running python files through pep8 validator, however there were some warnings about characters exceeding 79 on views.py, auth.py and init.py. There were also no errors present in the terminal or console.  
 
 ## Lighthouse Testing  
 
@@ -98,9 +108,12 @@ Mobile lighthouse score [here](README-images/all-users-mobile-lighthouse.png "Op
 
 | Device                   | Operating system | Bugs  |
 | -------------            |:-------------:   | -----:|
-| iPhone 14                | iOS 16.3.1       | None  |
-| iPhone 14 pro            | iOS 16.0         | None  |
-| iPad 10                  | iOS              | None  |
+| iPhone 14                | iOS 16.6.1       | None  |
+| iPhone 14 pro            | iOS 16.6.1       | None  |
+| iPad 10                  | iOS 16.6         | None  |
+| Samsung Galaxy S22 ultra | Android 14.0     | None  |
+| HONOR Magic5 Pro         | Android 13.0     | None  |
+| iPhone 13 pro            | iOS 16.6         | None  |
 
 ## Automatic Testing  
 I decided to employ a certain degree of automated testing during the project in the form of unittest, the python built-in module for writing/testing. The tests can be found in the test_views.py file and are summarised below.  
