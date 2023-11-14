@@ -210,7 +210,7 @@ Users can navigate to the 'My profile' page, here they can add to their bio, cha
 ![Image profile page](README-images/profile.png "Optional title")
 
 **Other Users**  
-Users have the ability to navigate to the 'Other users' page to view the other users that have created accounts.  
+Users have the ability to navigate to the 'Other users' page to view the other users that have created accounts. Users can see other users information such as username, Favourite Team and Favourite Sport.  
 
 ![Image of other users page](README-images/other-users.png "Optional title")
 
