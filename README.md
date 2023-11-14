@@ -84,11 +84,11 @@ The layout of the Suport website is built using the Bootstrap framework, which p
 
 ### Accessibility  
 
-Used contrasting colours to enhance accessibility.
+The site has scored highly in terms of accessibility, I have included alt text descriptions for all images to provide context and information to visually impaired users, Used contrasting colours to enhance accessibility. 
  
 
 ### Imagery  
-Used a combination of imagery from Pixabay (See media below) and an image that i had taken myself. Images are all of a similar size and quality for consistency throughotu the site.  
+Used a combination of imagery from Pixabay (See media below) and an image that i had taken myself. Images are all of a similar size and quality for consistency throughout the site.  
 
 
 ### Wireframes
@@ -226,7 +226,7 @@ Users can navigate to respective social media sites that are present in the foot
 
 ### Future Implementations
 There are a number of different features that could be implemented in the future;
-- API that displays live/gistoric sports data.
+- API that displays live/historic sports data.
 - Private messaging function that allows users to message directly.
 - More interactive profiles that allow users to upload images and other content.
 - The ability to view other users profiles.  
