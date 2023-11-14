@@ -224,10 +224,12 @@ Users can navigate to respective social media sites that are present in the foot
 
 **Flash Messages**  
 I chose to use flash messages as a positive feedback to users whenever they made an action on the site. Everything from logging in, to adding a post to try something they aren't authorised to do.   
+
 ![Image of flash message](README-images/flash-message.png "Optional title")  
 
 **Creative timestamping**  
 I decided to included a timestamp that informed users how long ago something was rather than a full dated timestamp, I chose this to enhance user experience.  
+
 ![Image of timestamp](README-images/timestamp.png "Optional title")
 
 
