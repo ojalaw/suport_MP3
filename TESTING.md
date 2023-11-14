@@ -196,7 +196,7 @@ Throughout the development phase of the site, I came across a variety of differe
 
 - When I added the 'Favourite Sport' and 'Favourite Team' to the database, there were issues with migration and i was displayed with a 500 internal server error. To correct this, i reset the database.
 
-- - When adding 'Favourite Sport' and 'Favourite Team', I did not include them in my auth.py, so when users were signing up, they were not being added to the database.   
+- When adding 'Favourite Sport' and 'Favourite Team', I did not include them in my auth.py, so when users were signing up, they were not being added to the database.   
 
 - When deploying to heroku for the first time, i was encountered with an 500 internal server error. This time it was due to trying to connect to a local database rather than my PostgreSQL Heroku database.  
 
