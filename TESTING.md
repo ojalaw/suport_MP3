@@ -147,7 +147,7 @@ During the manual testing, I tested the sites functionality, usability and respo
 I have kept the basic functionality of the site the same throughout the entire project. Initially leaning towards a note/review site, moving towards a social media site that allows users to create, edit and delete posts.  
 
 **Overview page**  
-During the manual testing phase, I changed the images on the overview.html page. A test user suggested that the images could not be seen clearly and a change would make it a better user experience. Due to this feedback, I transitioned to a bootstrap image carousel, similar to what is used on inidivdual sports pages.  
+During the manual testing phase, I changed the images on the overview.html page. A test user suggested that the images could not be seen clearly and a change would make it a better user experience. Due to this feedback, I transitioned to a bootstrap image carousel, like what is used on individual sports pages.  
 
 **Sports pages**
 Similarly to the overview page, during testing, i felt that the individual sports pages were rather static and needed something to add interest. I added the bootstrap carousel to allow users to see multiple images relating to the chosen sport.  
@@ -164,7 +164,7 @@ Sign up - Signup works as expected with errors handled as expected.
 Login - Login works as expected.  
 Flash messages - All flash messages are correctly implemented, both success and error flash messages are displayed correctly.  
 Overview cards - The interactive sports cards work as expected on the overview page.  
-Image carousels - The image carousels work as expected on indivdual sports pages and on the overview page on smaller devices.  
+Image carousels - The image carousels work as expected on individual sports pages and on the overview page on smaller devices.  
 
 **Sports pages** 
 
@@ -179,10 +179,10 @@ Delete Comment - The delete comment feature works as expected.
 Edit Bio - The edit bio feature works as expected.  
 Edit fav team - The edit fav team works as expected.  
 Edit fav sport - The edit fav sport works as expected.  
-Save/cancel button - The save and cancal buttons both work as expected.
-Social media footer - The social media icons work as expected, responding on hover and openeing new tab.  
+Save/cancel button - The save and cancel buttons both work as expected.
+Social media footer - The social media icons work as expected, responding on hover and opening new tab.  
 Delete modal - The delete modal opens as expected and deletes content when clicked.  
-Logout - The logout feature works as expeced.  
+Logout - The logout feature works as expected.  
 
 **Usability**  
 
@@ -206,13 +206,13 @@ Throughout the development phase of the site, I came across a variety of differe
 
 - When adding 'Favourite Sport' and 'Favourite Team', I did not include them in my auth.py, so when users were signing up, they were not being added to the database.   
 
-- When deploying to heroku for the first time, i was encountered with an 500 internal server error. This time it was due to trying to connect to a local database rather than my PostgreSQL Heroku database.  
+- When deploying to heroku for the first time, I was encountered with a 500 internal server error. This time it was due to trying to connect to a local database rather than my PostgreSQL Heroku database.  
 
 - One issue that i had very early on was conflicting packages/modules to do with flask. To get around this, I used older versions of different modules to deconflict the issue. I have been displayed with the following message multiple times. C:\Users\olly-\Documents\GitHub\suport_MP3\suport\auth.py:19: UserWarning: The 'sha256' password method is deprecated and will be removed in Werkzeug 2.4. Migrate to the 'scrypt' method. Moving forward I would intedn to use the most up to date modules, it was just not possible for me this time.  
 
-- A bug that was noticed during testing was that when posts containing words that contained alot of characters were posted/commented, they overflowed their div. To correct this, I used the following CSS 'word-break: break-word;'  
+- A bug that was noticed during testing was that when posts containing words that contained a lot of characters were posted/commented, they overflowed their div. To correct this, I used the following CSS 'word-break: break-word;'  
 
-- Clicking 'cancel' button on profile page was causing content to save and reveal flash message, i added javascript to handle the toggle reveal/hide.  
+- Clicking 'cancel' button on profile page was causing content to save and reveal flash message, I added javascript to handle the toggle reveal/hide.  
 
 - Buttons too small on mobile devices, changed width to 100%.  
 
@@ -220,7 +220,7 @@ Throughout the development phase of the site, I came across a variety of differe
 
 - Users were being logged in automatically rather than being redirected to the login page, I added code to direct users to the login page.  
 
-- When 'Favourite Team' and 'Favourite Sport' were over the 25 charcter limit, it caused 500 Internal server error. Added code to handle the error.
+- When 'Favourite Team' and 'Favourite Sport' were over the 25 character limit, it caused 500 Internal server error. Added code to handle the error.
 
 - Changed from interactive image cards to image carousel on overview page on smaller screens.
 
