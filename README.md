@@ -55,7 +55,7 @@ As a committed sports fan, I'm eager to engage with other enthusiasts across var
 
 
 **User Story 3:** 
-As a regular user of sports blog sites, I'm looking for a platform that offers a seamless experience for reading and interacting with sports content. I want to easily discover and read detailed posts and articles on my favorite sports without any hassles.
+As a regular user of sports blog sites, I'm looking for a platform that offers a seamless experience for reading and interacting with sports content. I want to easily discover and read detailed posts and articles on my favourite sports without any hassles.
 
 
 **User Story 4:** 
@@ -94,7 +94,7 @@ Used a combination of imagery from Pixabay (See media below) and an image that i
 ### Wireframes
 
 [Suport Wireframe](README-images/suport-mp3-wireframe.pdf "Link to Suport wireframe")  
-There have been some changes since the wireframe was created. The intial plan for the site was for users to be able to create an account and make posts about sports. The general principle remains the same, I have just added a comment ability to the posts and implemented a user profile that includes the users 'Favourite Sport' and 'Favourite team', they can also add a bio.  
+There have been some changes since the wireframe was created. The initial plan for the site was for users to be able to create an account and make posts about sports. The general principle remains the same, I have just added a comment ability to the posts and implemented a user profile that includes the users 'Favourite Sport' and 'Favourite team', they can also add a bio.  
 
 ### Data Model  
 
@@ -135,7 +135,7 @@ See database schema [here](README-images/database-schema-mp3.pdf "Link to Suport
 A number of different security considerations were taken into account when putting together this project.  
 
 **Use of .env file**  
-Important credentials including DATABASE_URL and SECRET_KEY are located within .env file which is subsequently in .gitignore file to ensure it remains secure. SECRET_KEY was initally located in __init__.py file, it has since been changed and moved to a more secure location in .env file.  
+Important credentials including DATABASE_URL and SECRET_KEY are located within .env file which is subsequently in a .gitignore file to ensure it remains secure. SECRET_KEY was initially located in __init__.py file, it has since been changed and moved to a more secure location in .env file.  
 
 **Defensive Programming**  
 Measures have been put in place throughout the site to prevent users from doing things they are not authorised to do. For example, A user who has not signed up to the site, cannot access any of the individual sports pages to add a post. This has been implemented using @login_required decorators.  
@@ -166,7 +166,7 @@ Users have the ability to sign up, choosing their favourite sport and team in th
 ![Image of sign-up page](README-images/sign-up.png "Optional title")
 
 **Log in**  
-Users can login using the inofrmation that they provided at the sign up process.  
+Users can login using the information that they provided at the sign up process.  
 
 ![Image of login page](README-images/login.png "Optional title")
 
@@ -176,7 +176,7 @@ Users are presented with an overview page that includes interactive images of th
 ![Image of overview page](README-images/overview.png "Optional title")
 
 **Image Carousel**  
-A Bootstrap image carousel was used on individual sports pages to enance user experience.  
+A Bootstrap image carousel was used on individual sports pages to enhance user experience.  
 
 ![Image of image carousel](README-images/image-carousel.png "Optional title")
 
@@ -190,22 +190,22 @@ Individual sport page where users can go to post and interact with other users a
 Individual sport page where users can go to post and interact with other users about Rugby.  
 
 **Post feature**  
-Users have the ability to post content onto individual sports pages, they can also browse other posts that users have already posted.  
+Users can post content onto individual sports pages, they can also browse other posts that users have already posted.  
 
 ![Image of post feature](README-images/post.png "Optional title")
 
 **Comment feature**  
-Users have the ability to comment on posts made by themselves or other users, comments can be deleted once they have been added.  
+Users can comment on posts made by themselves or other users, comments can be deleted once they have been added.  
 
 ![Image of comment feature](README-images/comment.png "Optional title")
 
 **Delete modal**  
-Users have the ability to delete posts and comments once they have added them. A confirmation 'delete modal' is displayed once the user clicks the 'delete' button.  
+Users can delete posts and comments once they have added them. A confirmation 'delete modal' is displayed once the user clicks the 'delete' button.  
 
 ![Image of delete modal](README-images/delete-modal.png "Optional title")
 
 **My profile**  
-Users have the ability to navigate to the 'My profile' page, here they can add to their bio, change their favourite team/sport that is displayed on their profile page. They can also views historic posts/comments.  
+Users can navigate to the 'My profile' page, here they can add to their bio, change their favourite team/sport that is displayed on their profile page. They can also views historic posts/comments.  
 
 ![Image profile page](README-images/profile.png "Optional title")
 
@@ -215,7 +215,7 @@ Users have the ability to navigate to the 'Other users' page to view the other u
 ![Image of other users page](README-images/other-users.png "Optional title")
 
 **Logout**  
-Once users are finished on the site, they have the ability to click the logout button which will take them to the overview page.  
+Once users are finished on the site, they can click click the logout button which will take them to the overview page.  
 
 **Footer**  
 Users can navigate to respective social media sites that are present in the footer. On non-touchscreen devices, an animation has been added causing the icons to rotate utilising SVG.  
@@ -248,7 +248,7 @@ Used to run the app.
 ### Frameworks, Libraries & Programs Used
 
 [Bootstrap 5.3.0](https://getbootstrap.com/)  
-Boostrap was predominantly used throughout the site for responsiveness, modals to confrim deleting posts/comments and image carousel.
+Boostrap was predominantly used throughout the site for responsiveness, modals to confirm deleting posts/comments and image carousel.
 
 [CDN jsdelivr](https://www.jsdelivr.com/)  
 CDN jsdeliver was used to serve static assets bootstrap and jquery to improve performance and reliability.
@@ -378,3 +378,4 @@ Personal image taken by myself
 
 Code Institute training material  
 Mentor - Chris Quinn  
+
