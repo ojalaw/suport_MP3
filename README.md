@@ -220,8 +220,15 @@ Once users are finished on the site, they can click click the logout button whic
 **Footer**  
 Users can navigate to respective social media sites that are present in the footer. On non-touchscreen devices, an animation has been added causing the icons to rotate utilising SVG.  
 
-![Image of footer](README-images/footer.png "Optional title")
+![Image of footer](README-images/footer.png "Optional title")  
 
+**Flash Messages**  
+I chose to use flash messages as a positive feedback to users whenever they made an action on the site. Everything from logging in, to adding a post to try something they aren't authorised to do.   
+![Image of flash message](README-images/flash-message.png "Optional title")  
+
+**Creative timestamping**  
+I decided to included a timestamp that informed users how long ago something was rather than a full dated timestamp, I chose this to enhance user experience.  
+![Image of timestamp](README-images/timestamp.png "Optional title")
 
 
 ### Future Implementations
@@ -264,6 +271,18 @@ GitHub is used to store the projects code after being pushed from Git.
 
 [Balsamiq](https:/balsamiq.com)  
 Balsamiq was used to create the wireframes during the design process.  
+
+[Heroku](https://id.heroku.com/login)  
+Used to deploy the project.  
+
+[Flask](https://flask.palletsprojects.com/en/3.0.x/#)  
+Python framework that has provided tools and features to build my web application.  
+
+[Jinja](https://jinja.palletsprojects.com/en/3.1.x/)  
+Assisted me in generating dynamic HTML content based on templates and data.  
+
+[PostgreSQL](https://www.postgresql.org/)  
+Hosted the database used in my project.  
 
 [Visual Studio Code](https://code.visualstudio.com/download)  
 Visual Studio Code was use to create files pages and where i produced the code for the project.  
