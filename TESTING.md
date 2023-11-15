@@ -19,7 +19,7 @@ This site has been tested using the following testing procedures
 
 ## Code Validation    
 
-The site has been run through [W3C](https://validator.w3.org/), [WC3 CSS](https://jigsaw.w3.org/css-validator/), [JSHint](https://www.jslint.com/) javascript validator and CI [PEP8 validator](https://pep8ci.herokuapp.com/) 
+The site has been run through [W3C](https://validator.w3.org/), [WC3 CSS](https://jigsaw.w3.org/css-validator/), [JSHint](https://www.jshint.com/) javascript validator and CI [PEP8 validator](https://pep8ci.herokuapp.com/) 
 
 **HTML** 
 
