@@ -150,13 +150,6 @@ The code checks if the email already exists in the database to prevent duplicate
 Flash messages provide feedback to users about the status of their actions. For example, 'successful login or reasons for authentication failure'. However, care is taken not to provide overly specific errors. For example, rather than saying "incorrect password for given email," the feedback messages are generalised like 'Email does not exist' or 'Incorrect password, try again.'  
 
 
-
-### Future updates  
-- Adding more sports.
-- Adding message feature between users.
-- Adding an API that imports sports data for user to post about.
-
-
 ## Features
 
 ### General features  
