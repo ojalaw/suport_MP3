@@ -117,7 +117,7 @@ Mobile lighthouse score [here](README-images/all-users-mobile-lighthouse.png "Op
 | HONOR Magic5 Pro         | Android 13.0     | None  |
 | iPhone 13 pro            | iOS 16.6         | None  |
 
-## Automatic Testing  
+## Automated Testing  
 I decided to employ a certain degree of automated testing during the project in the form of unittest, the python built-in module for writing/testing. The tests can be found in the test_views.py file and are summarised below.  
 
 **Sanity Testing**  
@@ -196,6 +196,8 @@ Generic bootstrap breakpoints were also used sporadically throughout the site.
 ## Bug Reporting
 Throughout the development phase of the site, I came across a variety of different bugs/errors that eventually overcame.  
 
+**resolved**
+
 - When I added the 'Favourite Sport' and 'Favourite Team' to the database, there were issues with migration and i was displayed with a 500 internal server error. To correct this, i reset the database.
 
 - When adding 'Favourite Sport' and 'Favourite Team', I did not include them in my auth.py, so when users were signing up, they were not being added to the database.   
@@ -217,5 +219,11 @@ Throughout the development phase of the site, I came across a variety of differe
 - When 'Favourite Team' and 'Favourite Sport' were over the 25 character limit, it caused 500 Internal server error. Added code to handle the error.
 
 - Changed from interactive image cards to image carousel on overview page on smaller screens.
+
+**Unresolved**
+
+- One minor issue I noticed during testing was with the comments on the posts. I initially intended for comments to by styled in a way that they had their own border in tact. However, the top of the comments seems attached to the comment above. The first comment is completely surrounded but from the second comment onwards, the top of the comment does not contain a border. This makes it look as though the comments flow one after the other, dropping down one comment after the other which i believe works better than if the comments were kept separate. This issue has no further effect on functionality or styling which is why I did not pursue this issue further.  
+
+  ![comment box styling bug](README-images/comment-box.png "Optional title")  
 
 [Back to README.md](https://github.com/ojalaw/suport_MP3)
