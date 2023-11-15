@@ -45,16 +45,10 @@ There were no errors when running javascript file through JShint validator.
 
 **Python**
 
-There were no errors when running python files through pep8 validator, however there were some warnings about characters exceeding 79 on views.py, auth.py and init.py. There were also no errors present in the terminal or console.  
+I had to correct some errors regarding characters exceeding 79 on views.py, auth.py, init.py and test_views.py. There are no errors when running python files through pep8 validator, There were also no errors present in the terminal or console.  
 
-![Image of pep8 validator testing](README-images/views-pep8.png "Optional title")  
-Views.py warnings.  
+![Image of pep8 validator testing](README-images/pep8-py.png "Optional title")  
 
-![Image of pep8 validator testing](README-images/auth-pep8.png "Optional title")  
-Auth.py warnings.  
-
-![Image of pep8 validator testing](README-images/init-pep8.png "Optional title")  
-init.py warnings.
 
 ## Lighthouse Testing  
 
