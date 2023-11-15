@@ -177,7 +177,7 @@ Individual sport page where users can go to post and interact with other users a
 **Formula 1 page**  
 Individual sport page where users can go to post and interact with other users about Formula 1.  
 
-**Rugby page**
+**Rugby page**  
 Individual sport page where users can go to post and interact with other users about Rugby.  
 
 **Post feature**  
@@ -214,7 +214,7 @@ Users can navigate to respective social media sites that are present in the foot
 ![Image of footer](README-images/footer.png "Optional title")  
 
 **Flash Messages**  
-I chose to use flash messages as a positive feedback to users whenever they made an action on the site. Everything from logging in, to adding a post to try something they aren't authorised to do.   
+I chose to use flash messages as a positive feedback to users whenever they made an action on the site. Everything from logging in, to adding a post to try something they aren't authorised to do.  
 
 ![Image of flash message](README-images/flash-message.png "Optional title")  
 
@@ -225,7 +225,7 @@ I decided to included a timestamp that informed users how long ago something was
 
 
 ### Future Implementations
-There are a number of different features that could be implemented in the future;
+There are a number of different features that could be implemented in the future;  
 - API that displays live/historic sports data.
 - Private messaging function that allows users to message directly.
 - More interactive profiles that allow users to upload images and other content.
