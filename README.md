@@ -76,15 +76,13 @@ Initial colour scheme is general dark theme for a contemporary look, I have incl
 
 The font used throughout the site is 'Ubuntu', I have chosen this font because I consider it to be clean and easy to read.  
 
-
-
 ### Layout
 
 The layout of the Suport website is built using the Bootstrap framework, which provides a responsive grid system that allows the website to adapt to different screen sizes and devices. The use of a grid system helps to create a consistent layout on necessary pages of the website, which makes navigation and exploration more intuitive for visitors.  
 
 ### Accessibility  
 
-The site has scored highly in terms of accessibility, I have included alt text descriptions for all images to provide context and information to visually impaired users, Used contrasting colours to enhance accessibility. 
+The site has scored highly in terms of accessibility, I have included alt text descriptions for all images to provide context and information to visually impaired users, Used contrasting colours to enhance accessibility.  
  
 
 ### Imagery  
@@ -135,7 +133,7 @@ See database schema [here](README-images/database-schema-mp3.pdf "Link to Suport
 A number of different security considerations were taken into account when putting together this project.  
 
 **Use of .env file**  
-Important credentials including DATABASE_URL and SECRET_KEY are located within .env file which is subsequently in a .gitignore file to ensure it remains secure. SECRET_KEY was initially located in __init__.py file, it has since been changed and moved to a more secure location in .env file.  
+Important credentials including DATABASE_URL and SECRET_KEY are located within .env file which is subsequently in a .gitignore file to ensure it remains secure. SECRET_KEY was initially located in __init__.py file, it has since been changed and moved to a more secure location in .env file, the database was also subsequently destroyed and rebuilt to produce a different DATABASE_URL.  
 
 **Defensive Programming**  
 Measures have been put in place throughout the site to prevent users from doing things they are not authorised to do. For example, A user who has not signed up to the site, cannot access any of the individual sports pages to add a post. This has been implemented using @login_required decorators.  
@@ -183,12 +181,12 @@ Individual sport page where users can go to post and interact with other users a
 Individual sport page where users can go to post and interact with other users about Rugby.  
 
 **Post feature**  
-Users can post content onto individual sports pages, they can also browse other posts that users have already posted.  
+Users can post content onto individual sports pages, they can also browse other posts that users have already posted. The most recent posts will populate at the top of the page so that users are immediately displayed with the most recent posts.  
 
 ![Image of post feature](README-images/post.png "Optional title")
 
 **Comment feature**  
-Users can comment on posts made by themselves or other users, comments can be deleted once they have been added.  
+Users can comment on posts made by themselves or other users, comments can be deleted once they have been added. The most recent comments are populated towards the bottom of the comments section, this way users can browse the older comments towards the top and the most recent responses towards the bottom.  
 
 ![Image of comment feature](README-images/comment.png "Optional title")
 
