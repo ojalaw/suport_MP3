@@ -236,6 +236,10 @@ def edit_favourite_sport():
     user = current_user
     new_sport = request.form.get('favourite_sport')
 
+    if len(new_sport) == 0:
+        flash("Favorite sport cannot be blank.", 'error')
+        return redirect(url_for('views.profile', user_id=user.id))
+
     if len(new_sport) > 25:
         flash("Favorite sport must be 25 characters or less.", 'error')
     elif new_sport != user.favourite_sport:
@@ -252,6 +256,10 @@ def edit_favourite_team():
     user = current_user
     new_team = request.form.get('favourite_team')
 
+    if len(new_team) == 0:
+        flash("Favorite team cannot be blank.", 'error')
+        return redirect(url_for('views.profile', user_id=user.id))
+
     if len(new_team) > 25:
         flash("Favorite team must be 25 characters or less.", 'error')
     elif new_team != user.favourite_team:
@@ -260,4 +268,3 @@ def edit_favourite_team():
         flash("Favorite team updated successfully!", 'success')
 
     return redirect(url_for('views.profile', user_id=user.id))
-    
